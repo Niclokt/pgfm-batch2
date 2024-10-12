@@ -8,4 +8,10 @@ Info on programming fundamentals
 
 - Just basic use of Git
 - Won't be going through branching for now
-- 
+
+
+- This is a new text
+
+## References
+https://np.edu.sg
+
