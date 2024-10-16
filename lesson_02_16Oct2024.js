@@ -89,3 +89,29 @@ console.log((85 > 50) ? "yes" : "no");
 
 
 //Branching
+//visualising Ifs
+//We can use JavaScript to run certain code only if a condition is met: 
+let x = 10; 
+if (x > 0){
+    console.log("x is bigger than 0");
+}
+
+console.log("Program ended")
+
+
+//Visualising If... Else If ... Else
+// let score = 75;
+// if (score >= 75){
+//     console.log("Your grade is A.");
+// }else if(score >= 50){
+//     console.log("Your grade is B.");
+// }else {
+//     console.log("You failed.");
+// }
+
+let score = 20;
+console.log(
+  score >= 75 ? "Your grade is A." : 
+  score >= 50 ? "Your grade is B." : 
+  "You failed."
+);
