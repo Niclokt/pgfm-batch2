@@ -21,3 +21,7 @@ console.log(`X + Y = ${x * y}`);
 console.log(`X % Y = ${x % y}`);
 
 //Exercise 04 
+
+
+
+//Exercise 18 

@@ -1,4 +1,9 @@
 //Tutorial03 
+//Advice
+//Good Practise to use CamelCase
+//Good practise to test algo before pasting it into a function
+//Test in small tiny bits, then piece them tgt
+
 
 //**EXERCISE 1**//
 // Objective
@@ -17,6 +22,8 @@ console.log('###EXERCISE 01###');
 
 //**EXERCISE 3**// 
 
+//--- SOLN 03 ---
+//use .push() to reverse an array
 
 
 //**EXERCISE 5**// 
@@ -42,6 +49,22 @@ let width2 = 12;
 let height2 = 7;
 calculateArea(width2,height2);
 
+//----- Exercise 05 - Solution -----
+
+function calculateAreaRect(h,w){
+    area = h * r 
+}
+
+}
+
+let userWidth = parseInt(prompt ("Enter Width: "));
+let userHeight = parseInt(prompt ("Enter Width: "));
+
+//Cleaning the data
+//Checks and balances to ensure the data received is clean
+if(){
+
+}
 
 
 //**EXERCISE 6**//
@@ -72,7 +95,29 @@ checkAge(age1);
 let age2 = 3;
 checkAge(age2);
 
+//---- SOLN 06 ----
+// 13 - child
+// 14 - 19 teen
+// 20+ - adult
+function checkAge1 (age){
+    let x = age;
+    let ageCategory = '' //initialising
+    let flag = false;
+    if (x <= 13){
+        flag = true;
+        ageCategory = "Child"
+        return x; 
+    } if else (x > 13 && x < 20 ){
+        flag = true;
+        ageCategory = "Teen"
+        return x; 
+    }
 
+    if (flag) {
+        return age;
+    }
+        return "Age is invalid";
+}
 
 
 //**EXERCISE 07**//
