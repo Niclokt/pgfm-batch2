@@ -109,6 +109,79 @@ console.log(totalCostOfMuffins(d,c,n,));
 console.log("###EXERCISE 09###");
 
 
+//Exercise 12
+console.log("###EXERCISE 12###");
+/* num1 = parseInt(prompt("Num 1: "));
+num2 = parseInt(prompt("Num 2: "));
+num3 = parseInt(prompt("Num 3: "));
+num4 = parseInt(prompt("Num 4: "));
+
+console.log((num1+num2+num3+num4)/4); */
+
+//Approach 2
+/* let num = [];
+num[0] = parseInt(prompt("Num 1: "));
+num[1] = parseInt(prompt("Num 2: "));
+num[2] = parseInt(prompt("Num 3: "));
+num[3] = parseInt(prompt("Num 4: "));
+
+//Find length of the array
+let arrLen = num.length;
+
+//Find the sum of the array
+let summation = num.reduce(
+    (accumulator,currentValue)=> accumulator + currentValue
+);
+
+console.log(summation);
+console.log(summation/arrLen); */
+
+//Exercise 13
+/* console.log("###EXERCISE 13###");
+let a = 5;
+let b = 3;
+
+console.log(`Before swapping - a: ${a}, b: ${b}`);
+
+let x = a;
+a = b;
+b = x;
+
+console.log(`After swapping - a: ${a}, b: ${b}`);
+ */
+
+//Exercise 14
+/* console.log("###EXERCISE 14###");
+let celsius = prompt("Provide Temp in Celisus: ");
+
+console.log(`Celsius: ${celsius} = Farenheit: ${(celsius*9/5)+32}`); */
+
+//Exercise 15
+/* console.log("###EXERCISE 15###");
+
+let getNum = parseInt(prompt("Provide a number: "));
+
+(getNum >= 0) ? console.log(`${getNum} is a Positive Number.`) : console.log(`${getNum} is a Negative Number.`); */
+
+//Exercise 16
+/* console.log("###EXERCISE 16###");
+
+let getNum = parseInt(prompt("Provide a number: "));
+
+function isNumEvenOrOdd (num){
+    let remainder = num % 2;
+    console.log (`${num} % 2 --> Remainder= ${remainder}`);
+
+    remainder ? console.log(`${num} is an Odd number.`) : console.log(`${num} is an Even number.`);
+}
+
+isNumEvenOrOdd(getNum); */
+
+
+//Exercise 17
+console.log("###EXERCISE 17###");
+
+
 //Exercise 18 
 /* console.log('###EXERCISE 18###');
 //this is user driven
