@@ -1,6 +1,6 @@
 # Lesson 05 -- JS Fundamentals II (HTML + JS)
-`Date: 26 OCT 2024, SAT`
-
+`Date: 26 OCT 2024, SAT`  
+`Status: WIP, 26 OCT 2024`
 ### [Summary]
 _(To summarise at the end of the lesson)_  
 Some learning points:  
@@ -51,9 +51,27 @@ Some learning points:
 
 xx -- Interesting ways to implement code
 --- 
->Code 1
+>Code 1 -- CSS style  
+
+When implementing selector in css style, to take note of the inclusion/ exculsion of a spacing after the last tag before the colon as follows: 
+
+`From ChatGPT:`  
+The issue in your CSS code lies in the selector used for the hover effect.  
+The current selector `nav ul li :hover` has a space before `:hover`, which targets any element inside the li (like `<a>`, `<span>`, etc.) that is being hovered over, rather than the `li` element itself.  
+This means that when you hover over the `li`, nothing will happen unless there is a child element.
+
+
+
 ```
-For multiline code highlighting, keep it sandwiched between 2 3xbackticks
+<!--Without spacing-->
+nav ul li:hover {
+    background:#e8d1ff85;
+}
+
+<!--With spacing-->
+nav ul li :hover {
+    background:#e8d1ff85;
+}
 ```
 >Code 2
 ```
