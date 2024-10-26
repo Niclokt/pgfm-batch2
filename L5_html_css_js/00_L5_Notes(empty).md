@@ -8,7 +8,8 @@ Some learning points:
 2. LP 2
 
 ### [Useful Links]
-
+1. [Website to get gradient css code](https://coolors.co/gradient-maker/eeddf3-ee92b1-6330b4)
+2. 
 
 ## Today's Agenda
 1. Recap
@@ -23,6 +24,7 @@ Some learning points:
 &ensp;&ensp; - 2 Methods  
 &ensp;&ensp;&ensp;&ensp; - using `"srcset"`  
 &ensp;&ensp;&ensp;&ensp; - using Content Delivery Network (CDN) e.g. Cloudflare  
+
 2. HTML & CSS  
 &ensp;&ensp; - Semantic Tags  
 &ensp;&ensp; - Ways of implementing style  
@@ -33,10 +35,11 @@ Some learning points:
 
 
 
-## 02 -- 
+## 02 -- CSS - Implement Gradient background
+[Website to get gradient  CSS code] https://coolors.co/gradient-maker/eeddf3-ee92b1-6330b4  
+[_Some other website_]
 
-
-## 03 -- 
+## 03 -- CSS -  Importing fonts from Google fonts
 
 
 ## 04 -- 
@@ -46,7 +49,9 @@ Some learning points:
 
 
 ## 06 -- Garble Garble...
+>This section is for making quick notes... 
 
+Quick Quick!!
 
 
 xx -- Interesting ways to implement code
@@ -85,3 +90,7 @@ Hope I take better notes with this in the future :3
 yy -- Markdown Reference 
 --- 
 [Markdown Cheat Sheet] (https://github.com/adam-p/markdown-here/wiki/markdown-cheatsheet)
+
+zz -- AOB
+--- 
+Proud of my notes template heh 👀
