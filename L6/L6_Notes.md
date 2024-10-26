@@ -1,5 +1,5 @@
-# Lesson XXX 
-
+# Lesson 06 -- HTML CSS Advanced (Positioning)
+Date: WED, 30 OCT 2024
 ### [Summary]
 _(To summarise at the end of the lesson)_  
 Some learning points:  
