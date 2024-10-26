@@ -8,7 +8,7 @@ This is the first para
 
 ---
 # Lesson XXX 
-
+`Date: 12 JAN 2024, WED`
 ### [Summary]
 _(To summarise at the end of the lesson)_  
 Some learning points:  
