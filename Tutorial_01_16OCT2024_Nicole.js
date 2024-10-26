@@ -180,7 +180,34 @@ isNumEvenOrOdd(getNum); */
 
 //Exercise 17
 console.log("###EXERCISE 17###");
+/* 
+let score = parseInt(prompt("What is your score?: "));
 
+(score >= 90) ? console.log(`Score: ${score}, Grade: A`):
+(score >= 80) ? console.log(`Score: ${score}, Grade: B`):
+(score >= 70) ? console.log(`Score: ${score}, Grade: C`):
+(score >= 60) ? console.log(`Score: ${score}, Grade: D`):
+console.log(`Score: ${score}, Grade: F`); */
+
+let score = parseInt(prompt("What is your score?: "));
+
+switch(score){
+    case score >= 90: 
+        console.log(`Score: ${score}, Grade: A`);
+        break;
+    case score >= 80: 
+        console.log(`Score: ${score}, Grade: B`);
+        break;
+    case score >= 70: 
+        console.log(`Score: ${score}, Grade: C`);
+        break;
+    case score >= 60: 
+        console.log(`Score: ${score}, Grade: D`);
+        break;
+    case score < 60: 
+        console.log(`Score: ${score}, Grade: F`);
+        break;
+};
 
 //Exercise 18 
 /* console.log('###EXERCISE 18###');
@@ -209,3 +236,8 @@ let isJaniceGoing = false;
 const canGoToBeach = (isSunny || isCloudy) && isEveGoing && !isTuesday && !isJaniceGoing;
 
 console.log(canGoToBeach ? 'Going to the beach!' : 'Not going to the beach'); */
+
+
+//Exercise 19
+console.log("###EXERCISE 19###");
+
