@@ -1,35 +1,33 @@
-<style>
-    body{
-        font-family: Helvetica, Arial, sans-serif;
-    }
-    p{color:#483D8B;}
+body{
+    font-family: Helvetica, Arial, sans-serif;
+}
+p{color:#483D8B;}
 
-    #myElement{
-        font-family: Arial, Helvetica, sans-serif;
-        color:cornflowerblue;
-        background-color: beige;
-    }
+#myElement{
+    font-family: Arial, Helvetica, sans-serif;
+    color:cornflowerblue;
+    background-color: beige;
+}
 
-    .myClass{
-        font-family: "Playwrite GB S", cursive;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-        color: cornflowerblue;
-    }
+.myClass{
+    font-family: "Playwrite GB S", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: cornflowerblue;
+}
 
-    nav ul li {
-        display: inline-block;
-        margin-right: 10px;
-        padding: 10px;
-        background: #f4f4f4;
-        font-family: cursive;
-    }
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px;
+    background: #f4f4f4;
+    font-family: cursive;
+    border: 1px solid #483D8B;
+    border-radius: 1em;
+}
 
-    a {
-        text-decoration: none;
-        font-family: Helvetica, sans-serif;
-    }
-
-
-</style>
+a {
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+}
