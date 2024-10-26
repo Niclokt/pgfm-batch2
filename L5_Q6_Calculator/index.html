@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style> 
+    form {
+        display:inline
+    }
+</style>
+
+<body>
+    <h1>Your friendly calculator</h1>
+
+
+    <form>
+        <input type="text" id="input1" name="input1" placeholder="Input 1">
+        <input type="text" id="input2" name="input1" placeholder="Input 2">
+        <input type="button" id="btn_getSum" name="btn_getSum" value="Get Sum">
+    </form>
+
+
+    <!-- Dump sum over here -->
+    <h1 id="sumResult">
+        0
+    </h1>
+
+    <h1>Sum is <span id="sumResult">0</span></h1>
+
+
+    <!-- <Script>
+        let input1 = document.getElementById('input1');
+        let input2 = document.getElementById('input2');
+        let sumResult = document.getElementById('sumResult')
+
+        btn_getSum.addEventListener('click', function(){
+            let sum = parseInt(document.getElementById('input1').value) + parseInt(document.getElementById('input2').value);
+            sumResult.innerText = sum;
+            alert(`Input1 + Input2 = ${sum}`);
+        });
+
+    </Script> -->
+
+    <script>src="script.js"</script>
+
+</body>
+</html>
