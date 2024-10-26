@@ -17,3 +17,6 @@ https://np.edu.sg
 
 ## Something new
 - test test
+
+- Notes management system: 
+- Notes for the lesson should be stored in an `.md` file
