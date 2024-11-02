@@ -1,6 +1,7 @@
 # Lesson 08 --
 
-`Date: 02 NOV 2024, SAT`
+`Date: 02 NOV 2024, SAT`  
+`Status: WIP, 02 NOV 2024`
 
 ### [Summary]
 
@@ -33,6 +34,7 @@ Some learning points:
 - How to declare
 - Associative array vs literal objects
 
+**WHILE LOOPS:**  
 The following code can be used for the following scenarios:
 
 1. While we are validating something
@@ -44,7 +46,7 @@ while (true) {
 }
 ```
 
-DO-WHILE LOOPS:
+**DO-WHILE LOOPS:**
 
 ```javascript
 //do something dd
@@ -153,17 +155,39 @@ const response = await axios.request(options);
 const { data } = await axios.request(options);
 ```
 
-**3. Axios -- 'Response' Object**  
+**3. Axios -- 'Response' Object**
+
+- A `response` object provides detailed information about the HTTP response received from a server.
+- When you make a request, Axios returns a `response` object that includes key data related to the response.
+- **Summary:** The Axios `response` object is rich in information, providing both the data and context for the response, making it easier to handle API responses in a structured way.
+
 **4. Axios -- Methods to access the 'Response' object**
+
+- Key properties to use in an Axios request to inspect different parts of the response objects:  
+  _(^^From chatGPT)_
+
+```javascript
+axios
+  .get("https://api.example.com/data")
+  .then((response) => {
+    console.log("Data:", response.data); // Actual data from the server
+    console.log("Status:", response.status); // HTTP status code
+    console.log("Status Text:", response.statusText); // HTTP status message
+    console.log("Headers:", response.headers); // Response headers
+    console.log("Config:", response.config); // Request configuration
+    console.log("Request:", response.request); // Underlying request object
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+```
 
 ## ww -- Today's task list
 
 1. Re-organise learning materials && tutorials (30 mins)
 2. Revise on implementing JS in HTML (buttons and implementing js script) (code)
 
-xx -- Interesting ways to implement code
-
----
+## xx -- Interesting ways to implement code
 
 > Code 1
 
