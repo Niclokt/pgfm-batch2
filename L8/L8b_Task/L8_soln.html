@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple weather app</title>
+</head>
+<body>
+    <h1>Weather Data</h1>
+    <h2>Timestamp: <span id="Timestamp"></span></h2>
+    <h3>Low: <span id="Low"></span></h3>
+    <h3>High: <span id="High"></span></h3>
+
+    <input type="text" id="txtSearch" name="txtSearch">
+    <input type="text" value="Refresh" id="btnRefresh" >
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        //add event listener to button
+        document.getElementById("btnRefresh").addEventListener("click")
+
+
+        function fetchWeather(){
+        
+            const axios = require('axios').default;
+
+            const options = {method: 'GET', url: 'https://api.data.gov.sg/v1/environment/air-temperature'};
+
+            try {
+            const { data } = await axios.request(options);
+            console.log(data);
+            } catch (error) {
+            console.error(error);
+            }
+        }
+
+        fetchWeather();
+    </script>
+
+
+</body>
+</html>

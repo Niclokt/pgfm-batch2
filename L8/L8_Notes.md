@@ -101,8 +101,26 @@ DO-WHILE LOOPS:
 1. Use data gov for a free api? 
 2. Construct and print to your browser some of the API responses
 
+**Steps**  
+&ensp;&ensp;1. Write HTML [✔️]  
+&ensp;&ensp;2. Figure out how to link api response into HTML? []    
+&ensp;&ensp;3. Find a HTML to include []  
 
-## 05 -- 
+**Idea**  
+&ensp;&ensp;1. Get and return a post from nat geo's instagram page??  
+&ensp;&ensp;2. Get and return stats from neaGov website  
+
+
+
+## 05 -- calling Api 
+- CDN  
+- 
+
+**Steps to implement API**
+1. test api (to test in axios format)  
+2. create script 
+3. create async function to throw script from 2 in
+4. 
 
 
 
