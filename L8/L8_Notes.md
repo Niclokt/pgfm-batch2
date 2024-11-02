@@ -1,5 +1,5 @@
-# Lesson 06 -- HTML CSS Advanced (Positioning)
-`~~Date: 30 OCT 2024, WED~~`
+# Lesson 08 -- 
+`Date: 02 NOV 2024, SAT`
 
 ### [Summary]
 _(To summarise at the end of the lesson)_  
@@ -11,7 +11,7 @@ Some learning points:
 
 
 ## Today's Agenda
-1. Recap
+1. Recap -- Key parts to js  
 2. Item 1 
 3. Item 2
 4. Item 3
