@@ -13,6 +13,7 @@ Some learning points:
 3. [Azure Cognitive API](https://learn.microsoft.com/en-us/samples/azure-samples/cognitive-services-rest-api-samples/cognitive-services-rest-api-samples/)
 4. [JSON path finder](https://jsonpathfinder.com)
 5. [Axios](https://axios-http.com)
+6. [Chart.js](https://www.chartjs.org/)
 
 ## Today's Agenda
 1. Recap -- Key parts to js  
@@ -54,7 +55,8 @@ DO-WHILE LOOPS:
 &ensp;&ensp;- [!!] Go research popular free and paid apis  
 &ensp;&ensp;- (E.g) Tik Tok's revenue source -- Is also them selling their technology 
 &ensp;&ensp;- Pokemon APIs are popular because it is a complete API  
-&ensp;&ensp;- 
+&ensp;&ensp;- Rapid APIs is like a middleman
+
 
 - **API platforms**  
 &ensp;&ensp; 1. [httpie](https://httpie.io/)  
@@ -91,6 +93,7 @@ DO-WHILE LOOPS:
 - Create a frontEnd
 - DON'T BE LATE
 - Now we are just consuming APIS, not creating APIs
+- Take sometime to explore all the available APIs
 
 **Tips**
 - Rmb to do wire-framing
@@ -109,7 +112,8 @@ DO-WHILE LOOPS:
 **Idea**  
 &ensp;&ensp;1. Get and return a post from nat geo's instagram page??  
 &ensp;&ensp;2. Get and return stats from neaGov website  
-
+&ensp;&ensp;3. 4D website
+&ensp;&ensp;4. Stocks + Charts
 
 
 ## 05 -- calling Api 
@@ -120,7 +124,8 @@ DO-WHILE LOOPS:
 1. test api (to test in axios format)  
 2. create script 
 3. create async function to throw script from 2 in
-4. 
+4. (??) how to open html in web browser?
+5. 
 
 
 
