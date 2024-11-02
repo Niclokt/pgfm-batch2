@@ -33,15 +33,42 @@
                 console.log(response);
 
                 //To test for a response in here: 
-                console.log(response);
+                console.log(response.data);
 
-                //
+                //Get timestamp
+                let timestamp = response.data.data.readings[0].timestamp;
+                console.log(`Timestamp: ${timestamp}`);
+
+                //find length of array -- No of weather stns in SG
+                let arrLen = response.data.data.readings[0].data.length;
+                console.log(`No. of weather stns: ${arrLen}`);
+
+                //find temp of 1 stn: 
+                let temp1 = response.data.data.readings[0].data[1].value;
+                console.log(temp1);
+
+                /* //Get avg Temp
+                function getAvgTemp() {
+                    //Sum of temp:
+                    let sumOfTemp = 0;
+
+                    for (let i = 0; i < arrLen; i++) {
+                        sumOfTemp += response.data.data.readings[0].data[i].value;
+                    }
+                    console.log(sumOfTemp);
+
+                    //find avg temp
+                    let avgTemp = sumOfTemp / arrLen;
+                    console.log(`Avg Temp: ${avgTemp}`)
+                }
+
+                getAvgTemp(); */
+
 
                 console.log("Data: ", response.data);
                 console.log("Status: ", response.status);
                 console.log("Code: ", response.data.code);
                 console.log("ErrorMsg: ", response.data.errorMsg);
-
             } catch (error) {
                 console.error(error);
             }
