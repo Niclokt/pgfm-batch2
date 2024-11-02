@@ -1,7 +1,0 @@
-//// Deconstructing objects: 
-
-let fruit = {
-    "apples": 20,
-    "orange": 50;
-    
-}
