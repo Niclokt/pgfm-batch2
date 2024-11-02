@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Weather API</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        #templow {
+            color: blue;
+        }
+
+        #temphigh {
+            color: salmon;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Weather Data</h1>
+    <h2>Timestamp: <span id="timestamp"></span></h2>
+    <h3>Low: <span id="templow"></span></h3>
+    <h3>High: <span id="temphigh"></span></h3>
+
+    <input type="text" id="txtSearch" name="txtSearch">
+    <input type="button" value="Refresh" id="btnRefresh" />
+    <script>
+
+        //add event listener to button
+        document.getElementById("btnRefresh").addEventListener("click", function () {
+            let dateToSearch = document.getElementById("txtSearch").value;
+            fetchWeather(dateToSearch);
+        });
+
+        async function fetchWeather(searchDate = "") {
+            const options = {
+                method: "GET",
+                url: `https://api-open.data.gov.sg/v2/real-time/api/twenty-four-hr-forecast?date=${searchDate}`,
+            };
+
+            try {
+                const { data } = await axios.request(options);
+                console.log(data);
+
+                let response = data.data;
+                console.log(response)
+                let timeStamp = response.records[0].updatedTimestamp; //(??) where did the records[] array come from?
+                let lowTemp = response.records[0].general.temperature.low;
+
+
+                let highTemp = response.records[0].general.temperature.high;
+                let highTempDescription = "";
+                if (highTemp > 30) {
+                    highTempDescription = "It's reallly reallllllly hot!!! 🥵"
+                } else {
+                    highTempDescription = "For once.. it is a little cooling 🥶"
+                }
+
+                console.log(`Updated at: ${timeStamp}: 
+          Low: ${lowTemp}°C, 
+          High: ${highTemp}°C`);
+
+                document.getElementById("timestamp").innerHTML = timeStamp;
+                document.getElementById("templow").innerHTML = lowTemp;
+                document.getElementById("temphigh").innerHTML = highTemp + highTempDescription;
+
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        fetchWeather();
+    </script>
+</body>
+
+</html>

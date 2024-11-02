@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Weather API</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        /* Include style here */
+    </style>
+</head>
+
+<!-- Step 1: Insert API into an async function -->
+<!-- Step 2: Test if API code works -->
+<!-- Step 3: Insert API into an async function -->
+
+<body>
+
+    <script>
+        // GET API HTTP command
+        // Place command into an async function
+
+        async function fetchWeather() {
+            const options = {
+                method: 'GET',
+                url: 'https://api-open.data.gov.sg/v2/real-time/api/air-temperature'
+            };
+
+            try {
+                //in this case 'response' would be the response object
+                const response = await axios.request(options);
+                console.log(response);
+
+                //To test for a response in here: 
+                console.log(response);
+
+                //
+
+                console.log("Data: ", response.data);
+                console.log("Status: ", response.status);
+                console.log("Code: ", response.data.code);
+                console.log("ErrorMsg: ", response.data.errorMsg);
+
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        fetchWeather();
+
+    </script>
+
+</body>
+
+</html>

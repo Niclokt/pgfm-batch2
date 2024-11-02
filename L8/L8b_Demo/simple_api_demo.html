@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Weather</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .weather-container {
+            margin-top: 30px;
+        }
+
+        .weather-card {
+            padding: 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container weather-container">
+        <h1 class="text-center">Current Weather in Singapore</h1>
+        <div id="weatherRow" class="row"></div>
+    </div>
+
+    <script>
+        // Fetch weather data
+        async function fetchWeather() {
+            try {
+                const response = await fetch("https://api.data.gov.sg/v1/environment/air-temperature", {
+                    //  headers: { "api-key": "YOUR_API_KEY" }
+                });
+                const data = await response.json();
+                displayWeather(data);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        }
+
+        // Display weather data in cards
+        function displayWeather(data) {
+            const weatherRow = document.getElementById("weatherRow");
+            weatherRow.innerHTML = ""; // Clear previous data
+
+            data.items[0].readings.forEach((station) => {
+                const col = document.createElement("div");
+                col.className = "col-lg-4 col-md-6 col-sm-12 mb-3";
+
+                //consider placing in icons for better UI
+                col.innerHTML = `
+                    <div class="card weather-card bg-light shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">${station.station_id}</h5>
+                            <p class="card-text">🌡️Temperature: ${station.value}°C</p>
+                        </div>
+                    </div>
+                `;
+                weatherRow.appendChild(col);
+            });
+        }
+
+        // Call the function on page load
+        window.onload = fetchWeather;
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
