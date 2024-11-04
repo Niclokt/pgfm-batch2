@@ -17,17 +17,38 @@
 
 <body>
     <h1>Sg temp data</h1>
+    <h3>TimeStamp: <span id="timestamp"></span></h3>
+    <h3>No of weather Station : <span id="noOfWeatherStns"></span></h3>
     <h3>Avg Temp : <span id="avgTemp"></span></h3>
+    <input type="text" id="txtSearch" name="txtSearch">
     <input type="button" id="btnGetTemp" value="Get Temp">
 
     <script>
         // GET API HTTP command
         // Place command into an async function
 
-        async function fetchWeather() {
+        //Another function
+        function getTodaysDate() {
+            const today = new Date();
+            const formattedDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+            console.log(formattedDate); // Outputs something like: 2024-11-04
+            return formattedDate;
+        }
+
+        //add event listener to the button
+        document.getElementById("btnGetTemp").addEventListener("click", function () {
+            let dateToSearch = document.getElementById("txtSearch").value;
+            if (dateToSearch == "") {
+                dateToSearch = getTodaysDate();
+            };
+            fetchWeather(dateToSearch);
+        })
+
+        //Async function
+        async function fetchWeather(searchDate = "") {
             const options = {
                 method: 'GET',
-                url: 'https://api-open.data.gov.sg/v2/real-time/api/air-temperature'
+                url: `https://api-open.data.gov.sg/v2/real-time/api/air-temperature?date=${searchDate}`
             };
 
             try {
@@ -46,11 +67,13 @@
                 let arrLen = response.data.data.readings[0].data.length;
                 console.log(`No. of weather stns: ${arrLen}`);
 
-                //find temp of 1 stn: 
-                /* let temp1 = response.data.data.readings[0].data[1].value;
-                console.log(`Temp at Stn 1 = ${temp1}`); */
+                // (Test) Find temp of 1 stn
+                let temp1 = response.data.data.readings[0].data[1].value;
+                console.log(`Temp at Stn 1 = ${temp1}`);
 
-                /* //Get avg Temp
+                console.log(getTodaysDate());
+
+                //FUNCTION to get avg Temp
                 function getAvgTemp() {
                     //Sum of temp:
                     let sumOfTemp = 0;
@@ -62,12 +85,19 @@
 
                     //find avg temp
                     let avgTemp = sumOfTemp / arrLen;
-                    console.log(`Avg Temp: ${avgTemp}`)
+                    console.log(`Avg Temp: ${avgTemp.toFixed(2)}`)
+                    return avgTemp.toFixed(2);
                 }
 
-                getAvgTemp(); */
+                let avgTemp1 = getAvgTemp();
+
+                //DOM Manipulation
+                document.getElementById("timestamp").innerHTML = timestamp;
+                document.getElementById("avgTemp").innerHTML = avgTemp1;
+                document.getElementById("noOfWeatherStns").innerHTML = arrLen;
 
 
+                // (Output check)
                 console.log(`Data: ${response.data.data}`);
                 console.log(`Status: ${response.data.status}`);
                 console.log(`Code: ${response.data.code}`);
