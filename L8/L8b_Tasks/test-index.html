@@ -16,6 +16,9 @@
 <!-- Step 3: Insert API into an async function -->
 
 <body>
+    <h1>Sg temp data</h1>
+    <h3>Avg Temp : <span id="avgTemp"></span></h3>
+    <input type="button" id="btnGetTemp" value="Get Temp">
 
     <script>
         // GET API HTTP command
@@ -44,8 +47,8 @@
                 console.log(`No. of weather stns: ${arrLen}`);
 
                 //find temp of 1 stn: 
-                let temp1 = response.data.data.readings[0].data[1].value;
-                console.log(temp1);
+                /* let temp1 = response.data.data.readings[0].data[1].value;
+                console.log(`Temp at Stn 1 = ${temp1}`); */
 
                 /* //Get avg Temp
                 function getAvgTemp() {
@@ -65,10 +68,10 @@
                 getAvgTemp(); */
 
 
-                console.log("Data: ", response.data);
-                console.log("Status: ", response.status);
-                console.log("Code: ", response.data.code);
-                console.log("ErrorMsg: ", response.data.errorMsg);
+                console.log(`Data: ${response.data.data}`);
+                console.log(`Status: ${response.data.status}`);
+                console.log(`Code: ${response.data.code}`);
+                console.log(`ErrorMsg: ${response.data.errorMsg}`);
             } catch (error) {
                 console.error(error);
             }
