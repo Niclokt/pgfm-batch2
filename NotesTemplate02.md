@@ -1,4 +1,14 @@
-# Lesson 06 -- HTML CSS Advanced (Positioning)
+```
+# Notes template (To remove)
+This is the first para
+&nbsp; This is the 2nd para
+&ensp; &ensp; This is the 3rd para (both ensp and nbsp acheives the samee indent effect)
+> (This is a blockquote) This is the 4th para
+```
+
+---
+
+# Lesson xx -- Lesson Title
 
 `~~Date: 30 OCT 2024, WED~~`
 `Status: `
