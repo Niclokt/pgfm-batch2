@@ -8,10 +8,10 @@ This is the first para
 
 ---
 
-# Lesson xx -- Lesson Title
+# Lesson 10 -- Lesson Title
 
-`~~Date: 9 NOV 2024, SAT~~`
-`Status: `
+`~~Date: 9 NOV 2024, SAT (MORNING)~~`
+`Status: WIP`
 
 ### [Summary]
 
@@ -25,14 +25,27 @@ Some learning points:
 
 ## Today's Agenda
 
-1. Recap
-2. Item 1
-3. Item 2
+1. Recap (flexbox)
+2. Intro to Bootstrap
+3. Assignment Check-in(Fig Jam)
 4. Item 3
 
-## 01 -- RECAP
+## 01 -- RECAP - flexbox
 
-## 02 --
+- Either use bootstrap or flexbox for responsive layouts
+- Flex container  
+  &ensp;&ensp;- every item in the container treated equally  
+  &ensp;&ensp;- Flex items, flex containers
+
+- Types of layouts
+  &ensp;&ensp; - For desktop viewing
+  &ensp;&ensp; - For app viewing
+
+## 02 -- Bootstrap
+
+- Take note if it is version 4 or 5 --> always use version 5
+  &ensp;&ensp; - as only versions 5 uses flexbox behind the scenes  
+  &ensp;&ensp; - when playing with html, think in terms of boxes
 
 ## 03 --
 
