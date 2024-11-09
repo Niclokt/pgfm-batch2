@@ -23,6 +23,10 @@ Some learning points:
 
 ### [Useful Links]
 
+1. [Animate.css](https://animate.style) --> For animating CSS
+2. [Chart.js](https://www.chartjs.org) --> JS library for the modern web
+3. [BootStrap Utilities Notation](https://getbootstrap.com/docs/4.0/utilities/borders/)
+
 ## Today's Agenda
 
 1. Recap (flexbox)
@@ -37,8 +41,8 @@ Some learning points:
   &ensp;&ensp;- every item in the container treated equally  
   &ensp;&ensp;- Flex items, flex containers
 
-- Types of layouts
-  &ensp;&ensp; - For desktop viewing
+- Types of layouts  
+  &ensp;&ensp; - For desktop viewing  
   &ensp;&ensp; - For app viewing
 
 ## 02 -- Bootstrap
@@ -47,9 +51,13 @@ Some learning points:
   &ensp;&ensp; - as only versions 5 uses flexbox behind the scenes  
   &ensp;&ensp; - when playing with html, think in terms of boxes
 
-- Project  
-  &ensp;&ensp; - Need to plan project  
-  &ensp;&ensp; - And make sure to do wireframe
+- Bootstrap Tutorial
+
+  - [Img sizing / fill guide](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
+  - Typically people use "Cover'
+
+- Definition & Notations in Bootstrap
+  - [Utilities](https://getbootstrap.com/docs/4.0/utilities/borders/)
 
 ## 03 --
 
@@ -59,7 +67,17 @@ Some learning points:
 
 ## 06 --
 
+## Project Things:
+
+- Project  
+  &ensp;&ensp; - Need to plan project (This is what takes up the most of the time)  
+  &ensp;&ensp; - And make sure to do wireframe
+
 ## zz -- Garble Garble...
+
+- Reflection on skills learnt so far...
+  - so far we learnt how to take user input and use it to call api. But have not learnt how to STORE user input
+  - also have not learnt how to include code
 
 xx -- Interesting ways to implement code
 
