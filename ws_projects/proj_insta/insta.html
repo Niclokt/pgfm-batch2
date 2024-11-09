@@ -18,9 +18,30 @@
         //Add event listener to button
 
         //Add Async function
+        async function fetchInstaPost() {
+            const options = {
+                method: 'GET',
+                url: 'https://instagram-scraper-api2.p.rapidapi.com/v1.2/posts',
+                params: {
+                    username_or_id_or_url: 'nasa'
+                },
+                headers: {
+                    'x-rapidapi-key': '609e2558d1msh6b1c444f29b8f22p1360fejsn858e524c731d',
+                    'x-rapidapi-host': 'instagram-scraper-api2.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await axios.request(options);
+                console.log(response);
+
+            } catch (error) {
+                console.error(error);
+            }
+        }
 
         //Call Async function 
-
+        fetchInstaPost();
     </script>
 
 </body>
