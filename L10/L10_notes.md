@@ -43,9 +43,13 @@ Some learning points:
 
 ## 02 -- Bootstrap
 
-- Take note if it is version 4 or 5 --> always use version 5
+- Take note if it is version 4 or 5 --> always use version 5  
   &ensp;&ensp; - as only versions 5 uses flexbox behind the scenes  
   &ensp;&ensp; - when playing with html, think in terms of boxes
+
+- Project  
+  &ensp;&ensp; - Need to plan project  
+  &ensp;&ensp; - And make sure to do wireframe
 
 ## 03 --
 
