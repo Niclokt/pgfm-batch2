@@ -61,9 +61,12 @@ Some learning points:
 - Local Storage - Removing items
 
 - Local Storage - JSON
+
   - Often used when data are sent through an API
-  - based on JS syntax
-  -
+  - based on JS syntax, but NOT a js object
+  - Key MUST be placed in double quotes ("")
+
+- JSON as a long string (object??)
 
 ## 04 --
 
