@@ -45,6 +45,26 @@ Some learning points:
 3. Domain
 4. Port Number
 
+- Accessing the storage API
+  - Test
+  - ```javascript
+    localStorage.setItem({ Key }, { Value });
+    var temp = localStorage.getItem({ key });
+    ```
+- Local Storage - Javascript Object
+- Local Storage - Setter/Getters vs Dot Notation (accessing the js object)
+  ![alt text](image.png) <br>
+
+- Checking local storage using inspect on web browser (see ss below):
+  ![alt text](image-1.png) <br>
+
+- Local Storage - Removing items
+
+- Local Storage - JSON
+  - Often used when data are sent through an API
+  - based on JS syntax
+  -
+
 ## 04 --
 
 ## 05 --
