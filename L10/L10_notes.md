@@ -26,6 +26,11 @@ Some learning points:
 1. [Animate.css](https://animate.style) --> For animating CSS
 2. [Chart.js](https://www.chartjs.org) --> JS library for the modern web
 3. [BootStrap Utilities Notation](https://getbootstrap.com/docs/4.0/utilities/borders/)
+4. [Loom education]
+5. [Jetbrains]
+6. [Miro]
+7. [Figma]
+8. [Apple Care]
 
 ## Today's Agenda
 
@@ -59,7 +64,48 @@ Some learning points:
 - Definition & Notations in Bootstrap
   - [Utilities](https://getbootstrap.com/docs/4.0/utilities/borders/)
 
-## 03 --
+## 03 -- Project discussion
+
+- Prototyping tools
+
+  - [Figma]()
+  - [Miro]()
+  - [Powerpoint]
+  - [Canva]
+
+- Figma:
+
+  - Developer
+
+    - Can turn it on to copy the CSS style
+
+  - Lottie Animations
+
+    - Including animations into the website
+
+  - Icon plugins
+  - Photo plugins (unsplash)
+  - Can refer to Figma Youtube for guidelines on using Figma
+
+- Prototype for multiple devices (Desktop and mobile)
+- Show parts of the design
+  - Typography
+  - Colour Palette
+
+#### PROJECT IDEAS
+
+1. Calories counter
+2. Scrape insta reels to provide summary of recipes
+3. Create deepfake videos (might be dangerous)
+4. Financial tracker
+5.
+
+### Brainstorming
+
+- Challenges
+  - Spending tracking app?
+  - consolidating gym info from instagram
+  -
 
 ## 04 --
 
@@ -79,9 +125,7 @@ Some learning points:
   - so far we learnt how to take user input and use it to call api. But have not learnt how to STORE user input
   - also have not learnt how to include code
 
-xx -- Interesting ways to implement code
-
----
+## xx -- Interesting ways to implement code
 
 > Code 1
 
