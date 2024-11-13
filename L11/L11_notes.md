@@ -32,9 +32,18 @@ Some learning points:
 
 ## 01 -- RECAP
 
-## 02 --
+## 02 -- Local Storage vs Session Storage
 
-## 03 --
+- Don't store pw in local storage
+- local storage max = 5 MB
+- Never rely on users agreeing to let the web use more storage
+
+## 03 -- Same origin Policy
+
+1. Protocol
+2. Sub-Domain
+3. Domain
+4. Port Number
 
 ## 04 --
 
@@ -43,6 +52,8 @@ Some learning points:
 ## 06 --
 
 ## zz -- Garble Garble...
+
+- Don't store pw in local storage
 
 xx -- Interesting ways to implement code
 
