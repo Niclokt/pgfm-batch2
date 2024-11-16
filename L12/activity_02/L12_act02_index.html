@@ -26,12 +26,28 @@ https://www.w3schools.com/js/js_input_examples.asp
             //
             //INSERT YOUR CODE HERE :) 
 
+            //Create "Student" object from inputs
+            let student = new Student(document.getElementById('txtName').value,
+                document.getElementById('txtMobile').value,
+                document.getElementById('txtClass').value);
+
+            console.log(student);
+            //Parse JSON obj into String & save into local storage
+            localStorage.setItem('user1', JSON.stringify(student));
+
+            console.log(localStorage.getItem('user1'));
 
             //clear the form upon each sumission
             document.getElementById('myFrm').reset();
         });
         //@TODO
         //create a function based object "template"
+        function Student(stuName, stuMobile, stuClass) {
+            this.stuName = stuName;
+            this.stuMobile = stuMobile;
+            this.stuClass = stuClass;
+        }
+
 
     </script>
 </head>
