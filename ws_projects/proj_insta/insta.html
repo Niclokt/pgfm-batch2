@@ -16,11 +16,8 @@
     <input type="button" id="btnSubmit" name="btnSubmit" value="Let's geddit!">
 
     <h3>Here's an image!<br></h3>
-    <img id="result_img_1"
-        src="https://scontent-fra3-2.cdninstagram.com/v/t51.29350-15/462177429_1262342114900335_4820617269178709941_n.jpg?se=7&stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE2Njcuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-fra3-2.cdninstagram.com&_nc_cat=1&_nc_ohc=VOth51ut3mEQ7kNvgGo1hlR&_nc_gid=8b259904d9d74c6c8f41c062e14822e2&edm=ABmJApABAAAA&ccb=7-5&ig_cache_key=MzQ3NDU5MDI3OTU3NTkyODAyMQ%3D%3D.3-ccb7-5&oh=00_AYAT3Ja72YdT3oLmcI7hCGRzHDmt_5XCDO3yXmHXTuzq-Q&oe=6734DD82&_nc_sid=b41fef">
+    <img id="result_img_1" crossorigin="anonymous" src="">
     <h3>Caption: <br><span id="caption_text"></span></h3>
-
-
 
 
 
@@ -30,6 +27,7 @@
 
         //Add Async function
         async function fetchInstaPost() {
+            console.log("fetching inst ")
             const options = {
                 method: 'GET',
                 url: 'https://instagram-scraper-api2.p.rapidapi.com/v1.2/posts',
@@ -44,8 +42,11 @@
 
             try {
                 const response = await axios.request(options);
-                console.log(response.data);
-
+                //console.log("getting inst info")
+                //console.log(response.data.data);
+                //console.log(`image  + ${response.data.data.items[0].thumbnail_url}`)
+                let thumbnail_url = response.data.data.items[0].thumbnail_url;
+                document.getElementById('igframe').src = thumbnail_url;
                 let caption = response.data.data.items[0].caption.text;
                 console.log(caption);
 
@@ -60,43 +61,43 @@
             }
         }
 
-        // add Async function to download photos
-        async function downloadImage(imageUrl) {
-            try {
-                // Step 1: Fetch the image asynchronously
-                const response = await fetch(imageUrl, { mode: 'cors' });
+        // // add Async function to download photos
+        // async function downloadImage(imageUrl) {
+        //     try {
+        //         // Step 1: Fetch the image asynchronously
+        //         const response = await fetch(imageUrl, { mode: 'cors' });
 
-                // If the response isn't OK, throw an error
-                if (!response.ok) throw new Error('Network response was not ok');
+        //         // If the response isn't OK, throw an error
+        //         if (!response.ok) throw new Error('Network response was not ok');
 
-                // Step 2: Convert the response to a Blob asynchronously
-                const blob = await response.blob();
+        //         // Step 2: Convert the response to a Blob asynchronously
+        //         const blob = await response.blob();
 
-                // Step 3: Create a download link for the Blob
-                const blobUrl = URL.createObjectURL(blob);
-                const link = document.createElement('a');
-                link.href = blobUrl;
-                link.download = 'downloaded_image.jpg';
+        //         // Step 3: Create a download link for the Blob
+        //         const blobUrl = URL.createObjectURL(blob);
+        //         const link = document.createElement('a');
+        //         link.href = blobUrl;
+        //         link.download = 'downloaded_image.jpg';
 
-                // Step 4: Trigger the download
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+        //         // Step 4: Trigger the download
+        //         document.body.appendChild(link);
+        //         link.click();
+        //         document.body.removeChild(link);
 
-                // Step 5: Clean up the Blob URL
-                URL.revokeObjectURL(blobUrl);
+        //         // Step 5: Clean up the Blob URL
+        //         URL.revokeObjectURL(blobUrl);
 
-                console.log('Image downloaded successfully!');
-            } catch (error) {
-                console.error('Error downloading the image:', error);
-            }
-        }
+        //         console.log('Image downloaded successfully!');
+        //     } catch (error) {
+        //         console.error('Error downloading the image:', error);
+        //     }
+        // }
 
 
 
         //Call Async function 
         fetchInstaPost()
-        downloadImage();
+        // downloadImage();
     </script>
 
 </body>
