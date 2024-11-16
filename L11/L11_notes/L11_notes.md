@@ -68,7 +68,18 @@ Some learning points:
 
 - JSON as a long string (object??)
 
-## 04 --
+  - ??? Use "ParseJsonObject" ???
+  - ![alt text](image-2.png) <br>
+
+- Applications for Local Storage:
+  - Shopping Cart
+  - Game or Quiz Score
+  - Username etc
+  - (e.g.) ![alt text](image-3.png) <br>
+
+## 04 -- Activity 3
+
+- ![alt text](image-4.png)
 
 ## 05 --
 
