@@ -26,7 +26,10 @@ Some learning points:
 ## Today's TODO:
 
 1. Revise Local Storage  
-   &ensp;&ensp; - Understand the concept behind the code implementation
+   &ensp;&ensp;- Understand the concept behind the code implementation
+2. Work on the project --> Test prototype  
+   &ensp;&ensp; - test download img
+   &ensp;&ensp; - Else test youtube transcript
 
 ## Today's Agenda
 
