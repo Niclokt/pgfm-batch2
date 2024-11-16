@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3><span>Get Image Here:</span></h3><br>
+    <img>
+
+    <script>
+        const response = await fetch("https://example.com/image.jpg");
+        const blob = await response.blob();
+        const imgElement = document.createElement('img');
+        imgElement.src = URL.createObjectURL(blob);
+        document.body.appendChild(imgElement);
+    </script>
+</body>
+
+
+</html>

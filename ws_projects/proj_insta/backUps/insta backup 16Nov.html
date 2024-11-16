@@ -60,43 +60,8 @@
             }
         }
 
-        // add Async function to download photos
-        async function downloadImage(imageUrl) {
-            try {
-                // Step 1: Fetch the image asynchronously
-                const response = await fetch(imageUrl, { mode: 'cors' });
-
-                // If the response isn't OK, throw an error
-                if (!response.ok) throw new Error('Network response was not ok');
-
-                // Step 2: Convert the response to a Blob asynchronously
-                const blob = await response.blob();
-
-                // Step 3: Create a download link for the Blob
-                const blobUrl = URL.createObjectURL(blob);
-                const link = document.createElement('a');
-                link.href = blobUrl;
-                link.download = 'downloaded_image.jpg';
-
-                // Step 4: Trigger the download
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-
-                // Step 5: Clean up the Blob URL
-                URL.revokeObjectURL(blobUrl);
-
-                console.log('Image downloaded successfully!');
-            } catch (error) {
-                console.error('Error downloading the image:', error);
-            }
-        }
-
-
-
         //Call Async function 
-        fetchInstaPost()
-        downloadImage();
+        fetchInstaPost();
     </script>
 
 </body>
