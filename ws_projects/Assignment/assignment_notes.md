@@ -26,13 +26,27 @@ Some learning points:
 ### APIs
 
 // For getting transcript
-[]()
 
-// For summarising transcript / text  
-[Groq](https://console.groq.com/docs/overview)
+1. [Instagram Video Transcript](https://rapidapi.com/info-kAsZdTpxN/api/instagram-video-transcript/playground/apiendpoint_eeb64b16-9385-4955-86cb-a2c47c1ae23d)
+
+// For getting caption
+
+1.
+
+// For summarising transcript / text
+
+1. [Groq](https://console.groq.com/docs/overview)
 
 // For getting word cloud / for doing text extraction??
 []()
+
+// Makeshift Youtube API
+
+1. [YouTube Transcripts](https://rapidapi.com/rafalzawadzki/api/youtube-transcripts/pricing) --> 100 requests /mth
+2. [Youtube Transcript](https://rapidapi.com/solid-api-solid-api-default/api/youtube-transcript3/pricing) --> 100/ mth
+3. [](https://rapidapi.com/benrhzala90/api/youtube-transcriptor/pricing) --> 20/mth
+
+// Makeshift Insta API 2. [proxytube](https://rapidapi.com/forcequit/api/proxytube) --> 30 requests/mth 3. [Instagram Scraper API](https://rapidapi.com/social-api1-instagram/api/instagram-scraper-api2) --> 500/mth ✅✅ 4. [Instagram Bulk Scraper Latest](https://rapidapi.com/mrngstar/api/instagram-bulk-scraper-latest/playground/apiendpoint_26d5e416-abc2-4144-936d-f965c6f4f779) --> 100/mth
 
 ### Documentation & Ref Materials
 
