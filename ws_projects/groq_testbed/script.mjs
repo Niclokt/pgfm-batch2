@@ -21,7 +21,7 @@ export async function getGroqChatCompletion() {
           content: "summarise the 3 laws of motion in no more than 3 sentences.",
         },
       ],
-      model: "mixtral-8x7b-32768" //"llama3-8b-8192",
+      model: "llama3-8b-8192",
     });
     return response;
   } catch (error) {
