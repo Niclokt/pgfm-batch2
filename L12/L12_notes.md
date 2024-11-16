@@ -32,6 +32,26 @@ Some learning points:
 
 ## 01 -- RECAP: Local Storage
 
+- Application:
+  - Useful for storing user preference
+  - as a developer, off loading some of the datd data storage to the user
+  - Things like google, shopee uses local storage as well
+- Limitation
+
+  - Max storage space - 5MB (pure text) --> That's quite a lot of text
+  - Max storage space - 35MB (requires user's permission)
+
+- Data Format:
+
+  - Data stored in JSON format
+
+- ## Settings tied to local storage
+
+- Data type accepted in loacl storage
+  - string
+  - number
+  - boolean
+
 ## 02 --
 
 ## 03 --
