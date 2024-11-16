@@ -23,9 +23,14 @@ Some learning points:
 
 ### [Useful Links]
 
+## Today's TODO:
+
+1. Revise Local Storage  
+   &ensp;&ensp; - Understand the concept behind the code implementation
+
 ## Today's Agenda
 
-1. Recap
+1. RECAP: Local Storage
 2. Item 1
 3. Item 2
 4. Item 3
