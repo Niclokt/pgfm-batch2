@@ -46,12 +46,18 @@ Some learning points:
 2. [Youtube Transcript](https://rapidapi.com/solid-api-solid-api-default/api/youtube-transcript3/pricing) --> 100/ mth
 3. [](https://rapidapi.com/benrhzala90/api/youtube-transcriptor/pricing) --> 20/mth
 
-// Makeshift Insta API 2. [proxytube](https://rapidapi.com/forcequit/api/proxytube) --> 30 requests/mth 3. [Instagram Scraper API](https://rapidapi.com/social-api1-instagram/api/instagram-scraper-api2) --> 500/mth ✅✅ 4. [Instagram Bulk Scraper Latest](https://rapidapi.com/mrngstar/api/instagram-bulk-scraper-latest/playground/apiendpoint_26d5e416-abc2-4144-936d-f965c6f4f779) --> 100/mth
+// Makeshift Insta API
+
+1. [proxytube](https://rapidapi.com/forcequit/api/proxytube) --> 30 requests/mth
+2. [Instagram Scraper API](https://rapidapi.com/social-api1-instagram/api/instagram-scraper-api2) --> 500/mth ✅✅
+3. [Instagram Bulk Scraper Latest](https://rapidapi.com/mrngstar/api/instagram-bulk-scraper-latest/playground/apiendpoint_26d5e416-abc2-4144-936d-f965c6f4f779) --> 100/mth
 
 ### Documentation & Ref Materials
 
 1. [Bootstrap Component Examples](https://getbootstrap.com/docs/5.3/examples/)
 2. [Groq Supported Models](https://console.groq.com/docs/models)
+3. [YT: How to get Post details by url](https://youtu.be/L_JFOCyJOVU?si=I2WhikH5HJCH51e8)
+4. [YT: How to scrape instagram data](https://youtu.be/hz9tSv3CP6k?si=V_6vFGtS3Z973ONa)
 
 ## Today's Agenda
 

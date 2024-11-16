@@ -16,7 +16,7 @@
     <input type="button" id="btnSubmit" name="btnSubmit" value="Let's geddit!">
 
     <h3>Here's the transcript!<br></h3>
-    <img id="youtube_transcript" src="">
+    <span id="youtube_transcript"></span>
 
     <h3>Caption: <br><span id="caption_text"></span></h3>
 
@@ -27,20 +27,19 @@
         //Add event listener to button
 
 
-        //Add Async function
-        //const axios = require('axios');
-        async function fetchInstaPost2() {
+        //STEP 1: Add Async function
+        async function fetchTranscript() {
             const options = {
                 method: 'GET',
-                url: 'https://instagram-scraper-api3.p.rapidapi.com/user_posts',
+                url: 'https://youtube-transcript3.p.rapidapi.com/api/transcript-with-url',
                 params: {
-                    username_or_id: 'nasa',
-                    count: '12',
-                    nocors: 'true'
+                    url: 'https://youtu.be/znL6aTHE-O0?si=dWs3L6QiUWz8mJpU',
+                    flat_text: 'true',
+                    lang: 'en'
                 },
                 headers: {
                     'x-rapidapi-key': '609e2558d1msh6b1c444f29b8f22p1360fejsn858e524c731d',
-                    'x-rapidapi-host': 'instagram-scraper-api3.p.rapidapi.com'
+                    'x-rapidapi-host': 'youtube-transcript3.p.rapidapi.com'
                 }
             };
 
@@ -48,18 +47,14 @@
                 const response = await axios.request(options);
                 console.log(response.data);
 
-                let caption_text = response.data.data.items[0].caption.text;
-                console.log(caption);
+                let transcript = response.data.transcript;
+                console.log(transcript);
 
-                let thumbnail_url = response.data.data.items[0].image_versions2.candidates[3].url;
-                console.log(thumbnail_url);
+                //show transcript on webpage: 
+                document.getElementById("youtube_transcript").innerHTML = transcript;
 
-                //update caption in caption span tag
-                document.getElementById("caption_text").innerHTML = caption_text;
-
-                //update source in img tag
-                document.getElementById("result_img_1").innerHTML = thumbnail_url;
-
+                //return transcript to parse into LLM Groq
+                return transcript;
 
             } catch (error) {
                 console.error(error);
@@ -67,8 +62,11 @@
 
         }
 
+        //STEP 2: Add function to call Groq (LLM to summarise transcript)
+
+
         //Call Async function 
-        fetchInstaPost2();
+        fetchTranscript();
     </script>
 
 </body>
