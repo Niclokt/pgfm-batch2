@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Transcript Fetcher</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <h1>YouTube Transcript & Summary</h1>
+    <h3>Enter a YouTube URL:</h3>
+    <input type="text" id="youtube_url" placeholder="Input YouTube URL here">
+    <input type="button" id="btnSubmit" value="Fetch Transcript">
+
+    <h3>Transcript:</h3>
+    <pre id="youtube_transcript"></pre>
+
+    <h3>Summary:</h3>
+    <pre id="caption_text"></pre>
+
+    <script type="module">
+        import Groq from "https://unpkg.com/groq-sdk/browser.js";
+
+        const groq = new Groq({ apiKey: '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' });
+
+        // Function to fetch YouTube transcript
+        async function fetchTranscript(youtubeUrl) {
+            const options = {
+                method: 'GET',
+                url: 'https://youtube-transcript3.p.rapidapi.com/api/transcript-with-url',
+                params: {
+                    url: youtubeUrl,
+                    flat_text: 'true',
+                    lang: 'en'
+                },
+                headers: {
+                    'x-rapidapi-key': '609e2558d1msh6b1c444f29b8f22p1360fejsn858e524c731d',
+                    'x-rapidapi-host': 'youtube-transcript3.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await axios.request(options);
+                return response.data.transcript;
+            } catch (error) {
+                console.error("Error fetching transcript:", error);
+                return null;
+            }
+        }
+
+        // Function to get summary from Groq
+        async function getGroqChatCompletion(transcript) {
+            try {
+                const response = await groq.chat.completions.create({
+                    messages: [
+                        {
+                            role: "user",
+                            content: `Summarize the following text in no more than 300 words in point form: ${transcript}`
+                        }
+                    ],
+                    model: "llama3-8b-8192"
+                });
+                return response.choices[0]?.message?.content || "";
+            } catch (error) {
+                console.error("Error getting Groq summary:", error);
+                return "";
+            }
+        }
+
+        // Event listener for the button
+        document.getElementById("btnSubmit").addEventListener("click", async () => {
+            const youtubeUrl = document.getElementById("youtube_url").value;
+
+            if (!youtubeUrl) {
+                alert("Please enter a YouTube URL.");
+                return;
+            }
+
+            // Fetch transcript
+            const transcript = await fetchTranscript(youtubeUrl);
+            if (transcript) {
+                document.getElementById("youtube_transcript").textContent = transcript;
+
+                // Fetch summary
+                const summary = await getGroqChatCompletion(transcript);
+                document.getElementById("caption_text").textContent = summary;
+            } else {
+                document.getElementById("youtube_transcript").textContent = "Failed to fetch transcript.";
+            }
+        });
+    </script>
+</body>
+
+</html>

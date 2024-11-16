@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube beebuhdeeboo</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <h1>Youtube Euphoria </h1>
+    <h3>Some Info: <span id="someInfo"></span></h3>
+
+    <input type="text" id="youtube_url" name="youtube_url" placeholder="Input youtube url here">
+    <input type="button" id="btnSubmit" name="btnSubmit" value="Let's geddit!">
+
+    <h3>Here's the transcript!<br></h3>
+    <span id="youtube_transcript"></span>
+
+    <h3>Summary: <br><span id="summarised_text"></span></h3>
+
+
+    <!-- <script type="module">
+        //STEP 1: Add function to call Groq (LLM to summarise transcript)
+
+        import Groq from "groq-sdk";
+
+        const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+        // Main function
+        export async function printGroqResponse(yt_transcript) {
+            try {
+                const chatCompletion = await getGroqChatCompletion(yt_transcript);
+                // Print the completion returned by the LLM.
+                let groqResponse = chatCompletion.choices[0]?.message?.content;
+                console.log(groqResponse || "");
+
+                // Display summary on webpage
+                document.getElementById("summarised_text").innerHTML = groqResponse;
+
+                //console.log(chatCompletion.choices[0]?.message?.content || "");
+            } catch (error) {
+                console.error("Error during chat completion:", error);
+            }
+        }
+
+        // Child function
+        export async function getGroqChatCompletion(yt_transcript) {
+            try {
+                const response = await groq.chat.completions.create({
+                    messages: [
+                        {
+                            role: "user",
+                            content: `Summarise the following text in no more than 300 words in point form: ${yt_transcript} 
+                    Do not make things up.`,
+                        },
+                    ],
+                    model: "llama3-8b-8192",
+                });
+                return response;
+            } catch (error) {
+                console.error("Error calling groq.chat.completions.create:", error);
+                throw error; // Re-throw the error to be caught by the main function
+            }
+        }
+
+    </script> -->
+
+    <script>
+        //Add event listener to button
+
+        //hoist
+        const apiKey = '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';
+
+        //STEP 2: Add Async function to fetch transcript
+        async function fetchTranscript() {
+            const options = {
+                method: 'GET',
+                url: 'https://youtube-transcript3.p.rapidapi.com/api/transcript-with-url',
+                params: {
+                    url: 'https://youtu.be/znL6aTHE-O0?si=dWs3L6QiUWz8mJpU',
+                    flat_text: 'true',
+                    lang: 'en'
+                },
+                headers: {
+                    'x-rapidapi-key': '609e2558d1msh6b1c444f29b8f22p1360fejsn858e524c731d',
+                    'x-rapidapi-host': 'youtube-transcript3.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await axios.request(options);
+                console.log(response.data);
+
+                let yt_transcript = response.data.transcript;
+                console.log(yt_transcript);
+
+                //show transcript on webpage: 
+                document.getElementById("youtube_transcript").innerHTML = yt_transcript;
+
+                //return transcript to parse into LLM Groq
+                console.log(`Transcript datatype: ${typeof yt_transcript}`)
+                return yt_transcript;
+
+            } catch (error) {
+                console.error(error);
+            }
+
+        }
+
+        // Step 3: Call Groq function
+        async function getGroqChatCompletion(yt_transcript) {
+            const url = 'https://api.groq.com/openai/v1/chat/completions';
+
+            const data = {
+                model: "llama3-8b-8192",
+                messages: [
+                    {
+                        role: "user",
+                        content: `Summarise the following text in no more than 300 words in point form: ${yt_transcript} 
+                    Do not make things up.`,
+                    }
+                ]
+            };
+
+            const headers = {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`
+            };
+
+            try {
+                const response = await axios.post(url, data, { headers });
+                console.log("Response:", response.data);
+
+            } catch (error) {
+                console.error("Error:", error.response ? error.response.data : error.message);
+            }
+        }
+
+
+        // Declare groq main function
+        async function printGroqResponse(yt_transcript) {
+            try {
+                const chatCompletion = await getGroqChatCompletion(yt_transcript);
+                // Print the completion returned by the LLM.
+                let groqResponse = chatCompletion.choices[0]?.message?.content;
+                console.log(groqResponse || "");
+
+                // Display summary on webpage
+                document.getElementById("summarised_text").innerHTML = groqResponse;
+
+                //console.log(chatCompletion.choices[0]?.message?.content || "");
+            } catch (error) {
+                console.error("Error during chat completion:", error);
+            }
+        }
+
+        //Call Async function 
+        let returnedTranscript = fetchTranscript();
+        getGroqChatCompletion(returnedTranscript);
+
+        //printGroqResponse(returnedTranscript);
+    </script>
+
+</body>
+
+</html>

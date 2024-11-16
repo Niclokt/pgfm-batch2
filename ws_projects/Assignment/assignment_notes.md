@@ -58,6 +58,7 @@ Some learning points:
 2. [Groq Supported Models](https://console.groq.com/docs/models)
 3. [YT: How to get Post details by url](https://youtu.be/L_JFOCyJOVU?si=I2WhikH5HJCH51e8)
 4. [YT: How to scrape instagram data](https://youtu.be/hz9tSv3CP6k?si=V_6vFGtS3Z973ONa)
+5. [Marked library to display markdown in HTML](https://marked.js.org)
 
 ## Today's Agenda
 

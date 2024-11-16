@@ -2,7 +2,7 @@ import Groq from "groq-sdk";
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
-export async function main() {
+export async function printGroqResponse() {
   try {
     const chatCompletion = await getGroqChatCompletion();
     // Print the completion returned by the LLM.
@@ -30,4 +30,4 @@ export async function getGroqChatCompletion() {
   }
 }
 
-main();
+printGroqResponse();
