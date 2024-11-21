@@ -6,6 +6,7 @@ body{
 
 }
 
+/* Container - Container */
 .container{
     width: 40%;
     text-align: center;
@@ -22,11 +23,10 @@ form {
 form input,
 form textarea {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
@@ -38,12 +38,18 @@ form textarea {
     color: white;
     text-align: center;
     border: none;
-    padding: 10px 0;
     cursor: pointer;
     border-radius: 5px;
 }
 
-
+/* Container - Testing */
+.testing{
+    width: 60%;
+    margin-top: 30px;
+    padding: 10px;
+    border: 1px solid greenyellow;
+    text-align: start;
+}
 
 /* body {
     font-family: Arial, sans-serif;
