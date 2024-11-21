@@ -1,31 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+    //Add event listener to button
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>youtube beebuhdeeboo</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-</head>
-
-<body>
-    <h1>Youtube Euphoria </h1>
-    <h3>Some Info: <span id="someInfo"></span></h3>
-
-    <input type="text" id="youtube_url" name="youtube_url" placeholder="Input youtube url here">
-    <input type="button" id="btnSubmit" name="btnSubmit" value="Let's geddit!">
-
-    <h3>Here's the transcript!<br></h3>
-    <span id="youtube_transcript"></span>
-
-    <h3>Summary: <br><span id="summarised_text"></span></h3>
-
-    <script src="script.js"></script>
-    <script>
-        //Add event listener to button
-
-        //STEP 1: Add Async function to fetch transcript
+    //STEP 1: Add Async function to fetch transcript
         async function fetchTranscript() {
             const options = {
                 method: 'GET',
@@ -121,8 +96,3 @@
 
         //Call Async function 
         printGroqResponse();
-    </script>
-
-</body>
-
-</html>
