@@ -9,18 +9,38 @@ body{
 .container{
     width: 40%;
     text-align: center;
+    justify-content: center;
 }
 
 form {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 10px;
+}
+
+form input,
+form textarea {
     width: 100%;
+    padding: 10px;
+    margin: 10px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
+
 
 #btnSubmit{
     width: 20%;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 
