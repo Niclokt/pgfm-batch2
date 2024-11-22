@@ -9,21 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardContainer = document.getElementById('cardContainer');
 
 //Handle form submission to create new card
-
+cardForm.addEventListener('submit',(event) => {
     //Step 0: Store user input:
     const youtube_url = document.getElementById('youtube_url').value;
     const video_desc = document.getElementById('videoDescription').value;
 
     //Step 1:  From user input url, get video id
     const video_id = getVideoId(youtube_url);
-
-    //Step 2: Create new card obj: 
-    const newCard = { youtube_url, video_desc, video_id };
-
-    //Step 3: Add new card to the local storage: 
-    saveCardToLocalStorage(newCard);
-
-
 
     //Step 1: Get Video Summary --> Store in video_summary
 
@@ -48,8 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const dateCreated = `${year}-${month}-${date}, ${hours}:${minutes}`;
 
 
-    //Create Card
+    //Create Card obj
+    const newCard = { youtube_url, video_desc, video_id };
 
+    //Add new card to the local storage: 
+    saveCardToLocalStorage(newCard);
+
+    //Create and display card
+
+    //Clear the form
+    cardForm.reset();
+
+});
 
 
 });
@@ -192,6 +194,18 @@ async function getVideoDetails(video_id){
         console.log(videoId); // Output: "td4cpnZO6oY"
         return videoId;
     }
+
+
+    // FN 6: Save Card to Local Storage
+    function saveCardToLocalStorage (card){
+        const cards = JSON.parse(localStorage.getItem('cards')) || [];
+        cards.push;
+        localStorage.setItem('cards', JSON.stringify(cards));
+    }
+
+    // FN 7: Load Card from local storage
+
+
 
     //Call Async functions 
     getVideoDetails();
