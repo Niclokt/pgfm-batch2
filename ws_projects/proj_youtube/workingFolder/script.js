@@ -8,26 +8,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardForm = document.getElementById("cardForm");
     const cardContainer = document.getElementById("cardContainer");
 
+    // Load existing cards from local storage
+    loadCardsFromLocalStorage();
+
     //Handle form submission to create new card
     cardForm.addEventListener("submit", async (event) => {
         event.preventDefault();
 
-        //Step 0: Store user input:
+        //Card Details: [Step 0] Store user input:
         const youtube_url = document.getElementById("youtube_url").value;
         const video_desc = document.getElementById("videoDescription").value;
+
+        //Card Details: [Step 0] Get current timestamp for card id
+        const timestamp = Date.now();
+        console.log(timestamp);
+
+        const card_id = timestamp;
 
         console.log(`Input Youtube URL: ${youtube_url}`);
         console.log(`Input Desc: ${video_desc}`);
 
-        //Step 1:  From user input url, get video id
+        //Card Details: [Step 1] From user input url, get video id
         const video_id = getVideoId(youtube_url);
         console.log("Update -- Got Video Id");
 
-        //Step 1: Get Video Summary --> Store video_summary
+        //Card Details: [Step 1] Get Video Summary --> Store video_summary
         const video_summary = await printGroqResponse(youtube_url);
         console.log("Update -- Got Summary");
 
-        //Step 2: Get Video Details --> Store in 'video_thumbnail' and 'video_title'
+        //Card Details: [Step 2] Get Video Details --> Store in 'video_thumbnail' and 'video_title'
         const video_details = await getVideoDetails(video_id);
         console.log("Update -- Got Video Details");
 
@@ -42,20 +51,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const hours = now.getHours(); // Get the hour (0-23)
         const minutes = now.getMinutes(); // Get the minutes (0-59)
 
-        //Card Details: Get user inputs & video info & date created
-        //const youtube_url = document.getElementById('youtube_url').value;
-        //const video_desc = document.getElementById('videoDescription').value;
+        //Card Details: Get Date Created
         const dateCreated = `${year}-${month}-${date}, ${hours}:${minutes}`;
         console.log("Update -- Got Date");
 
         //Create Card obj
+        //to implement id
         const newCard = {
+            card_id,
             youtube_url,
             video_desc,
             video_id,
             video_summary,
             video_title,
             video_thumbnail,
+            dateCreated,
         };
 
         //Add new card to the local storage:
@@ -116,7 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 lang: "en",
             },
             headers: {
-                //"x-rapidapi-key":"6fe1e10d0cmsh613dcf445482ba5p1ff21djsn8eda3b7270b3",
+                "x-rapidapi-key":
+                    "6fe1e10d0cmsh613dcf445482ba5p1ff21djsn8eda3b7270b3",
                 "x-rapidapi-host": "youtube-transcript3.p.rapidapi.com",
             },
         };
@@ -153,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 {
                     role: "user",
                     content: `Summarise the following text in no more than 300 words in point form: ${yt_transcript} 
-                    Do not make things up. Respond in html-friendly text.`,
+                    Do not make things up. Respond in html-friendly text or markdown.`,
                 },
             ],
         };
@@ -196,13 +207,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 chatCompletion.data.choices[0]?.message?.content;
             console.log(groqResponse || "");
 
-            // Return value of markedGroqResponse:
+            // Save value of markedGroqResponse:
             const markedGroqResponse = marked.parse(groqResponse);
-            return markedGroqResponse;
 
             // Display summary on webpage. parse markeddown response into "marked" library
             document.getElementById("summarised_text").innerHTML =
                 markedGroqResponse;
+
+            // Return value of markedGroqResponse:
+            return markedGroqResponse;
 
             //console.log(chatCompletion.choices[0]?.message?.content || "");
         } catch (error) {
@@ -220,22 +233,24 @@ document.addEventListener("DOMContentLoaded", () => {
         return videoId;
     }
 
-    // FN 6: Save Card to Local Storage
+    // FN 6: Save Card to Local Storage, into "videoCards" obj
     function saveCardToLocalStorage(card) {
-        const cards = JSON.parse(localStorage.getItem("cards")) || [];
-        cards.push(card);
-        localStorage.setItem("cards", JSON.stringify(cards));
+        const videoCards = JSON.parse(localStorage.getItem("videoCards")) || [];
+        videoCards.push(card);
+        localStorage.setItem("videoCards", JSON.stringify(videoCards));
     }
 
     // FN 7: Create and Load Card from local storage
     function createCardElement(cardData) {
         const {
+            card_id,
             youtube_url,
             video_desc,
             video_id,
             video_summary,
             video_title,
             video_thumbnail,
+            dateCreated,
         } = cardData;
 
         const card = document.createElement("div");
@@ -248,25 +263,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 ? `<img src ="${video_thumbnail}" alt="Card Image">`
                 : ""
         }
-        <div class="card body">
-            <a href=${youtube_url} id="title">${video_title}</a>
-            <p>${video_summary}</p>
+        <div class="card-body">
+            <a href=${youtube_url}><h3>${video_title}</h3></a>
+            <p>${video_summary}</p> <br>
+            <h4>Notes: </h4>
             <p>${video_desc}</p>
-            <button class="delete-btn">Delete</button>
+            <button class="delete-btn" data-id="">Delete</button>
         </div>
     `;
 
-        // Add delete functionality to the delete button
-        // card.querySelector(".delete-btn").addEventListener("click", () => {
-        //     card.remove();
-        //     deleteCardFromLocalStorage(cardData);
-        // });
+        //Add delete functionality to the delete button
+        card.querySelector(".delete-btn").addEventListener("click", () => {
+            card.remove();
+            deleteCardFromLocalStorage(cardData);
+        });
 
         // Append the card to the card container
         cardContainer.appendChild(card);
     }
 
-    //FN 8: Include function to delete a card from local storage
+    //FN 8: Load card from Local Storage
+    function loadCardsFromLocalStorage() {
+        const cards = JSON.parse(localStorage.getItem("videoCards")) || [];
+        cards.forEach(createCardElement);
+    }
+
+    //FN 9: Include function to delete a card from local storage
+    function deleteCardFromLocalStorage(cardToDelete) {
+        //add code here
+        const cards = JSON.parse(localStorage.getItem("videoCards")) || [];
+        const updatedCards = cards.filter(
+            // !! To edit what to filter in here!! Should eventually filter by id
+            (card) => card.card_id !== cardToDelete.card_id
+        );
+        localStorage.setItem("videoCards", JSON.stringify(updatedCards));
+    }
 });
 //Call Async functions
 // getVideoDetails();

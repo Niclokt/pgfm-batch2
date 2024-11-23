@@ -123,9 +123,20 @@ Some learning points:
 
 ## 01 -- RECAP
 
-## 02 --
+## 02 -- Concepts for further reading
 
-## 03 --
+1. `Callbacks`
+2.
+
+## 03 -- Learning Points (Mistakes)
+
+1. Functions wrapping APIs
+
+    - Should be declared as an async function
+    - "await" should be used when calling these async functions
+
+2. Conditions
+    - Ensure the code is comparing the right variables for validation
 
 ## 04 --
 
