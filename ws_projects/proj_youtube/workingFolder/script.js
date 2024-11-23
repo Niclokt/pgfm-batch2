@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //Add edit functionality to the edit button
         card.querySelector(".edit-btn").addEventListener("click", () => {
-            editCardFromLocalStorage(cardData);
+            editCardFromLocalStorage(cardData, card);
         });
 
         //Add delete functionality to the delete button
@@ -295,11 +295,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //FN 9: Include function to edit card from local storage
-    function editCardFromLocalStorage(cardToEdit) {
+    function editCardFromLocalStorage(cardDataToEdit, cardElement) {
         //add code here
-        const cards = JSON.parse(localStorage.getItem("videoCards")) || [];
+        //const cards = JSON.parse(localStorage.getItem("videoCards")) || [];
         //create temporary input field and save edited data into a variable
         //update "videoCards" object in Local Storage
+        // Get the card's current description
+        const currentDescription = cardElement.querySelector(".video-desc");
+
+        // Create a text area for editing
+        const textArea = document.createElement("textarea");
+        textArea.value = currentDescription.textContent; // Set the current value
+        currentDescription.replaceWith(textArea);
+
+        // Change the button text to 'Save Notes'
+        const editButton = cardElement.querySelector(".edit-btn");
+        editButton.textContent = "Save Notes";
+
+        // Update button behavior to save edited content
+        editButton.addEventListener("click", () => {
+            const updatedDescription = textArea.value;
+            cardDataToEdit.video_desc = updatedDescription; // Update the card object with the new description
+
+            // Save the updated card to local storage
+            saveCardToLocalStorage(cardDataToEdit);
+
+            // Replace the textarea with the updated description
+            const updatedDescriptionElement = document.createElement("p");
+            updatedDescriptionElement.textContent = updatedDescription;
+            textArea.replaceWith(updatedDescriptionElement);
+
+            // Reset the button text to "Edit Notes"
+            editButton.textContent = "Edit Notes";
+        });
     }
 
     //FN 10: Include function to delete a card from local storage
