@@ -9,24 +9,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardContainer = document.getElementById("cardContainer");
 
     //Handle form submission to create new card
-    cardForm.addEventListener("submit", (event) => {
+    cardForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
         //Step 0: Store user input:
         const youtube_url = document.getElementById("youtube_url").value;
         const video_desc = document.getElementById("videoDescription").value;
 
+        console.log(`Input Youtube URL: ${youtube_url}`);
+        console.log(`Input Desc: ${video_desc}`);
+
         //Step 1:  From user input url, get video id
         const video_id = getVideoId(youtube_url);
+        console.log("Update -- Got Video Id");
 
-        //Step 1: Get Video Summary --> Store in video_summary
-        const video_summary = printGroqResponse(youtube_url);
+        //Step 1: Get Video Summary --> Store video_summary
+        const video_summary = await printGroqResponse(youtube_url);
+        console.log("Update -- Got Summary");
 
         //Step 2: Get Video Details --> Store in 'video_thumbnail' and 'video_title'
-        const video_details = getVideoDetails(video_id);
+        const video_details = await getVideoDetails(video_id);
+        console.log("Update -- Got Video Details");
 
         const video_title = video_details.video_title;
         const video_thumbnail = video_details.video_thumbnail;
 
         //Get Date: YYYY MMM DD, HH:MM
+        const now = new Date();
         const year = now.getFullYear();
         const month = now.getMonth() + 1; // Get the month (0-11, so add 1 for 1-12)
         const date = now.getDate(); // Get the day of the month (1-31)
@@ -37,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //const youtube_url = document.getElementById('youtube_url').value;
         //const video_desc = document.getElementById('videoDescription').value;
         const dateCreated = `${year}-${month}-${date}, ${hours}:${minutes}`;
+        console.log("Update -- Got Date");
 
         //Create Card obj
         const newCard = {
@@ -50,12 +60,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //Add new card to the local storage:
         saveCardToLocalStorage(newCard);
+        console.log("Update -- Saved card to Local Storage");
 
         //Create and display card
         createCardElement(newCard);
+        console.log("Update -- Created card");
 
         //Clear the form
         cardForm.reset();
+        console.log("Update -- Card form resetted");
     });
 
     //Add event listener to button
@@ -103,17 +116,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 lang: "en",
             },
             headers: {
-                //'x-rapidapi-key': '6fe1e10d0cmsh613dcf445482ba5p1ff21djsn8eda3b7270b3',
+                //"x-rapidapi-key":"6fe1e10d0cmsh613dcf445482ba5p1ff21djsn8eda3b7270b3",
                 "x-rapidapi-host": "youtube-transcript3.p.rapidapi.com",
             },
         };
 
         try {
             const response = await axios.request(options);
-            console.log(response.data);
+            console.log(`Response Data in Fetch Transcript: ${response.data}`);
 
             let yt_transcript = response.data.transcript;
-            console.log(yt_transcript);
+            console.log(
+                `Transcript Data in Fetch Transcript: ${yt_transcript}`
+            );
 
             //show transcript on webpage:
             document.getElementById("youtube_transcript").innerHTML =
