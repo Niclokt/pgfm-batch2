@@ -1,18 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const cardForm = document.getElementById('cardForm');
-    const cardContainer = document.getElementById('cardContainer');
+document.addEventListener("DOMContentLoaded", () => {
+    const cardForm = document.getElementById("cardForm");
+    const cardContainer = document.getElementById("cardContainer");
 
     // Load existing cards from local storage when the page loads
     loadCardsFromLocalStorage();
 
     // Handle form submission to create a new card
-    cardForm.addEventListener('submit', (event) => {
+    cardForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
         // Get user inputs
-        const title = document.getElementById('title').value;
-        const description = document.getElementById('description').value;
-        const imageUrl = document.getElementById('imageUrl').value;
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        const imageUrl = document.getElementById("imageUrl").value;
 
         // Create a new card object
         const newCard = { title, description, imageUrl };
@@ -30,13 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to create a card element in the DOM
     function createCardElement(cardData) {
         const { title, description, imageUrl } = cardData;
-        
-        const card = document.createElement('div');
-        card.classList.add('card');
+
+        const card = document.createElement("div");
+        card.classList.add("card");
 
         // Add card content
         card.innerHTML = `
-            ${imageUrl ? `<img src="${imageUrl}" alt="Card Image">` : ''}
+            ${imageUrl ? `<img src="${imageUrl}" alt="Card Image">` : ""}
             <div class="card-body">
                 <h3>${title}</h3>
                 <p>${description}</p>
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         // Add delete functionality to the delete button
-        card.querySelector('.delete-btn').addEventListener('click', () => {
+        card.querySelector(".delete-btn").addEventListener("click", () => {
             card.remove();
             deleteCardFromLocalStorage(cardData);
         });
@@ -56,25 +56,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to save a card to local storage
     function saveCardToLocalStorage(card) {
-        const cards = JSON.parse(localStorage.getItem('cards')) || [];
+        const cards = JSON.parse(localStorage.getItem("cards")) || [];
         cards.push(card);
-        localStorage.setItem('cards', JSON.stringify(cards));
+        localStorage.setItem("cards", JSON.stringify(cards));
     }
 
     // Function to load cards from local storage and display them
     function loadCardsFromLocalStorage() {
-        const cards = JSON.parse(localStorage.getItem('cards')) || [];
+        const cards = JSON.parse(localStorage.getItem("cards")) || [];
         cards.forEach(createCardElement);
     }
 
     // Function to delete a card from local storage
     function deleteCardFromLocalStorage(cardToDelete) {
-        const cards = JSON.parse(localStorage.getItem('cards')) || [];
-        const updatedCards = cards.filter(card =>
-            card.title !== cardToDelete.title ||
-            card.description !== cardToDelete.description ||
-            card.imageUrl !== cardToDelete.imageUrl
+        const cards = JSON.parse(localStorage.getItem("cards")) || [];
+        const updatedCards = cards.filter(
+            (card) =>
+                card.title !== cardToDelete.title ||
+                card.description !== cardToDelete.description ||
+                card.imageUrl !== cardToDelete.imageUrl
         );
-        localStorage.setItem('cards', JSON.stringify(updatedCards));
+        localStorage.setItem("cards", JSON.stringify(updatedCards));
     }
 });
