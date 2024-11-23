@@ -10,7 +10,7 @@ This is the first para
 
 # Assignment Documentation
 
-`~~Date: 16 NOV 2024, SAT~~`
+`~~Date: 16 NOV 2024, SAT~~`  
 `Status: WIP, 16 NOV 2024`
 
 ### [Summary]
@@ -83,6 +83,11 @@ Some learning points:
     - can use API to make use of RESTful services to call
     -
 
+// Free Maps
+
+1. [MapBox](https://www.mapbox.com)
+2. [OpenMaps](https://www.openstreetmap.org/#map=12/1.3649/103.8229)
+
 ### Documentation & Ref Materials
 
 1. [Bootstrap Component Examples](https://getbootstrap.com/docs/5.3/examples/)
@@ -95,7 +100,19 @@ Some learning points:
 
 1. Create button
 2. Immediately after, create an event listener
-3.
+3. Environment Variable (Possible on GitHub as well)
+
+### Some Considerations:
+
+1. **Security**
+    - Not too secure to deploy everything frontend
+    - Because when you POST and GET it will be exposed
+    - Front-facing only API service, usually the data is not important
+    - Need to deploy both frontend and backednd
+    - Only useful if you can hide the API-key on the server side when you deploy with backend
+    - Hard to hide, since we don't have the initial authentication (Like logging into an account)
+    - Some API providers can usually have a `2 way handshake`
+    - Can view APIs on website, in inspect page - "network" tab
 
 ## Today's Agenda
 

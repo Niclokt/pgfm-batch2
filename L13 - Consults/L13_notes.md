@@ -10,8 +10,8 @@ This is the first para
 
 # Lesson xx -- Lesson Title
 
-`~~Date: 30 OCT 2024, WED~~`
-`Status: `
+`~~Date: 23 NOV 2024, SAT~~`  
+`Status: WIP, 23 NOV 2024`
 
 ### [Summary]
 
