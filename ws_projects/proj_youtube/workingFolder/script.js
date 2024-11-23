@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 {
                     role: "user",
                     content: `Summarise the following text in no more than 300 words in point form: ${yt_transcript} 
-                    Do not make things up. Respond in html-friendly text or markdown.`,
+                    Do not make things up. Prioritise consolidating the text by insights to the arguments presented in the text. Respond in html-friendly text or markdown.`,
                 },
             ],
         };
