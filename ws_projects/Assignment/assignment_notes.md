@@ -40,6 +40,10 @@ Some learning points:
 // For getting word cloud / for doing text extraction??
 []()
 
+// For getting youtube detail:
+
+1.
+
 // Makeshift Youtube API
 
 1. [YouTube Transcripts](https://rapidapi.com/rafalzawadzki/api/youtube-transcripts/pricing) --> 100 requests /mth
@@ -52,6 +56,33 @@ Some learning points:
 2. [Instagram Scraper API](https://rapidapi.com/social-api1-instagram/api/instagram-scraper-api2) --> 500/mth ✅✅
 3. [Instagram Bulk Scraper Latest](https://rapidapi.com/mrngstar/api/instagram-bulk-scraper-latest/playground/apiendpoint_26d5e416-abc2-4144-936d-f965c6f4f779) --> 100/mth
 
+// Services: Website hosting
+
+1. [Netlify](https://www.netlify.com)
+2. [Render](https://render.com)
+
+    **Benefits**:
+
+    - More control to deployment
+    - as we move on in development, it should be public facing
+    - Can use the hosting website to deploy
+
+// Services: Managing Data
+
+1. [jsonBin](https://jsonbin.io)
+    - Can use to implement RBAC (very simple implementation)
+    - Can treat a bin like one big json file to maintain
+    - keep access key as const
+    - Can use it as extra storage space (up to 100KB)
+    - Tricky thing would be to edit data --> (code implementation wise) need to retrieve from bin and put back back
+2. [restDB.io](https://restdb.io)
+    - has a web interface
+    - noSQL database, the whole thing is like a json object
+    - interface looks like an excel sheet, but when reading
+    - Data should be secure, it should be like some sort of backend access
+    - can use API to make use of RESTful services to call
+    -
+
 ### Documentation & Ref Materials
 
 1. [Bootstrap Component Examples](https://getbootstrap.com/docs/5.3/examples/)
@@ -59,6 +90,12 @@ Some learning points:
 3. [YT: How to get Post details by url](https://youtu.be/L_JFOCyJOVU?si=I2WhikH5HJCH51e8)
 4. [YT: How to scrape instagram data](https://youtu.be/hz9tSv3CP6k?si=V_6vFGtS3Z973ONa)
 5. [Marked library to display markdown in HTML](https://marked.js.org)
+
+### Good practise
+
+1. Create button
+2. Immediately after, create an event listener
+3.
 
 ## Today's Agenda
 
