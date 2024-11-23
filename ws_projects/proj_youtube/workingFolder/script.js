@@ -268,9 +268,15 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>${video_summary}</p> <br>
             <h4>Notes: </h4>
             <p>${video_desc}</p>
+            <button class="edit-btn" data-id="">Edit Notes</button>
             <button class="delete-btn" data-id="">Delete</button>
         </div>
     `;
+
+        //Add edit functionality to the edit button
+        card.querySelector(".edit-btn").addEventListener("click", () => {
+            editCardFromLocalStorage(cardData);
+        });
 
         //Add delete functionality to the delete button
         card.querySelector(".delete-btn").addEventListener("click", () => {
@@ -288,7 +294,15 @@ document.addEventListener("DOMContentLoaded", () => {
         cards.forEach(createCardElement);
     }
 
-    //FN 9: Include function to delete a card from local storage
+    //FN 9: Include function to edit card from local storage
+    function editCardFromLocalStorage(cardToEdit) {
+        //add code here
+        const cards = JSON.parse(localStorage.getItem("videoCards")) || [];
+        //create temporary input field and save edited data into a variable
+        //update "videoCards" object in Local Storage
+    }
+
+    //FN 10: Include function to delete a card from local storage
     function deleteCardFromLocalStorage(cardToDelete) {
         //add code here
         const cards = JSON.parse(localStorage.getItem("videoCards")) || [];

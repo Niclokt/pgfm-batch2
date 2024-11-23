@@ -142,6 +142,7 @@ Some learning points:
 3. Stress testing
     - Groq API is unable to process prompt with too much words
     - Tried getting a summary for a 15 hr video and the api call failed hahaha...
+    - [Video used for stress testing](https://www.youtube.com/watch?v=x4rFhThSX04)
     - ![alt text](image.png)
 
 ## 04 --
