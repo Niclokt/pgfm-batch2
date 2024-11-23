@@ -128,7 +128,7 @@ Some learning points:
 1. `Callbacks`
 2.
 
-## 03 -- Learning Points (Mistakes)
+## 03 -- Learning Points (Mistakes & Boundary Testing)
 
 1. Functions wrapping APIs
 
@@ -136,7 +136,13 @@ Some learning points:
     - "await" should be used when calling these async functions
 
 2. Conditions
+
     - Ensure the code is comparing the right variables for validation
+
+3. Stress testing
+    - Groq API is unable to process prompt with too much words
+    - Tried getting a summary for a 15 hr video and the api call failed hahaha...
+    - ![alt text](image.png)
 
 ## 04 --
 
