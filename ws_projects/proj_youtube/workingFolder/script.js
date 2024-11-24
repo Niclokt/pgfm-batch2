@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
             messages: [
                 {
                     role: "user",
-                    content: `Summarise the following text in no more than 300 words in point form: ${yt_transcript} 
+                    content: `Summarise the following text in no more than 400 words in point form: ${yt_transcript} 
                     Do not make things up. Prioritise consolidating the text by insights to the arguments presented in the text. Respond in html-friendly text or markdown.`,
                 },
             ],
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href=${youtube_url}><h3>${video_title}</h3></a>
             <p>${video_summary}</p> <br>
             <h4>Notes: </h4>
-            <p>${video_desc}</p>
+            <p id="card-body-notes">${video_desc}</p>
             <button class="edit-btn" data-id="">Edit Notes</button>
             <button class="delete-btn" data-id="">Delete</button>
         </div>
@@ -301,36 +301,63 @@ document.addEventListener("DOMContentLoaded", () => {
         //create temporary input field and save edited data into a variable
         //update "videoCards" object in Local Storage
         // Get the card's current description
-        const currentDescription = cardElement.querySelector(".video-desc");
 
-        // Create a text area for editing
-        const textArea = document.createElement("textarea");
-        textArea.value = currentDescription.textContent; // Set the current value
-        currentDescription.replaceWith(textArea);
+        //Select elements to edit
+        const descriptionElement =
+            cardElement.querySelector("#card-body-notes");
 
-        // Change the button text to 'Save Notes'
+        //Create input fields for editing
+        const descriptionInput = document.createElement("textarea");
+        descriptionInput.value = descriptionElement.textContent;
+
+        //Replace Static Content w Input Fields
+        descriptionElement.replaceWith(descriptionInput);
+
+        //Change Edit button to Save button
         const editButton = cardElement.querySelector(".edit-btn");
-        editButton.textContent = "Save Notes";
+        editButton.textContent = "Save";
+        editButton.classList.add("save-btn");
+        editButton.classList.remove("edit-btn");
 
-        // Update button behavior to save edited content
+        //Save changes on button click
         editButton.addEventListener("click", () => {
-            const updatedDescription = textArea.value;
-            cardDataToEdit.video_desc = updatedDescription; // Update the card object with the new description
-
-            // Save the updated card to local storage
-            saveCardToLocalStorage(cardDataToEdit);
-
-            // Replace the textarea with the updated description
-            const updatedDescriptionElement = document.createElement("p");
-            updatedDescriptionElement.textContent = updatedDescription;
-            textArea.replaceWith(updatedDescriptionElement);
-
-            // Reset the button text to "Edit Notes"
-            editButton.textContent = "Edit Notes";
+            saveCard(cardElement);
+            //include parameters here
         });
     }
 
-    //FN 10: Include function to delete a card from local storage
+    //FN 10: Function to save changes to edit
+    function saveCard(cardElementToSave) {
+        //Get updated values
+        const descriptionInput =
+            cardElementToSave.querySelector("#card-body-notes");
+
+        //new elements to replace inputs
+        const updatedDescriptionElement = document.createElement("p");
+        updatedDescriptionElement.value = descriptionInput.textContent;
+
+        //Replace input fields with updated content
+        descriptionInput.replaceWith(updatedDescriptionElement);
+
+        //Change save button back to edit button
+        const saveButton = cardElementToSave.querySelector("save-btn");
+        saveButton.textContent = "Edit";
+        saveButton.classList.add("edit-btn");
+        saveButton.classList.remove("save-btn");
+
+        //Save chnages to local storage
+        const cards = JSON.parse(localStorage.getItem("videoCards")) || [];
+        const updatedCards = cards.filter(
+            (card) => card.card_id !== cardElementToSave.card_id
+        );
+        updatedCards.push(cardElementToSave);
+        cards = localStorage.setItem(
+            "videoCards",
+            JSON.stringify(cardElementToSave)
+        );
+
+        //FN 11: Include function to delete a card from local storage
+    }
     function deleteCardFromLocalStorage(cardToDelete) {
         //add code here
         const cards = JSON.parse(localStorage.getItem("videoCards")) || [];
