@@ -397,11 +397,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //Call Event Listener
         addCardEventListeners();
-        // //Save changes on button click
-        // editButton.addEventListener("click", () => {
-        //     saveCard(cardDataToEdit, cardElement, descriptionInput.value);
-        //     //include parameters here
-        // });
     }
 
     //FN 10: Function to save changes to edit
@@ -412,34 +407,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // ) {
 
     async function saveEditedCardToLocalStorage(cardToSaveID) {
-        // //Get updated values
-        // const descriptionInput =
-        //     cardElementToSave.querySelector(".card-body-notes");
-
-        // //new elements to replace inputs
-        // const updatedDescriptionElement = document.createElement("p");
-        // updatedDescriptionElement.innerHTML = descriptionInput.value;
-
-        // //Replace input fields with updated content
-        // descriptionInput.replaceWith(updatedDescriptionElement);
-
-        // //Change save button back to edit button
-        // const saveButton = cardElementToSave.querySelector("save-btn");
-        // saveButton.textContent = "Edit";
-        // saveButton.classList.add("edit-btn");
-        // saveButton.classList.remove("save-btn");
-
-        // //Save chnages to local storage
-        // const cards = JSON.parse(localStorage.getItem("videoCards")) || [];
-        // const updatedCards = cards.filter(
-        //     (card) => card.card_id !== cardElementToSave.card_id
-        // );
-        // updatedCards.push(cardElementToSave);
-        // cards = localStorage.setItem(
-        //     "videoCards",
-        //     JSON.stringify(cardElementToSave)
-        // );
-
         //input check
         console.log(`Fn #10 - cardToSaveID: ${cardToSaveID}`);
 
