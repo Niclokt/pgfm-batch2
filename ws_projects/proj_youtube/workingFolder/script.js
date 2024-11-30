@@ -407,6 +407,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // ) {
 
     async function saveEditedCardToLocalStorage(cardToSaveID) {
+        // Get the updated description from the textarea
+        const cardElementToSave = document.getElementById(cardToSaveID);
+        const updatedDescription =
+            cardElementToSave.querySelector("textarea").value;
+
         //input check
         console.log(`Fn #10 - cardToSaveID: ${cardToSaveID}`);
 
@@ -433,16 +438,14 @@ document.addEventListener("DOMContentLoaded", () => {
             `Fn #10 - UpdatedDescriptionElement.textContent: ${updatedDescriptionElement.textContent}`
         );
 
-        const descriptionInput = cardElementToSave.querySelector(
-            `#${cardToSaveID} textarea`
-        );
+        const descriptionInput = cardElementToSave.querySelector("textarea");
         descriptionInput.replaceWith(updatedDescriptionElement);
         console.log(
             `Fn #10 - Input Field has been replaced with Static Field: ${updatedDescriptionElement.textContent}`
         );
 
         // Change Save button back to Edit button
-        const saveButton = cardElementToSave.querySelector(" .save-btn");
+        const saveButton = cardElementToSave.querySelector(".save-btn");
         const newEditButton = saveButton.cloneNode(true); // Creates a new button, clearing listeners
         newEditButton.textContent = "Edit";
         newEditButton.classList.add("edit-btn");
