@@ -153,9 +153,13 @@ Some learning points:
         - Allowing raw HTML input can expose your site to XSS (Cross-Site Scripting) attacks. Always sanitize user input if the data comes from untrusted sources.
 5. **Button clicks on each video card**
 
--   Identifying the card which was clicked - Methods to do so:
-    -   Identify by button-id
-    -   Get button to return a unique identifier, to identify the container to be manipulated
+    - Identifying the card which was clicked - Methods to do so:
+        - Identify by button-id
+        - Get button to return a unique identifier, to identify the container to be manipulated
+
+6. **Organising Event Handlers**
+    - Need to ensure that redundant event handlers are being removed after use
+    - Good practise to hoist event handlers for generic buttons
 
 ## 04 --
 
