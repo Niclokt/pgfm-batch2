@@ -12,6 +12,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Load existing cards from local storage
     const cardsList = loadCardsFromLocalStorage();
+    //Add edit functionality to the edit button
+    //[??] how to get card id??
+    cardsList.querySelector(".edit-btn").addEventListener("click", () => {
+        //Get id of clicked button
+
+        //Call function to Edit Card
+        editCardFromLocalStorage(cardData, card);
+    });
+
+    //Add delete functionality to the delete button
+    cardsList.querySelector(".delete-btn").addEventListener("click", () => {
+        //Get id of clicked button (include code before "card.remove")
+
+        card.remove();
+        //Call function to delete Card
+        deleteCardFromLocalStorage(cardData);
+    });
 
     //Handle form submission to create new card
     cardForm.addEventListener("submit", async (event) => {
@@ -287,24 +304,24 @@ document.addEventListener("DOMContentLoaded", () => {
 	        </div>
         </div>
     `;
+        // TO REMOVE: Event Listeners have been hoisted to the top
+        // //Add edit functionality to the edit button
+        // //[??] how to get card id??
+        // card.querySelector(".edit-btn").addEventListener("click", () => {
+        //     //Get id of clicked button
 
-        //Add edit functionality to the edit button
-        //[??] how to get card id??
-        card.querySelector(".edit-btn").addEventListener("click", () => {
-            //Get id of clicked button
+        //     //Call function to Edit Card
+        //     editCardFromLocalStorage(cardData, card);
+        // });
 
-            //Call function to Edit Card
-            editCardFromLocalStorage(cardData, card);
-        });
+        // //Add delete functionality to the delete button
+        // card.querySelector(".delete-btn").addEventListener("click", () => {
+        //     //Get id of clicked button (include code before "card.remove")
 
-        //Add delete functionality to the delete button
-        card.querySelector(".delete-btn").addEventListener("click", () => {
-            //Get id of clicked button (include code before "card.remove")
-
-            card.remove();
-            //Call function to delete Card
-            deleteCardFromLocalStorage(cardData);
-        });
+        //     card.remove();
+        //     //Call function to delete Card
+        //     deleteCardFromLocalStorage(cardData);
+        // });
 
         // Append the card to the card container
         // After creating the elements & saving the card data into local storage, need to add the elements into the HTML card container for the new cards to be displayed.
