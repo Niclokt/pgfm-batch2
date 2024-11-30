@@ -126,7 +126,8 @@ Some learning points:
 ## 02 -- Concepts for further reading
 
 1. `Callbacks`
-2.
+2. `Spread Syntax` --> used with map function to replace data that has been edited in the edit field.
+3.
 
 ## 03 -- Learning Points (Mistakes & Boundary Testing)
 
@@ -140,16 +141,33 @@ Some learning points:
     - Ensure the code is comparing the right variables for validation
 
 3. Stress testing
+
     - Groq API is unable to process prompt with too much words
     - Tried getting a summary for a 15 hr video and the api call failed hahaha...
     - [Video used for stress testing](https://www.youtube.com/watch?v=x4rFhThSX04)
     - ![alt text](image.png)
 
+4. Preserving HTML while saving `<TextArea>` value to `<p>` element .TextContent
+    - Instead of saving to TextContent, save to .innerHTML
+    - Consideration:
+        - Allowing raw HTML input can expose your site to XSS (Cross-Site Scripting) attacks. Always sanitize user input if the data comes from untrusted sources.
+        -
+
 ## 04 --
 
-## 05 --
+## 05 -- Code to check back:
 
-## 06 --
+    - Check back on the FN #7
+    - Why is the card not saved?
+    -
+
+## 06 -- Questions to check
+
+1. **Event listeners:**
+    - How does it work when we wrap it in a function?
+    - Does the function keep running until the event listner is called?
+2. **Edit function Saving to local storage:**
+    - Test test
 
 ## zz -- Garble Garble...
 
