@@ -1,0 +1,2195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube beebuhdeeboo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel=" stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- DOMPurify Library, but not working -->
+    <!-- <script type="text/javascript" src="src/purify.js"></script> -->
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Youtube Euphoria </h1>
+        <h3>Some Info: <span id="someInfo"></span></h3>
+        <form id="cardForm">
+            <input type="text" id="youtube_url" name="youtube_url" placeholder="Youtube Url">
+            <textarea id="videoDescription" placeholder="Input Description"></textarea>
+            <button type="submit" id="btnSubmit" name="btnSubmit">Save Video to Notes</button>
+        </form>
+    </div>
+    <div class="container-fluid">
+        <div class="row g-4">
+            <div class="col-4">
+                <div id="cardContainer">
+                    <div class="card">
+                        <img src="https://i.ytimg.com/vi/qyCVCGg_3Ec/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCPywTHQgBy_7uWNv6ba9yPihSUaA"
+                            alt="Card Image">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <a href="https://www.youtube.com/watch?v=qyCVCGg_3Ec">
+                                        <h3>Microsoft Notepad.exe is overpowered now… and 13 other major updates for
+                                            devs</h3>
+                                    </a>
+                                    <p></p>
+                                    <p>Here's a summary of the text in point form:</p>
+                                    <p><strong>AI in Developer Tools</strong></p>
+                                    <ul>
+                                        <li>Microsoft to add AI features to Notepad and Microsoft Paint in Windows 11
+                                        </li>
+                                        <li>Adobe announces Project Turntable, a 2D-to-3D vector graphic tool</li>
+                                        <li>Google adds Gemini 9 Nano to Chrome browser, enabling AI-powered coding</li>
+                                        <li>GitHub CoPilot now supports multiple models, including Gemini and Claude
+                                        </li>
+                                    </ul>
+                                    <p><strong>Other Developer Tools and Frameworks</strong></p>
+                                    <ul>
+                                        <li>GitHub releases Spark, a tool for building mini applications with natural
+                                            language</li>
+                                        <li>StackBlitz announces Bolt, a tool for developing and previewing full
+                                            applications in the browser using AI</li>
+                                        <li>Next.js releases version 15, removing opinionated caching defaults</li>
+                                        <li>Deno 2.0 makes JavaScript development less painful</li>
+                                        <li>T releases version 2.0, a cross-platform tool for building desktop and
+                                            mobile apps with frontend JavaScript</li>
+                                    </ul>
+                                    <p><strong>Cross-Platform Mobile App Tools</strong></p>
+                                    <ul>
+                                        <li>Flutter is forked into a new project called Flock, due to the lack of
+                                            engineers on the Flutter team</li>
+                                    </ul>
+                                    <p><strong>Gaming</strong></p>
+                                    <ul>
+                                        <li>Ahiri Linux allows running AAA games on M1 Max, thanks to complex stack
+                                            including FX, Wine, and dxvk</li>
+                                    </ul>
+                                    <p><strong>IDEs and Learning</strong></p>
+                                    <ul>
+                                        <li>JetBrains announces that WebStorm and Write IDEs are now free for personal
+                                            use</li>
+                                        <li>Brilliant is a platform for learning programming and other subjects through
+                                            hands-on exercises.</li>
+                                    </ul>
+                                    <p></p> <br>
+                                    <h4>Notes: </h4>
+                                    <p class="card-body-notes">tool to create application from simple natural language.
+                                        test.</p>
+                                    <button class="edit-btn" data-id="1732357876622">Edit</button>
+                                    <button class="delete-btn" data-id="">Delete</button>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div id="cardContainer">
+                    <div class="card">
+                        <img src="https://i.ytimg.com/vi/NRmkr50mkEE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDtvbZa0Av8U0g_NMj01UPnCBTXWA"
+                            alt="Card Image">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <a
+                                        href="https://www.youtube.com/watch?v=NRmkr50mkEE&amp;list=PLhyRa0PyXvWXCIhZKc9u341LZ1TJP5wF5&amp;index=10">
+                                        <h3>Ray Tracing: How NVIDIA Solved the Impossible!</h3>
+                                    </a>
+                                    <p></p>
+                                    <h1><strong>Two Minute Papers: Solving the Impossible Problem of Real-Time Light
+                                            Transport</strong></h1>
+                                    <h2><strong>The Problem: Noise in Light Transport Simulation</strong></h2>
+                                    <ul>
+                                        <li>Noise is a major issue in light transport simulation, making photorealistic
+                                            scenes difficult to achieve.</li>
+                                        <li>Noise is caused by inaccuracies in estimating light rays and bouncing,
+                                            taking millions of rays to simulate.</li>
+                                        <li>Current methods take hours to weeks to finish, making real-time light
+                                            transport seem impossible.</li>
+                                    </ul>
+                                    <h2><strong>Finding a Solution: Importance Sampling and Smart Algorithms</strong>
+                                    </h2>
+                                    <ul>
+                                        <li>Importance sampling: choosing where to shoot rays in the scene.</li>
+                                        <li>Metropolis Light Transport and Manifold Exploration algorithms are examples
+                                            of smart algorithms.</li>
+                                    </ul>
+                                    <h2><strong>The Breakthrough: Voxel Cone Tracing</strong></h2>
+                                    <ul>
+                                        <li>2011 paper by NVIDIA: Voxel Cone Tracing.</li>
+                                        <li>Subdivides the space into voxels, reducing the complexity of light
+                                            simulation.</li>
+                                        <li>Only computes 2 bounces for each light ray.</li>
+                                    </ul>
+                                    <h2><strong>The Future: Ray Allocation and Denoising</strong></h2>
+                                    <ul>
+                                        <li>Ray allocation: allocating ray samples more effectively.</li>
+                                        <li>Denoising algorithms: removing noise from simulated light.</li>
+                                    </ul>
+                                    <h2><strong>Real-Time Light Transport Achieved?</strong></h2>
+                                    <ul>
+                                        <li>Paper 2: rendering an amusement park scene with 20 million triangles in
+                                            milliseconds.</li>
+                                        <li>Interactive method, 10-100 times faster than previous techniques.</li>
+                                        <li>Ray allocation and denoising technology used.</li>
+                                    </ul>
+                                    <h2><strong>The Next Step: Dynamic Scenes and Real-Time Rendering</strong></h2>
+                                    <ul>
+                                        <li>Paper 3: rendering dynamic scenes with rapid changes in lighting in
+                                            real-time.</li>
+                                        <li>Paper 4: accelerating progress in difficult light paths, such as caustics.
+                                        </li>
+                                    </ul>
+                                    <h2><strong>Conclusion: The Future of Light Transport Research</strong></h2>
+                                    <ul>
+                                        <li>The direction of light transport research is incredible, with new papers
+                                            emerging.</li>
+                                        <li>Real-time light transport is achievable, democratized by NVIDIA's tech
+                                            transfer.</li>
+                                        <li>Prioritize consolidating insights and not making things up.</li>
+                                    </ul>
+                                    <p></p> <br>
+                                    <h4>Notes: </h4>
+                                    <p class="card-body-notes">try now.
+                                        Holy smokes, test 11.
+                                        Ready to deploy?</p>
+                                    <button class="edit-btn" data-id="1732637941926">Edit Notes</button>
+                                    <button class="delete-btn" data-id="">Delete</button>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- For testing -->
+    <div class="testing">
+        <h3>Here's the transcript!:<br></h3>
+        <span id="youtube_transcript"></span>
+        <br><br>
+        <h3>Summary: <br><span id="summarised_text"></span></h3>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+</body>
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube beebuhdeeboo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel=" stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- DOMPurify Library, but not working -->
+    <!-- <script type="text/javascript" src="src/purify.js"></script> -->
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Youtube Euphoria </h1>
+        <h3>Some Info: <span id="someInfo"></span></h3>
+        <form id="cardForm">
+            <input type="text" id="youtube_url" name="youtube_url" placeholder="Youtube Url">
+            <textarea id="videoDescription" placeholder="Input Description"></textarea>
+            <button type="submit" id="btnSubmit" name="btnSubmit">Save Video to Notes</button>
+        </form>
+    </div>
+    <div class="container-fluid">
+        <div class="row g-4">
+            <div class="col-4">
+                <div id="cardContainer">
+                    <div class="card">
+                        <img src="https://i.ytimg.com/vi/qyCVCGg_3Ec/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCPywTHQgBy_7uWNv6ba9yPihSUaA"
+                            alt="Card Image">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <a href="https://www.youtube.com/watch?v=qyCVCGg_3Ec">
+                                        <h3>Microsoft Notepad.exe is overpowered now… and 13 other major updates for
+                                            devs</h3>
+                                    </a>
+                                    <p></p>
+                                    <p>Here's a summary of the text in point form:</p>
+                                    <p><strong>AI in Developer Tools</strong></p>
+                                    <ul>
+                                        <li>Microsoft to add AI features to Notepad and Microsoft Paint in Windows 11
+                                        </li>
+                                        <li>Adobe announces Project Turntable, a 2D-to-3D vector graphic tool</li>
+                                        <li>Google adds Gemini 9 Nano to Chrome browser, enabling AI-powered coding</li>
+                                        <li>GitHub CoPilot now supports multiple models, including Gemini and Claude
+                                        </li>
+                                    </ul>
+                                    <p><strong>Other Developer Tools and Frameworks</strong></p>
+                                    <ul>
+                                        <li>GitHub releases Spark, a tool for building mini applications with natural
+                                            language</li>
+                                        <li>StackBlitz announces Bolt, a tool for developing and previewing full
+                                            applications in the browser using AI</li>
+                                        <li>Next.js releases version 15, removing opinionated caching defaults</li>
+                                        <li>Deno 2.0 makes JavaScript development less painful</li>
+                                        <li>T releases version 2.0, a cross-platform tool for building desktop and
+                                            mobile apps with frontend JavaScript</li>
+                                    </ul>
+                                    <p><strong>Cross-Platform Mobile App Tools</strong></p>
+                                    <ul>
+                                        <li>Flutter is forked into a new project called Flock, due to the lack of
+                                            engineers on the Flutter team</li>
+                                    </ul>
+                                    <p><strong>Gaming</strong></p>
+                                    <ul>
+                                        <li>Ahiri Linux allows running AAA games on M1 Max, thanks to complex stack
+                                            including FX, Wine, and dxvk</li>
+                                    </ul>
+                                    <p><strong>IDEs and Learning</strong></p>
+                                    <ul>
+                                        <li>JetBrains announces that WebStorm and Write IDEs are now free for personal
+                                            use</li>
+                                        <li>Brilliant is a platform for learning programming and other subjects through
+                                            hands-on exercises.</li>
+                                    </ul>
+                                    <p></p> <br>
+                                    <h4>Notes: </h4>
+                                    <p class="card-body-notes">tool to create application from simple natural language.
+                                        test.</p>
+                                    <button class="edit-btn" data-id="1732357876622">Edit</button>
+                                    <button class="delete-btn" data-id="">Delete</button>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div id="cardContainer">
+                    <div class="card">
+                        <img src="https://i.ytimg.com/vi/NRmkr50mkEE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDtvbZa0Av8U0g_NMj01UPnCBTXWA"
+                            alt="Card Image">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <a
+                                        href="https://www.youtube.com/watch?v=NRmkr50mkEE&amp;list=PLhyRa0PyXvWXCIhZKc9u341LZ1TJP5wF5&amp;index=10">
+                                        <h3>Ray Tracing: How NVIDIA Solved the Impossible!</h3>
+                                    </a>
+                                    <p></p>
+                                    <h1><strong>Two Minute Papers: Solving the Impossible Problem of Real-Time Light
+                                            Transport</strong></h1>
+                                    <h2><strong>The Problem: Noise in Light Transport Simulation</strong></h2>
+                                    <ul>
+                                        <li>Noise is a major issue in light transport simulation, making photorealistic
+                                            scenes difficult to achieve.</li>
+                                        <li>Noise is caused by inaccuracies in estimating light rays and bouncing,
+                                            taking millions of rays to simulate.</li>
+                                        <li>Current methods take hours to weeks to finish, making real-time light
+                                            transport seem impossible.</li>
+                                    </ul>
+                                    <h2><strong>Finding a Solution: Importance Sampling and Smart Algorithms</strong>
+                                    </h2>
+                                    <ul>
+                                        <li>Importance sampling: choosing where to shoot rays in the scene.</li>
+                                        <li>Metropolis Light Transport and Manifold Exploration algorithms are examples
+                                            of smart algorithms.</li>
+                                    </ul>
+                                    <h2><strong>The Breakthrough: Voxel Cone Tracing</strong></h2>
+                                    <ul>
+                                        <li>2011 paper by NVIDIA: Voxel Cone Tracing.</li>
+                                        <li>Subdivides the space into voxels, reducing the complexity of light
+                                            simulation.</li>
+                                        <li>Only computes 2 bounces for each light ray.</li>
+                                    </ul>
+                                    <h2><strong>The Future: Ray Allocation and Denoising</strong></h2>
+                                    <ul>
+                                        <li>Ray allocation: allocating ray samples more effectively.</li>
+                                        <li>Denoising algorithms: removing noise from simulated light.</li>
+                                    </ul>
+                                    <h2><strong>Real-Time Light Transport Achieved?</strong></h2>
+                                    <ul>
+                                        <li>Paper 2: rendering an amusement park scene with 20 million triangles in
+                                            milliseconds.</li>
+                                        <li>Interactive method, 10-100 times faster than previous techniques.</li>
+                                        <li>Ray allocation and denoising technology used.</li>
+                                    </ul>
+                                    <h2><strong>The Next Step: Dynamic Scenes and Real-Time Rendering</strong></h2>
+                                    <ul>
+                                        <li>Paper 3: rendering dynamic scenes with rapid changes in lighting in
+                                            real-time.</li>
+                                        <li>Paper 4: accelerating progress in difficult light paths, such as caustics.
+                                        </li>
+                                    </ul>
+                                    <h2><strong>Conclusion: The Future of Light Transport Research</strong></h2>
+                                    <ul>
+                                        <li>The direction of light transport research is incredible, with new papers
+                                            emerging.</li>
+                                        <li>Real-time light transport is achievable, democratized by NVIDIA's tech
+                                            transfer.</li>
+                                        <li>Prioritize consolidating insights and not making things up.</li>
+                                    </ul>
+                                    <p></p> <br>
+                                    <h4>Notes: </h4>
+                                    <p class="card-body-notes">try now.
+                                        Holy smokes, test 11.
+                                        Ready to deploy?</p>
+                                    <button class="edit-btn" data-id="1732637941926">Edit Notes</button>
+                                    <button class="delete-btn" data-id="">Delete</button>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- For testing -->
+    <div class="testing">
+        <h3>Here's the transcript!:<br></h3>
+        <span id="youtube_transcript"></span>
+        <br><br>
+        <h3>Summary: <br><span id="summarised_text"></span></h3>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+</body>
+<div class="container">
+    <h1>Youtube Euphoria </h1>
+    <h3>Some Info: <span id="someInfo"></span></h3>
+    <form id="cardForm">
+        <input type="text" id="youtube_url" name="youtube_url" placeholder="Youtube Url">
+        <textarea id="videoDescription" placeholder="Input Description"></textarea>
+        <button type="submit" id="btnSubmit" name="btnSubmit">Save Video to Notes</button>
+    </form>
+</div>
+<div class="container-fluid">
+    <div class="row g-4">
+        <div class="col-4">
+            <div id="cardContainer">
+                <div class="card">
+                    <img src="https://i.ytimg.com/vi/qyCVCGg_3Ec/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCPywTHQgBy_7uWNv6ba9yPihSUaA"
+                        alt="Card Image">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <a href="https://www.youtube.com/watch?v=qyCVCGg_3Ec">
+                                    <h3>Microsoft Notepad.exe is overpowered now… and 13 other major updates for devs
+                                    </h3>
+                                </a>
+                                <p></p>
+                                <p>Here's a summary of the text in point form:</p>
+                                <p><strong>AI in Developer Tools</strong></p>
+                                <ul>
+                                    <li>Microsoft to add AI features to Notepad and Microsoft Paint in Windows 11</li>
+                                    <li>Adobe announces Project Turntable, a 2D-to-3D vector graphic tool</li>
+                                    <li>Google adds Gemini 9 Nano to Chrome browser, enabling AI-powered coding</li>
+                                    <li>GitHub CoPilot now supports multiple models, including Gemini and Claude</li>
+                                </ul>
+                                <p><strong>Other Developer Tools and Frameworks</strong></p>
+                                <ul>
+                                    <li>GitHub releases Spark, a tool for building mini applications with natural
+                                        language</li>
+                                    <li>StackBlitz announces Bolt, a tool for developing and previewing full
+                                        applications in the browser using AI</li>
+                                    <li>Next.js releases version 15, removing opinionated caching defaults</li>
+                                    <li>Deno 2.0 makes JavaScript development less painful</li>
+                                    <li>T releases version 2.0, a cross-platform tool for building desktop and mobile
+                                        apps with frontend JavaScript</li>
+                                </ul>
+                                <p><strong>Cross-Platform Mobile App Tools</strong></p>
+                                <ul>
+                                    <li>Flutter is forked into a new project called Flock, due to the lack of engineers
+                                        on the Flutter team</li>
+                                </ul>
+                                <p><strong>Gaming</strong></p>
+                                <ul>
+                                    <li>Ahiri Linux allows running AAA games on M1 Max, thanks to complex stack
+                                        including FX, Wine, and dxvk</li>
+                                </ul>
+                                <p><strong>IDEs and Learning</strong></p>
+                                <ul>
+                                    <li>JetBrains announces that WebStorm and Write IDEs are now free for personal use
+                                    </li>
+                                    <li>Brilliant is a platform for learning programming and other subjects through
+                                        hands-on exercises.</li>
+                                </ul>
+                                <p></p> <br>
+                                <h4>Notes: </h4>
+                                <p class="card-body-notes">tool to create application from simple natural language.
+                                    test.</p>
+                                <button class="edit-btn" data-id="1732357876622">Edit</button>
+                                <button class="delete-btn" data-id="">Delete</button>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div id="cardContainer">
+                <div class="card">
+                    <img src="https://i.ytimg.com/vi/NRmkr50mkEE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDtvbZa0Av8U0g_NMj01UPnCBTXWA"
+                        alt="Card Image">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <a
+                                    href="https://www.youtube.com/watch?v=NRmkr50mkEE&amp;list=PLhyRa0PyXvWXCIhZKc9u341LZ1TJP5wF5&amp;index=10">
+                                    <h3>Ray Tracing: How NVIDIA Solved the Impossible!</h3>
+                                </a>
+                                <p></p>
+                                <h1><strong>Two Minute Papers: Solving the Impossible Problem of Real-Time Light
+                                        Transport</strong></h1>
+                                <h2><strong>The Problem: Noise in Light Transport Simulation</strong></h2>
+                                <ul>
+                                    <li>Noise is a major issue in light transport simulation, making photorealistic
+                                        scenes difficult to achieve.</li>
+                                    <li>Noise is caused by inaccuracies in estimating light rays and bouncing, taking
+                                        millions of rays to simulate.</li>
+                                    <li>Current methods take hours to weeks to finish, making real-time light transport
+                                        seem impossible.</li>
+                                </ul>
+                                <h2><strong>Finding a Solution: Importance Sampling and Smart Algorithms</strong></h2>
+                                <ul>
+                                    <li>Importance sampling: choosing where to shoot rays in the scene.</li>
+                                    <li>Metropolis Light Transport and Manifold Exploration algorithms are examples of
+                                        smart algorithms.</li>
+                                </ul>
+                                <h2><strong>The Breakthrough: Voxel Cone Tracing</strong></h2>
+                                <ul>
+                                    <li>2011 paper by NVIDIA: Voxel Cone Tracing.</li>
+                                    <li>Subdivides the space into voxels, reducing the complexity of light simulation.
+                                    </li>
+                                    <li>Only computes 2 bounces for each light ray.</li>
+                                </ul>
+                                <h2><strong>The Future: Ray Allocation and Denoising</strong></h2>
+                                <ul>
+                                    <li>Ray allocation: allocating ray samples more effectively.</li>
+                                    <li>Denoising algorithms: removing noise from simulated light.</li>
+                                </ul>
+                                <h2><strong>Real-Time Light Transport Achieved?</strong></h2>
+                                <ul>
+                                    <li>Paper 2: rendering an amusement park scene with 20 million triangles in
+                                        milliseconds.</li>
+                                    <li>Interactive method, 10-100 times faster than previous techniques.</li>
+                                    <li>Ray allocation and denoising technology used.</li>
+                                </ul>
+                                <h2><strong>The Next Step: Dynamic Scenes and Real-Time Rendering</strong></h2>
+                                <ul>
+                                    <li>Paper 3: rendering dynamic scenes with rapid changes in lighting in real-time.
+                                    </li>
+                                    <li>Paper 4: accelerating progress in difficult light paths, such as caustics.</li>
+                                </ul>
+                                <h2><strong>Conclusion: The Future of Light Transport Research</strong></h2>
+                                <ul>
+                                    <li>The direction of light transport research is incredible, with new papers
+                                        emerging.</li>
+                                    <li>Real-time light transport is achievable, democratized by NVIDIA's tech transfer.
+                                    </li>
+                                    <li>Prioritize consolidating insights and not making things up.</li>
+                                </ul>
+                                <p></p> <br>
+                                <h4>Notes: </h4>
+                                <p class="card-body-notes">try now.
+                                    Holy smokes, test 11.
+                                    Ready to deploy?</p>
+                                <button class="edit-btn" data-id="1732637941926">Edit Notes</button>
+                                <button class="delete-btn" data-id="">Delete</button>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row g-4">
+    <div class="col-4">
+        <div id="cardContainer">
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/qyCVCGg_3Ec/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCPywTHQgBy_7uWNv6ba9yPihSUaA"
+                    alt="Card Image">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <a href="https://www.youtube.com/watch?v=qyCVCGg_3Ec">
+                                <h3>Microsoft Notepad.exe is overpowered now… and 13 other major updates for devs</h3>
+                            </a>
+                            <p></p>
+                            <p>Here's a summary of the text in point form:</p>
+                            <p><strong>AI in Developer Tools</strong></p>
+                            <ul>
+                                <li>Microsoft to add AI features to Notepad and Microsoft Paint in Windows 11</li>
+                                <li>Adobe announces Project Turntable, a 2D-to-3D vector graphic tool</li>
+                                <li>Google adds Gemini 9 Nano to Chrome browser, enabling AI-powered coding</li>
+                                <li>GitHub CoPilot now supports multiple models, including Gemini and Claude</li>
+                            </ul>
+                            <p><strong>Other Developer Tools and Frameworks</strong></p>
+                            <ul>
+                                <li>GitHub releases Spark, a tool for building mini applications with natural language
+                                </li>
+                                <li>StackBlitz announces Bolt, a tool for developing and previewing full applications in
+                                    the browser using AI</li>
+                                <li>Next.js releases version 15, removing opinionated caching defaults</li>
+                                <li>Deno 2.0 makes JavaScript development less painful</li>
+                                <li>T releases version 2.0, a cross-platform tool for building desktop and mobile apps
+                                    with frontend JavaScript</li>
+                            </ul>
+                            <p><strong>Cross-Platform Mobile App Tools</strong></p>
+                            <ul>
+                                <li>Flutter is forked into a new project called Flock, due to the lack of engineers on
+                                    the Flutter team</li>
+                            </ul>
+                            <p><strong>Gaming</strong></p>
+                            <ul>
+                                <li>Ahiri Linux allows running AAA games on M1 Max, thanks to complex stack including
+                                    FX, Wine, and dxvk</li>
+                            </ul>
+                            <p><strong>IDEs and Learning</strong></p>
+                            <ul>
+                                <li>JetBrains announces that WebStorm and Write IDEs are now free for personal use</li>
+                                <li>Brilliant is a platform for learning programming and other subjects through hands-on
+                                    exercises.</li>
+                            </ul>
+                            <p></p> <br>
+                            <h4>Notes: </h4>
+                            <p class="card-body-notes">tool to create application from simple natural language. test.
+                            </p>
+                            <button class="edit-btn" data-id="1732357876622">Edit</button>
+                            <button class="delete-btn" data-id="">Delete</button>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div id="cardContainer">
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/NRmkr50mkEE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDtvbZa0Av8U0g_NMj01UPnCBTXWA"
+                    alt="Card Image">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <a
+                                href="https://www.youtube.com/watch?v=NRmkr50mkEE&amp;list=PLhyRa0PyXvWXCIhZKc9u341LZ1TJP5wF5&amp;index=10">
+                                <h3>Ray Tracing: How NVIDIA Solved the Impossible!</h3>
+                            </a>
+                            <p></p>
+                            <h1><strong>Two Minute Papers: Solving the Impossible Problem of Real-Time Light
+                                    Transport</strong></h1>
+                            <h2><strong>The Problem: Noise in Light Transport Simulation</strong></h2>
+                            <ul>
+                                <li>Noise is a major issue in light transport simulation, making photorealistic scenes
+                                    difficult to achieve.</li>
+                                <li>Noise is caused by inaccuracies in estimating light rays and bouncing, taking
+                                    millions of rays to simulate.</li>
+                                <li>Current methods take hours to weeks to finish, making real-time light transport seem
+                                    impossible.</li>
+                            </ul>
+                            <h2><strong>Finding a Solution: Importance Sampling and Smart Algorithms</strong></h2>
+                            <ul>
+                                <li>Importance sampling: choosing where to shoot rays in the scene.</li>
+                                <li>Metropolis Light Transport and Manifold Exploration algorithms are examples of smart
+                                    algorithms.</li>
+                            </ul>
+                            <h2><strong>The Breakthrough: Voxel Cone Tracing</strong></h2>
+                            <ul>
+                                <li>2011 paper by NVIDIA: Voxel Cone Tracing.</li>
+                                <li>Subdivides the space into voxels, reducing the complexity of light simulation.</li>
+                                <li>Only computes 2 bounces for each light ray.</li>
+                            </ul>
+                            <h2><strong>The Future: Ray Allocation and Denoising</strong></h2>
+                            <ul>
+                                <li>Ray allocation: allocating ray samples more effectively.</li>
+                                <li>Denoising algorithms: removing noise from simulated light.</li>
+                            </ul>
+                            <h2><strong>Real-Time Light Transport Achieved?</strong></h2>
+                            <ul>
+                                <li>Paper 2: rendering an amusement park scene with 20 million triangles in
+                                    milliseconds.</li>
+                                <li>Interactive method, 10-100 times faster than previous techniques.</li>
+                                <li>Ray allocation and denoising technology used.</li>
+                            </ul>
+                            <h2><strong>The Next Step: Dynamic Scenes and Real-Time Rendering</strong></h2>
+                            <ul>
+                                <li>Paper 3: rendering dynamic scenes with rapid changes in lighting in real-time.</li>
+                                <li>Paper 4: accelerating progress in difficult light paths, such as caustics.</li>
+                            </ul>
+                            <h2><strong>Conclusion: The Future of Light Transport Research</strong></h2>
+                            <ul>
+                                <li>The direction of light transport research is incredible, with new papers emerging.
+                                </li>
+                                <li>Real-time light transport is achievable, democratized by NVIDIA's tech transfer.
+                                </li>
+                                <li>Prioritize consolidating insights and not making things up.</li>
+                            </ul>
+                            <p></p> <br>
+                            <h4>Notes: </h4>
+                            <p class="card-body-notes">try now.
+                                Holy smokes, test 11.
+                                Ready to deploy?</p>
+                            <button class="edit-btn" data-id="1732637941926">Edit Notes</button>
+                            <button class="delete-btn" data-id="">Delete</button>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-4">
+    <div id="cardContainer">
+        <div class="card">
+            <img src="https://i.ytimg.com/vi/qyCVCGg_3Ec/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCPywTHQgBy_7uWNv6ba9yPihSUaA"
+                alt="Card Image">
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <a href="https://www.youtube.com/watch?v=qyCVCGg_3Ec">
+                            <h3>Microsoft Notepad.exe is overpowered now… and 13 other major updates for devs</h3>
+                        </a>
+                        <p></p>
+                        <p>Here's a summary of the text in point form:</p>
+                        <p><strong>AI in Developer Tools</strong></p>
+                        <ul>
+                            <li>Microsoft to add AI features to Notepad and Microsoft Paint in Windows 11</li>
+                            <li>Adobe announces Project Turntable, a 2D-to-3D vector graphic tool</li>
+                            <li>Google adds Gemini 9 Nano to Chrome browser, enabling AI-powered coding</li>
+                            <li>GitHub CoPilot now supports multiple models, including Gemini and Claude</li>
+                        </ul>
+                        <p><strong>Other Developer Tools and Frameworks</strong></p>
+                        <ul>
+                            <li>GitHub releases Spark, a tool for building mini applications with natural language</li>
+                            <li>StackBlitz announces Bolt, a tool for developing and previewing full applications in the
+                                browser using AI</li>
+                            <li>Next.js releases version 15, removing opinionated caching defaults</li>
+                            <li>Deno 2.0 makes JavaScript development less painful</li>
+                            <li>T releases version 2.0, a cross-platform tool for building desktop and mobile apps with
+                                frontend JavaScript</li>
+                        </ul>
+                        <p><strong>Cross-Platform Mobile App Tools</strong></p>
+                        <ul>
+                            <li>Flutter is forked into a new project called Flock, due to the lack of engineers on the
+                                Flutter team</li>
+                        </ul>
+                        <p><strong>Gaming</strong></p>
+                        <ul>
+                            <li>Ahiri Linux allows running AAA games on M1 Max, thanks to complex stack including FX,
+                                Wine, and dxvk</li>
+                        </ul>
+                        <p><strong>IDEs and Learning</strong></p>
+                        <ul>
+                            <li>JetBrains announces that WebStorm and Write IDEs are now free for personal use</li>
+                            <li>Brilliant is a platform for learning programming and other subjects through hands-on
+                                exercises.</li>
+                        </ul>
+                        <p></p> <br>
+                        <h4>Notes: </h4>
+                        <p class="card-body-notes">tool to create application from simple natural language. test.</p>
+                        <button class="edit-btn" data-id="1732357876622">Edit</button>
+                        <button class="delete-btn" data-id="">Delete</button>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="cardContainer">
+    <div class="card">
+        <img src="https://i.ytimg.com/vi/qyCVCGg_3Ec/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCPywTHQgBy_7uWNv6ba9yPihSUaA"
+            alt="Card Image">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <a href="https://www.youtube.com/watch?v=qyCVCGg_3Ec">
+                        <h3>Microsoft Notepad.exe is overpowered now… and 13 other major updates for devs</h3>
+                    </a>
+                    <p></p>
+                    <p>Here's a summary of the text in point form:</p>
+                    <p><strong>AI in Developer Tools</strong></p>
+                    <ul>
+                        <li>Microsoft to add AI features to Notepad and Microsoft Paint in Windows 11</li>
+                        <li>Adobe announces Project Turntable, a 2D-to-3D vector graphic tool</li>
+                        <li>Google adds Gemini 9 Nano to Chrome browser, enabling AI-powered coding</li>
+                        <li>GitHub CoPilot now supports multiple models, including Gemini and Claude</li>
+                    </ul>
+                    <p><strong>Other Developer Tools and Frameworks</strong></p>
+                    <ul>
+                        <li>GitHub releases Spark, a tool for building mini applications with natural language</li>
+                        <li>StackBlitz announces Bolt, a tool for developing and previewing full applications in the
+                            browser using AI</li>
+                        <li>Next.js releases version 15, removing opinionated caching defaults</li>
+                        <li>Deno 2.0 makes JavaScript development less painful</li>
+                        <li>T releases version 2.0, a cross-platform tool for building desktop and mobile apps with
+                            frontend JavaScript</li>
+                    </ul>
+                    <p><strong>Cross-Platform Mobile App Tools</strong></p>
+                    <ul>
+                        <li>Flutter is forked into a new project called Flock, due to the lack of engineers on the
+                            Flutter team</li>
+                    </ul>
+                    <p><strong>Gaming</strong></p>
+                    <ul>
+                        <li>Ahiri Linux allows running AAA games on M1 Max, thanks to complex stack including FX, Wine,
+                            and dxvk</li>
+                    </ul>
+                    <p><strong>IDEs and Learning</strong></p>
+                    <ul>
+                        <li>JetBrains announces that WebStorm and Write IDEs are now free for personal use</li>
+                        <li>Brilliant is a platform for learning programming and other subjects through hands-on
+                            exercises.</li>
+                    </ul>
+                    <p></p> <br>
+                    <h4>Notes: </h4>
+                    <p class="card-body-notes">tool to create application from simple natural language. test.</p>
+                    <button class="edit-btn" data-id="1732357876622">Edit</button>
+                    <button class="delete-btn" data-id="">Delete</button>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <img src="https://i.ytimg.com/vi/qyCVCGg_3Ec/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCPywTHQgBy_7uWNv6ba9yPihSUaA"
+        alt="Card Image">
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <a href="https://www.youtube.com/watch?v=qyCVCGg_3Ec">
+                    <h3>Microsoft Notepad.exe is overpowered now… and 13 other major updates for devs</h3>
+                </a>
+                <p></p>
+                <p>Here's a summary of the text in point form:</p>
+                <p><strong>AI in Developer Tools</strong></p>
+                <ul>
+                    <li>Microsoft to add AI features to Notepad and Microsoft Paint in Windows 11</li>
+                    <li>Adobe announces Project Turntable, a 2D-to-3D vector graphic tool</li>
+                    <li>Google adds Gemini 9 Nano to Chrome browser, enabling AI-powered coding</li>
+                    <li>GitHub CoPilot now supports multiple models, including Gemini and Claude</li>
+                </ul>
+                <p><strong>Other Developer Tools and Frameworks</strong></p>
+                <ul>
+                    <li>GitHub releases Spark, a tool for building mini applications with natural language</li>
+                    <li>StackBlitz announces Bolt, a tool for developing and previewing full applications in the browser
+                        using AI</li>
+                    <li>Next.js releases version 15, removing opinionated caching defaults</li>
+                    <li>Deno 2.0 makes JavaScript development less painful</li>
+                    <li>T releases version 2.0, a cross-platform tool for building desktop and mobile apps with frontend
+                        JavaScript</li>
+                </ul>
+                <p><strong>Cross-Platform Mobile App Tools</strong></p>
+                <ul>
+                    <li>Flutter is forked into a new project called Flock, due to the lack of engineers on the Flutter
+                        team</li>
+                </ul>
+                <p><strong>Gaming</strong></p>
+                <ul>
+                    <li>Ahiri Linux allows running AAA games on M1 Max, thanks to complex stack including FX, Wine, and
+                        dxvk</li>
+                </ul>
+                <p><strong>IDEs and Learning</strong></p>
+                <ul>
+                    <li>JetBrains announces that WebStorm and Write IDEs are now free for personal use</li>
+                    <li>Brilliant is a platform for learning programming and other subjects through hands-on exercises.
+                    </li>
+                </ul>
+                <p></p> <br>
+                <h4>Notes: </h4>
+                <p class="card-body-notes">tool to create application from simple natural language. test.</p>
+                <button class="edit-btn" data-id="1732357876622">Edit</button>
+                <button class="delete-btn" data-id="">Delete</button>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="cardContainer">
+    <div class="card">
+        <img src="https://i.ytimg.com/vi/qyCVCGg_3Ec/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCPywTHQgBy_7uWNv6ba9yPihSUaA"
+            alt="Card Image">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <a href="https://www.youtube.com/watch?v=qyCVCGg_3Ec">
+                        <h3>Microsoft Notepad.exe is overpowered now… and 13 other major updates for devs</h3>
+                    </a>
+                    <p></p>
+                    <p>Here's a summary of the text in point form:</p>
+                    <p><strong>AI in Developer Tools</strong></p>
+                    <ul>
+                        <li>Microsoft to add AI features to Notepad and Microsoft Paint in Windows 11</li>
+                        <li>Adobe announces Project Turntable, a 2D-to-3D vector graphic tool</li>
+                        <li>Google adds Gemini 9 Nano to Chrome browser, enabling AI-powered coding</li>
+                        <li>GitHub CoPilot now supports multiple models, including Gemini and Claude</li>
+                    </ul>
+                    <p><strong>Other Developer Tools and Frameworks</strong></p>
+                    <ul>
+                        <li>GitHub releases Spark, a tool for building mini applications with natural language</li>
+                        <li>StackBlitz announces Bolt, a tool for developing and previewing full applications in the
+                            browser using AI</li>
+                        <li>Next.js releases version 15, removing opinionated caching defaults</li>
+                        <li>Deno 2.0 makes JavaScript development less painful</li>
+                        <li>T releases version 2.0, a cross-platform tool for building desktop and mobile apps with
+                            frontend JavaScript</li>
+                    </ul>
+                    <p><strong>Cross-Platform Mobile App Tools</strong></p>
+                    <ul>
+                        <li>Flutter is forked into a new project called Flock, due to the lack of engineers on the
+                            Flutter team</li>
+                    </ul>
+                    <p><strong>Gaming</strong></p>
+                    <ul>
+                        <li>Ahiri Linux allows running AAA games on M1 Max, thanks to complex stack including FX, Wine,
+                            and dxvk</li>
+                    </ul>
+                    <p><strong>IDEs and Learning</strong></p>
+                    <ul>
+                        <li>JetBrains announces that WebStorm and Write IDEs are now free for personal use</li>
+                        <li>Brilliant is a platform for learning programming and other subjects through hands-on
+                            exercises.</li>
+                    </ul>
+                    <p></p> <br>
+                    <h4>Notes: </h4>
+                    <p class="card-body-notes">tool to create application from simple natural language. test.</p>
+                    <button class="edit-btn" data-id="1732357876622">Edit</button>
+                    <button class="delete-btn" data-id="">Delete</button>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-4">
+    <div id="cardContainer">
+        <div class="card">
+            <img src="https://i.ytimg.com/vi/qyCVCGg_3Ec/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCPywTHQgBy_7uWNv6ba9yPihSUaA"
+                alt="Card Image">
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <a href="https://www.youtube.com/watch?v=qyCVCGg_3Ec">
+                            <h3>Microsoft Notepad.exe is overpowered now… and 13 other major updates for devs</h3>
+                        </a>
+                        <p></p>
+                        <p>Here's a summary of the text in point form:</p>
+                        <p><strong>AI in Developer Tools</strong></p>
+                        <ul>
+                            <li>Microsoft to add AI features to Notepad and Microsoft Paint in Windows 11</li>
+                            <li>Adobe announces Project Turntable, a 2D-to-3D vector graphic tool</li>
+                            <li>Google adds Gemini 9 Nano to Chrome browser, enabling AI-powered coding</li>
+                            <li>GitHub CoPilot now supports multiple models, including Gemini and Claude</li>
+                        </ul>
+                        <p><strong>Other Developer Tools and Frameworks</strong></p>
+                        <ul>
+                            <li>GitHub releases Spark, a tool for building mini applications with natural language</li>
+                            <li>StackBlitz announces Bolt, a tool for developing and previewing full applications in the
+                                browser using AI</li>
+                            <li>Next.js releases version 15, removing opinionated caching defaults</li>
+                            <li>Deno 2.0 makes JavaScript development less painful</li>
+                            <li>T releases version 2.0, a cross-platform tool for building desktop and mobile apps with
+                                frontend JavaScript</li>
+                        </ul>
+                        <p><strong>Cross-Platform Mobile App Tools</strong></p>
+                        <ul>
+                            <li>Flutter is forked into a new project called Flock, due to the lack of engineers on the
+                                Flutter team</li>
+                        </ul>
+                        <p><strong>Gaming</strong></p>
+                        <ul>
+                            <li>Ahiri Linux allows running AAA games on M1 Max, thanks to complex stack including FX,
+                                Wine, and dxvk</li>
+                        </ul>
+                        <p><strong>IDEs and Learning</strong></p>
+                        <ul>
+                            <li>JetBrains announces that WebStorm and Write IDEs are now free for personal use</li>
+                            <li>Brilliant is a platform for learning programming and other subjects through hands-on
+                                exercises.</li>
+                        </ul>
+                        <p></p> <br>
+                        <h4>Notes: </h4>
+                        <p class="card-body-notes">tool to create application from simple natural language. test.</p>
+                        <button class="edit-btn" data-id="1732357876622">Edit</button>
+                        <button class="delete-btn" data-id="">Delete</button>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-4">
+    <div id="cardContainer">
+        <div class="card">
+            <img src="https://i.ytimg.com/vi/NRmkr50mkEE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDtvbZa0Av8U0g_NMj01UPnCBTXWA"
+                alt="Card Image">
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <a
+                            href="https://www.youtube.com/watch?v=NRmkr50mkEE&amp;list=PLhyRa0PyXvWXCIhZKc9u341LZ1TJP5wF5&amp;index=10">
+                            <h3>Ray Tracing: How NVIDIA Solved the Impossible!</h3>
+                        </a>
+                        <p></p>
+                        <h1><strong>Two Minute Papers: Solving the Impossible Problem of Real-Time Light
+                                Transport</strong></h1>
+                        <h2><strong>The Problem: Noise in Light Transport Simulation</strong></h2>
+                        <ul>
+                            <li>Noise is a major issue in light transport simulation, making photorealistic scenes
+                                difficult to achieve.</li>
+                            <li>Noise is caused by inaccuracies in estimating light rays and bouncing, taking millions
+                                of rays to simulate.</li>
+                            <li>Current methods take hours to weeks to finish, making real-time light transport seem
+                                impossible.</li>
+                        </ul>
+                        <h2><strong>Finding a Solution: Importance Sampling and Smart Algorithms</strong></h2>
+                        <ul>
+                            <li>Importance sampling: choosing where to shoot rays in the scene.</li>
+                            <li>Metropolis Light Transport and Manifold Exploration algorithms are examples of smart
+                                algorithms.</li>
+                        </ul>
+                        <h2><strong>The Breakthrough: Voxel Cone Tracing</strong></h2>
+                        <ul>
+                            <li>2011 paper by NVIDIA: Voxel Cone Tracing.</li>
+                            <li>Subdivides the space into voxels, reducing the complexity of light simulation.</li>
+                            <li>Only computes 2 bounces for each light ray.</li>
+                        </ul>
+                        <h2><strong>The Future: Ray Allocation and Denoising</strong></h2>
+                        <ul>
+                            <li>Ray allocation: allocating ray samples more effectively.</li>
+                            <li>Denoising algorithms: removing noise from simulated light.</li>
+                        </ul>
+                        <h2><strong>Real-Time Light Transport Achieved?</strong></h2>
+                        <ul>
+                            <li>Paper 2: rendering an amusement park scene with 20 million triangles in milliseconds.
+                            </li>
+                            <li>Interactive method, 10-100 times faster than previous techniques.</li>
+                            <li>Ray allocation and denoising technology used.</li>
+                        </ul>
+                        <h2><strong>The Next Step: Dynamic Scenes and Real-Time Rendering</strong></h2>
+                        <ul>
+                            <li>Paper 3: rendering dynamic scenes with rapid changes in lighting in real-time.</li>
+                            <li>Paper 4: accelerating progress in difficult light paths, such as caustics.</li>
+                        </ul>
+                        <h2><strong>Conclusion: The Future of Light Transport Research</strong></h2>
+                        <ul>
+                            <li>The direction of light transport research is incredible, with new papers emerging.</li>
+                            <li>Real-time light transport is achievable, democratized by NVIDIA's tech transfer.</li>
+                            <li>Prioritize consolidating insights and not making things up.</li>
+                        </ul>
+                        <p></p> <br>
+                        <h4>Notes: </h4>
+                        <p class="card-body-notes">try now.
+                            Holy smokes, test 11.
+                            Ready to deploy?</p>
+                        <button class="edit-btn" data-id="1732637941926">Edit Notes</button>
+                        <button class="delete-btn" data-id="">Delete</button>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="cardContainer">
+    <div class="card">
+        <img src="https://i.ytimg.com/vi/NRmkr50mkEE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDtvbZa0Av8U0g_NMj01UPnCBTXWA"
+            alt="Card Image">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <a
+                        href="https://www.youtube.com/watch?v=NRmkr50mkEE&amp;list=PLhyRa0PyXvWXCIhZKc9u341LZ1TJP5wF5&amp;index=10">
+                        <h3>Ray Tracing: How NVIDIA Solved the Impossible!</h3>
+                    </a>
+                    <p></p>
+                    <h1><strong>Two Minute Papers: Solving the Impossible Problem of Real-Time Light Transport</strong>
+                    </h1>
+                    <h2><strong>The Problem: Noise in Light Transport Simulation</strong></h2>
+                    <ul>
+                        <li>Noise is a major issue in light transport simulation, making photorealistic scenes difficult
+                            to achieve.</li>
+                        <li>Noise is caused by inaccuracies in estimating light rays and bouncing, taking millions of
+                            rays to simulate.</li>
+                        <li>Current methods take hours to weeks to finish, making real-time light transport seem
+                            impossible.</li>
+                    </ul>
+                    <h2><strong>Finding a Solution: Importance Sampling and Smart Algorithms</strong></h2>
+                    <ul>
+                        <li>Importance sampling: choosing where to shoot rays in the scene.</li>
+                        <li>Metropolis Light Transport and Manifold Exploration algorithms are examples of smart
+                            algorithms.</li>
+                    </ul>
+                    <h2><strong>The Breakthrough: Voxel Cone Tracing</strong></h2>
+                    <ul>
+                        <li>2011 paper by NVIDIA: Voxel Cone Tracing.</li>
+                        <li>Subdivides the space into voxels, reducing the complexity of light simulation.</li>
+                        <li>Only computes 2 bounces for each light ray.</li>
+                    </ul>
+                    <h2><strong>The Future: Ray Allocation and Denoising</strong></h2>
+                    <ul>
+                        <li>Ray allocation: allocating ray samples more effectively.</li>
+                        <li>Denoising algorithms: removing noise from simulated light.</li>
+                    </ul>
+                    <h2><strong>Real-Time Light Transport Achieved?</strong></h2>
+                    <ul>
+                        <li>Paper 2: rendering an amusement park scene with 20 million triangles in milliseconds.</li>
+                        <li>Interactive method, 10-100 times faster than previous techniques.</li>
+                        <li>Ray allocation and denoising technology used.</li>
+                    </ul>
+                    <h2><strong>The Next Step: Dynamic Scenes and Real-Time Rendering</strong></h2>
+                    <ul>
+                        <li>Paper 3: rendering dynamic scenes with rapid changes in lighting in real-time.</li>
+                        <li>Paper 4: accelerating progress in difficult light paths, such as caustics.</li>
+                    </ul>
+                    <h2><strong>Conclusion: The Future of Light Transport Research</strong></h2>
+                    <ul>
+                        <li>The direction of light transport research is incredible, with new papers emerging.</li>
+                        <li>Real-time light transport is achievable, democratized by NVIDIA's tech transfer.</li>
+                        <li>Prioritize consolidating insights and not making things up.</li>
+                    </ul>
+                    <p></p> <br>
+                    <h4>Notes: </h4>
+                    <p class="card-body-notes">try now.
+                        Holy smokes, test 11.
+                        Ready to deploy?</p>
+                    <button class="edit-btn" data-id="1732637941926">Edit Notes</button>
+                    <button class="delete-btn" data-id="">Delete</button>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <img src="https://i.ytimg.com/vi/NRmkr50mkEE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDtvbZa0Av8U0g_NMj01UPnCBTXWA"
+        alt="Card Image">
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <a
+                    href="https://www.youtube.com/watch?v=NRmkr50mkEE&amp;list=PLhyRa0PyXvWXCIhZKc9u341LZ1TJP5wF5&amp;index=10">
+                    <h3>Ray Tracing: How NVIDIA Solved the Impossible!</h3>
+                </a>
+                <p></p>
+                <h1><strong>Two Minute Papers: Solving the Impossible Problem of Real-Time Light Transport</strong></h1>
+                <h2><strong>The Problem: Noise in Light Transport Simulation</strong></h2>
+                <ul>
+                    <li>Noise is a major issue in light transport simulation, making photorealistic scenes difficult to
+                        achieve.</li>
+                    <li>Noise is caused by inaccuracies in estimating light rays and bouncing, taking millions of rays
+                        to simulate.</li>
+                    <li>Current methods take hours to weeks to finish, making real-time light transport seem impossible.
+                    </li>
+                </ul>
+                <h2><strong>Finding a Solution: Importance Sampling and Smart Algorithms</strong></h2>
+                <ul>
+                    <li>Importance sampling: choosing where to shoot rays in the scene.</li>
+                    <li>Metropolis Light Transport and Manifold Exploration algorithms are examples of smart algorithms.
+                    </li>
+                </ul>
+                <h2><strong>The Breakthrough: Voxel Cone Tracing</strong></h2>
+                <ul>
+                    <li>2011 paper by NVIDIA: Voxel Cone Tracing.</li>
+                    <li>Subdivides the space into voxels, reducing the complexity of light simulation.</li>
+                    <li>Only computes 2 bounces for each light ray.</li>
+                </ul>
+                <h2><strong>The Future: Ray Allocation and Denoising</strong></h2>
+                <ul>
+                    <li>Ray allocation: allocating ray samples more effectively.</li>
+                    <li>Denoising algorithms: removing noise from simulated light.</li>
+                </ul>
+                <h2><strong>Real-Time Light Transport Achieved?</strong></h2>
+                <ul>
+                    <li>Paper 2: rendering an amusement park scene with 20 million triangles in milliseconds.</li>
+                    <li>Interactive method, 10-100 times faster than previous techniques.</li>
+                    <li>Ray allocation and denoising technology used.</li>
+                </ul>
+                <h2><strong>The Next Step: Dynamic Scenes and Real-Time Rendering</strong></h2>
+                <ul>
+                    <li>Paper 3: rendering dynamic scenes with rapid changes in lighting in real-time.</li>
+                    <li>Paper 4: accelerating progress in difficult light paths, such as caustics.</li>
+                </ul>
+                <h2><strong>Conclusion: The Future of Light Transport Research</strong></h2>
+                <ul>
+                    <li>The direction of light transport research is incredible, with new papers emerging.</li>
+                    <li>Real-time light transport is achievable, democratized by NVIDIA's tech transfer.</li>
+                    <li>Prioritize consolidating insights and not making things up.</li>
+                </ul>
+                <p></p> <br>
+                <h4>Notes: </h4>
+                <p class="card-body-notes">try now.
+                    Holy smokes, test 11.
+                    Ready to deploy?</p>
+                <button class="edit-btn" data-id="1732637941926">Edit Notes</button>
+                <button class="delete-btn" data-id="">Delete</button>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="cardContainer">
+    <div class="card">
+        <img src="https://i.ytimg.com/vi/NRmkr50mkEE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDtvbZa0Av8U0g_NMj01UPnCBTXWA"
+            alt="Card Image">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <a
+                        href="https://www.youtube.com/watch?v=NRmkr50mkEE&amp;list=PLhyRa0PyXvWXCIhZKc9u341LZ1TJP5wF5&amp;index=10">
+                        <h3>Ray Tracing: How NVIDIA Solved the Impossible!</h3>
+                    </a>
+                    <p></p>
+                    <h1><strong>Two Minute Papers: Solving the Impossible Problem of Real-Time Light Transport</strong>
+                    </h1>
+                    <h2><strong>The Problem: Noise in Light Transport Simulation</strong></h2>
+                    <ul>
+                        <li>Noise is a major issue in light transport simulation, making photorealistic scenes difficult
+                            to achieve.</li>
+                        <li>Noise is caused by inaccuracies in estimating light rays and bouncing, taking millions of
+                            rays to simulate.</li>
+                        <li>Current methods take hours to weeks to finish, making real-time light transport seem
+                            impossible.</li>
+                    </ul>
+                    <h2><strong>Finding a Solution: Importance Sampling and Smart Algorithms</strong></h2>
+                    <ul>
+                        <li>Importance sampling: choosing where to shoot rays in the scene.</li>
+                        <li>Metropolis Light Transport and Manifold Exploration algorithms are examples of smart
+                            algorithms.</li>
+                    </ul>
+                    <h2><strong>The Breakthrough: Voxel Cone Tracing</strong></h2>
+                    <ul>
+                        <li>2011 paper by NVIDIA: Voxel Cone Tracing.</li>
+                        <li>Subdivides the space into voxels, reducing the complexity of light simulation.</li>
+                        <li>Only computes 2 bounces for each light ray.</li>
+                    </ul>
+                    <h2><strong>The Future: Ray Allocation and Denoising</strong></h2>
+                    <ul>
+                        <li>Ray allocation: allocating ray samples more effectively.</li>
+                        <li>Denoising algorithms: removing noise from simulated light.</li>
+                    </ul>
+                    <h2><strong>Real-Time Light Transport Achieved?</strong></h2>
+                    <ul>
+                        <li>Paper 2: rendering an amusement park scene with 20 million triangles in milliseconds.</li>
+                        <li>Interactive method, 10-100 times faster than previous techniques.</li>
+                        <li>Ray allocation and denoising technology used.</li>
+                    </ul>
+                    <h2><strong>The Next Step: Dynamic Scenes and Real-Time Rendering</strong></h2>
+                    <ul>
+                        <li>Paper 3: rendering dynamic scenes with rapid changes in lighting in real-time.</li>
+                        <li>Paper 4: accelerating progress in difficult light paths, such as caustics.</li>
+                    </ul>
+                    <h2><strong>Conclusion: The Future of Light Transport Research</strong></h2>
+                    <ul>
+                        <li>The direction of light transport research is incredible, with new papers emerging.</li>
+                        <li>Real-time light transport is achievable, democratized by NVIDIA's tech transfer.</li>
+                        <li>Prioritize consolidating insights and not making things up.</li>
+                    </ul>
+                    <p></p> <br>
+                    <h4>Notes: </h4>
+                    <p class="card-body-notes">try now.
+                        Holy smokes, test 11.
+                        Ready to deploy?</p>
+                    <button class="edit-btn" data-id="1732637941926">Edit Notes</button>
+                    <button class="delete-btn" data-id="">Delete</button>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-4">
+    <div id="cardContainer">
+        <div class="card">
+            <img src="https://i.ytimg.com/vi/NRmkr50mkEE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDtvbZa0Av8U0g_NMj01UPnCBTXWA"
+                alt="Card Image">
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <a
+                            href="https://www.youtube.com/watch?v=NRmkr50mkEE&amp;list=PLhyRa0PyXvWXCIhZKc9u341LZ1TJP5wF5&amp;index=10">
+                            <h3>Ray Tracing: How NVIDIA Solved the Impossible!</h3>
+                        </a>
+                        <p></p>
+                        <h1><strong>Two Minute Papers: Solving the Impossible Problem of Real-Time Light
+                                Transport</strong></h1>
+                        <h2><strong>The Problem: Noise in Light Transport Simulation</strong></h2>
+                        <ul>
+                            <li>Noise is a major issue in light transport simulation, making photorealistic scenes
+                                difficult to achieve.</li>
+                            <li>Noise is caused by inaccuracies in estimating light rays and bouncing, taking millions
+                                of rays to simulate.</li>
+                            <li>Current methods take hours to weeks to finish, making real-time light transport seem
+                                impossible.</li>
+                        </ul>
+                        <h2><strong>Finding a Solution: Importance Sampling and Smart Algorithms</strong></h2>
+                        <ul>
+                            <li>Importance sampling: choosing where to shoot rays in the scene.</li>
+                            <li>Metropolis Light Transport and Manifold Exploration algorithms are examples of smart
+                                algorithms.</li>
+                        </ul>
+                        <h2><strong>The Breakthrough: Voxel Cone Tracing</strong></h2>
+                        <ul>
+                            <li>2011 paper by NVIDIA: Voxel Cone Tracing.</li>
+                            <li>Subdivides the space into voxels, reducing the complexity of light simulation.</li>
+                            <li>Only computes 2 bounces for each light ray.</li>
+                        </ul>
+                        <h2><strong>The Future: Ray Allocation and Denoising</strong></h2>
+                        <ul>
+                            <li>Ray allocation: allocating ray samples more effectively.</li>
+                            <li>Denoising algorithms: removing noise from simulated light.</li>
+                        </ul>
+                        <h2><strong>Real-Time Light Transport Achieved?</strong></h2>
+                        <ul>
+                            <li>Paper 2: rendering an amusement park scene with 20 million triangles in milliseconds.
+                            </li>
+                            <li>Interactive method, 10-100 times faster than previous techniques.</li>
+                            <li>Ray allocation and denoising technology used.</li>
+                        </ul>
+                        <h2><strong>The Next Step: Dynamic Scenes and Real-Time Rendering</strong></h2>
+                        <ul>
+                            <li>Paper 3: rendering dynamic scenes with rapid changes in lighting in real-time.</li>
+                            <li>Paper 4: accelerating progress in difficult light paths, such as caustics.</li>
+                        </ul>
+                        <h2><strong>Conclusion: The Future of Light Transport Research</strong></h2>
+                        <ul>
+                            <li>The direction of light transport research is incredible, with new papers emerging.</li>
+                            <li>Real-time light transport is achievable, democratized by NVIDIA's tech transfer.</li>
+                            <li>Prioritize consolidating insights and not making things up.</li>
+                        </ul>
+                        <p></p> <br>
+                        <h4>Notes: </h4>
+                        <p class="card-body-notes">try now.
+                            Holy smokes, test 11.
+                            Ready to deploy?</p>
+                        <button class="edit-btn" data-id="1732637941926">Edit Notes</button>
+                        <button class="delete-btn" data-id="">Delete</button>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row g-4">
+    <div class="col-4">
+        <div id="cardContainer">
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/qyCVCGg_3Ec/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCPywTHQgBy_7uWNv6ba9yPihSUaA"
+                    alt="Card Image">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <a href="https://www.youtube.com/watch?v=qyCVCGg_3Ec">
+                                <h3>Microsoft Notepad.exe is overpowered now… and 13 other major updates for devs</h3>
+                            </a>
+                            <p></p>
+                            <p>Here's a summary of the text in point form:</p>
+                            <p><strong>AI in Developer Tools</strong></p>
+                            <ul>
+                                <li>Microsoft to add AI features to Notepad and Microsoft Paint in Windows 11</li>
+                                <li>Adobe announces Project Turntable, a 2D-to-3D vector graphic tool</li>
+                                <li>Google adds Gemini 9 Nano to Chrome browser, enabling AI-powered coding</li>
+                                <li>GitHub CoPilot now supports multiple models, including Gemini and Claude</li>
+                            </ul>
+                            <p><strong>Other Developer Tools and Frameworks</strong></p>
+                            <ul>
+                                <li>GitHub releases Spark, a tool for building mini applications with natural language
+                                </li>
+                                <li>StackBlitz announces Bolt, a tool for developing and previewing full applications in
+                                    the browser using AI</li>
+                                <li>Next.js releases version 15, removing opinionated caching defaults</li>
+                                <li>Deno 2.0 makes JavaScript development less painful</li>
+                                <li>T releases version 2.0, a cross-platform tool for building desktop and mobile apps
+                                    with frontend JavaScript</li>
+                            </ul>
+                            <p><strong>Cross-Platform Mobile App Tools</strong></p>
+                            <ul>
+                                <li>Flutter is forked into a new project called Flock, due to the lack of engineers on
+                                    the Flutter team</li>
+                            </ul>
+                            <p><strong>Gaming</strong></p>
+                            <ul>
+                                <li>Ahiri Linux allows running AAA games on M1 Max, thanks to complex stack including
+                                    FX, Wine, and dxvk</li>
+                            </ul>
+                            <p><strong>IDEs and Learning</strong></p>
+                            <ul>
+                                <li>JetBrains announces that WebStorm and Write IDEs are now free for personal use</li>
+                                <li>Brilliant is a platform for learning programming and other subjects through hands-on
+                                    exercises.</li>
+                            </ul>
+                            <p></p> <br>
+                            <h4>Notes: </h4>
+                            <p class="card-body-notes">tool to create application from simple natural language. test.
+                            </p>
+                            <button class="edit-btn" data-id="1732357876622">Edit</button>
+                            <button class="delete-btn" data-id="">Delete</button>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div id="cardContainer">
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/NRmkr50mkEE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDtvbZa0Av8U0g_NMj01UPnCBTXWA"
+                    alt="Card Image">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <a
+                                href="https://www.youtube.com/watch?v=NRmkr50mkEE&amp;list=PLhyRa0PyXvWXCIhZKc9u341LZ1TJP5wF5&amp;index=10">
+                                <h3>Ray Tracing: How NVIDIA Solved the Impossible!</h3>
+                            </a>
+                            <p></p>
+                            <h1><strong>Two Minute Papers: Solving the Impossible Problem of Real-Time Light
+                                    Transport</strong></h1>
+                            <h2><strong>The Problem: Noise in Light Transport Simulation</strong></h2>
+                            <ul>
+                                <li>Noise is a major issue in light transport simulation, making photorealistic scenes
+                                    difficult to achieve.</li>
+                                <li>Noise is caused by inaccuracies in estimating light rays and bouncing, taking
+                                    millions of rays to simulate.</li>
+                                <li>Current methods take hours to weeks to finish, making real-time light transport seem
+                                    impossible.</li>
+                            </ul>
+                            <h2><strong>Finding a Solution: Importance Sampling and Smart Algorithms</strong></h2>
+                            <ul>
+                                <li>Importance sampling: choosing where to shoot rays in the scene.</li>
+                                <li>Metropolis Light Transport and Manifold Exploration algorithms are examples of smart
+                                    algorithms.</li>
+                            </ul>
+                            <h2><strong>The Breakthrough: Voxel Cone Tracing</strong></h2>
+                            <ul>
+                                <li>2011 paper by NVIDIA: Voxel Cone Tracing.</li>
+                                <li>Subdivides the space into voxels, reducing the complexity of light simulation.</li>
+                                <li>Only computes 2 bounces for each light ray.</li>
+                            </ul>
+                            <h2><strong>The Future: Ray Allocation and Denoising</strong></h2>
+                            <ul>
+                                <li>Ray allocation: allocating ray samples more effectively.</li>
+                                <li>Denoising algorithms: removing noise from simulated light.</li>
+                            </ul>
+                            <h2><strong>Real-Time Light Transport Achieved?</strong></h2>
+                            <ul>
+                                <li>Paper 2: rendering an amusement park scene with 20 million triangles in
+                                    milliseconds.</li>
+                                <li>Interactive method, 10-100 times faster than previous techniques.</li>
+                                <li>Ray allocation and denoising technology used.</li>
+                            </ul>
+                            <h2><strong>The Next Step: Dynamic Scenes and Real-Time Rendering</strong></h2>
+                            <ul>
+                                <li>Paper 3: rendering dynamic scenes with rapid changes in lighting in real-time.</li>
+                                <li>Paper 4: accelerating progress in difficult light paths, such as caustics.</li>
+                            </ul>
+                            <h2><strong>Conclusion: The Future of Light Transport Research</strong></h2>
+                            <ul>
+                                <li>The direction of light transport research is incredible, with new papers emerging.
+                                </li>
+                                <li>Real-time light transport is achievable, democratized by NVIDIA's tech transfer.
+                                </li>
+                                <li>Prioritize consolidating insights and not making things up.</li>
+                            </ul>
+                            <p></p> <br>
+                            <h4>Notes: </h4>
+                            <p class="card-body-notes">try now.
+                                Holy smokes, test 11.
+                                Ready to deploy?</p>
+                            <button class="edit-btn" data-id="1732637941926">Edit Notes</button>
+                            <button class="delete-btn" data-id="">Delete</button>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row g-4">
+        <div class="col-4">
+            <div id="cardContainer">
+                <div class="card">
+                    <img src="https://i.ytimg.com/vi/qyCVCGg_3Ec/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCPywTHQgBy_7uWNv6ba9yPihSUaA"
+                        alt="Card Image">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <a href="https://www.youtube.com/watch?v=qyCVCGg_3Ec">
+                                    <h3>Microsoft Notepad.exe is overpowered now… and 13 other major updates for devs
+                                    </h3>
+                                </a>
+                                <p></p>
+                                <p>Here's a summary of the text in point form:</p>
+                                <p><strong>AI in Developer Tools</strong></p>
+                                <ul>
+                                    <li>Microsoft to add AI features to Notepad and Microsoft Paint in Windows 11</li>
+                                    <li>Adobe announces Project Turntable, a 2D-to-3D vector graphic tool</li>
+                                    <li>Google adds Gemini 9 Nano to Chrome browser, enabling AI-powered coding</li>
+                                    <li>GitHub CoPilot now supports multiple models, including Gemini and Claude</li>
+                                </ul>
+                                <p><strong>Other Developer Tools and Frameworks</strong></p>
+                                <ul>
+                                    <li>GitHub releases Spark, a tool for building mini applications with natural
+                                        language</li>
+                                    <li>StackBlitz announces Bolt, a tool for developing and previewing full
+                                        applications in the browser using AI</li>
+                                    <li>Next.js releases version 15, removing opinionated caching defaults</li>
+                                    <li>Deno 2.0 makes JavaScript development less painful</li>
+                                    <li>T releases version 2.0, a cross-platform tool for building desktop and mobile
+                                        apps with frontend JavaScript</li>
+                                </ul>
+                                <p><strong>Cross-Platform Mobile App Tools</strong></p>
+                                <ul>
+                                    <li>Flutter is forked into a new project called Flock, due to the lack of engineers
+                                        on the Flutter team</li>
+                                </ul>
+                                <p><strong>Gaming</strong></p>
+                                <ul>
+                                    <li>Ahiri Linux allows running AAA games on M1 Max, thanks to complex stack
+                                        including FX, Wine, and dxvk</li>
+                                </ul>
+                                <p><strong>IDEs and Learning</strong></p>
+                                <ul>
+                                    <li>JetBrains announces that WebStorm and Write IDEs are now free for personal use
+                                    </li>
+                                    <li>Brilliant is a platform for learning programming and other subjects through
+                                        hands-on exercises.</li>
+                                </ul>
+                                <p></p> <br>
+                                <h4>Notes: </h4>
+                                <p class="card-body-notes">tool to create application from simple natural language.
+                                    test.</p>
+                                <button class="edit-btn" data-id="1732357876622">Edit</button>
+                                <button class="delete-btn" data-id="">Delete</button>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div id="cardContainer">
+                <div class="card">
+                    <img src="https://i.ytimg.com/vi/NRmkr50mkEE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDtvbZa0Av8U0g_NMj01UPnCBTXWA"
+                        alt="Card Image">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <a
+                                    href="https://www.youtube.com/watch?v=NRmkr50mkEE&amp;list=PLhyRa0PyXvWXCIhZKc9u341LZ1TJP5wF5&amp;index=10">
+                                    <h3>Ray Tracing: How NVIDIA Solved the Impossible!</h3>
+                                </a>
+                                <p></p>
+                                <h1><strong>Two Minute Papers: Solving the Impossible Problem of Real-Time Light
+                                        Transport</strong></h1>
+                                <h2><strong>The Problem: Noise in Light Transport Simulation</strong></h2>
+                                <ul>
+                                    <li>Noise is a major issue in light transport simulation, making photorealistic
+                                        scenes difficult to achieve.</li>
+                                    <li>Noise is caused by inaccuracies in estimating light rays and bouncing, taking
+                                        millions of rays to simulate.</li>
+                                    <li>Current methods take hours to weeks to finish, making real-time light transport
+                                        seem impossible.</li>
+                                </ul>
+                                <h2><strong>Finding a Solution: Importance Sampling and Smart Algorithms</strong></h2>
+                                <ul>
+                                    <li>Importance sampling: choosing where to shoot rays in the scene.</li>
+                                    <li>Metropolis Light Transport and Manifold Exploration algorithms are examples of
+                                        smart algorithms.</li>
+                                </ul>
+                                <h2><strong>The Breakthrough: Voxel Cone Tracing</strong></h2>
+                                <ul>
+                                    <li>2011 paper by NVIDIA: Voxel Cone Tracing.</li>
+                                    <li>Subdivides the space into voxels, reducing the complexity of light simulation.
+                                    </li>
+                                    <li>Only computes 2 bounces for each light ray.</li>
+                                </ul>
+                                <h2><strong>The Future: Ray Allocation and Denoising</strong></h2>
+                                <ul>
+                                    <li>Ray allocation: allocating ray samples more effectively.</li>
+                                    <li>Denoising algorithms: removing noise from simulated light.</li>
+                                </ul>
+                                <h2><strong>Real-Time Light Transport Achieved?</strong></h2>
+                                <ul>
+                                    <li>Paper 2: rendering an amusement park scene with 20 million triangles in
+                                        milliseconds.</li>
+                                    <li>Interactive method, 10-100 times faster than previous techniques.</li>
+                                    <li>Ray allocation and denoising technology used.</li>
+                                </ul>
+                                <h2><strong>The Next Step: Dynamic Scenes and Real-Time Rendering</strong></h2>
+                                <ul>
+                                    <li>Paper 3: rendering dynamic scenes with rapid changes in lighting in real-time.
+                                    </li>
+                                    <li>Paper 4: accelerating progress in difficult light paths, such as caustics.</li>
+                                </ul>
+                                <h2><strong>Conclusion: The Future of Light Transport Research</strong></h2>
+                                <ul>
+                                    <li>The direction of light transport research is incredible, with new papers
+                                        emerging.</li>
+                                    <li>Real-time light transport is achievable, democratized by NVIDIA's tech transfer.
+                                    </li>
+                                    <li>Prioritize consolidating insights and not making things up.</li>
+                                </ul>
+                                <p></p> <br>
+                                <h4>Notes: </h4>
+                                <p class="card-body-notes">try now.
+                                    Holy smokes, test 11.
+                                    Ready to deploy?</p>
+                                <button class="edit-btn" data-id="1732637941926">Edit Notes</button>
+                                <button class="delete-btn" data-id="">Delete</button>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- For testing -->
+<div class="testing">
+    <h3>Here's the transcript!:<br></h3>
+    <span id="youtube_transcript"></span>
+    <br><br>
+    <h3>Summary: <br><span id="summarised_text"></span></h3>
+</div>
+<script src="script.js"></script>
+<!-- Code injected by live-server -->
+<script>
+    // <![CDATA[  <-- For SVG support
+    if ('WebSocket' in window) {
+        (function () {
+            function refreshCSS() {
+                var sheets = [].slice.call(document.getElementsByTagName("link"));
+                var head = document.getElementsByTagName("head")[0];
+                for (var i = 0; i < sheets.length; ++i) {
+                    var elem = sheets[i];
+                    var parent = elem.parentElement || head;
+                    parent.removeChild(elem);
+                    var rel = elem.rel;
+                    if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                        var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                        elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                    }
+                    parent.appendChild(elem);
+                }
+            }
+            var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+            var address = protocol + window.location.host + window.location.pathname + '/ws';
+            var socket = new WebSocket(address);
+            socket.onmessage = function (msg) {
+                if (msg.data == 'reload') window.location.reload();
+                else if (msg.data == 'refreshcss') refreshCSS();
+            };
+            if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                console.log('Live reload enabled.');
+                sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+            }
+        })();
+    }
+    else {
+        console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+    }
+    // ]]>
+</script>
+
+<body>
+
+    <div class="container">
+        <h1>Youtube Euphoria </h1>
+        <h3>Some Info: <span id="someInfo"></span></h3>
+        <form id="cardForm">
+            <input type="text" id="youtube_url" name="youtube_url" placeholder="Youtube Url">
+            <textarea id="videoDescription" placeholder="Input Description"></textarea>
+            <button type="submit" id="btnSubmit" name="btnSubmit">Save Video to Notes</button>
+        </form>
+    </div>
+    <div class="container-fluid">
+        <div class="row g-4">
+            <div class="col-4">
+                <div id="cardContainer">
+                    <div class="card">
+                        <img src="https://i.ytimg.com/vi/qyCVCGg_3Ec/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCPywTHQgBy_7uWNv6ba9yPihSUaA"
+                            alt="Card Image">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <a href="https://www.youtube.com/watch?v=qyCVCGg_3Ec">
+                                        <h3>Microsoft Notepad.exe is overpowered now… and 13 other major updates for
+                                            devs</h3>
+                                    </a>
+                                    <p></p>
+                                    <p>Here's a summary of the text in point form:</p>
+                                    <p><strong>AI in Developer Tools</strong></p>
+                                    <ul>
+                                        <li>Microsoft to add AI features to Notepad and Microsoft Paint in Windows 11
+                                        </li>
+                                        <li>Adobe announces Project Turntable, a 2D-to-3D vector graphic tool</li>
+                                        <li>Google adds Gemini 9 Nano to Chrome browser, enabling AI-powered coding</li>
+                                        <li>GitHub CoPilot now supports multiple models, including Gemini and Claude
+                                        </li>
+                                    </ul>
+                                    <p><strong>Other Developer Tools and Frameworks</strong></p>
+                                    <ul>
+                                        <li>GitHub releases Spark, a tool for building mini applications with natural
+                                            language</li>
+                                        <li>StackBlitz announces Bolt, a tool for developing and previewing full
+                                            applications in the browser using AI</li>
+                                        <li>Next.js releases version 15, removing opinionated caching defaults</li>
+                                        <li>Deno 2.0 makes JavaScript development less painful</li>
+                                        <li>T releases version 2.0, a cross-platform tool for building desktop and
+                                            mobile apps with frontend JavaScript</li>
+                                    </ul>
+                                    <p><strong>Cross-Platform Mobile App Tools</strong></p>
+                                    <ul>
+                                        <li>Flutter is forked into a new project called Flock, due to the lack of
+                                            engineers on the Flutter team</li>
+                                    </ul>
+                                    <p><strong>Gaming</strong></p>
+                                    <ul>
+                                        <li>Ahiri Linux allows running AAA games on M1 Max, thanks to complex stack
+                                            including FX, Wine, and dxvk</li>
+                                    </ul>
+                                    <p><strong>IDEs and Learning</strong></p>
+                                    <ul>
+                                        <li>JetBrains announces that WebStorm and Write IDEs are now free for personal
+                                            use</li>
+                                        <li>Brilliant is a platform for learning programming and other subjects through
+                                            hands-on exercises.</li>
+                                    </ul>
+                                    <p></p> <br>
+                                    <h4>Notes: </h4>
+                                    <p class="card-body-notes">tool to create application from simple natural language.
+                                        test.</p>
+                                    <button class="edit-btn" data-id="1732357876622">Edit</button>
+                                    <button class="delete-btn" data-id="">Delete</button>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div id="cardContainer">
+                    <div class="card">
+                        <img src="https://i.ytimg.com/vi/NRmkr50mkEE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDtvbZa0Av8U0g_NMj01UPnCBTXWA"
+                            alt="Card Image">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <a
+                                        href="https://www.youtube.com/watch?v=NRmkr50mkEE&amp;list=PLhyRa0PyXvWXCIhZKc9u341LZ1TJP5wF5&amp;index=10">
+                                        <h3>Ray Tracing: How NVIDIA Solved the Impossible!</h3>
+                                    </a>
+                                    <p></p>
+                                    <h1><strong>Two Minute Papers: Solving the Impossible Problem of Real-Time Light
+                                            Transport</strong></h1>
+                                    <h2><strong>The Problem: Noise in Light Transport Simulation</strong></h2>
+                                    <ul>
+                                        <li>Noise is a major issue in light transport simulation, making photorealistic
+                                            scenes difficult to achieve.</li>
+                                        <li>Noise is caused by inaccuracies in estimating light rays and bouncing,
+                                            taking millions of rays to simulate.</li>
+                                        <li>Current methods take hours to weeks to finish, making real-time light
+                                            transport seem impossible.</li>
+                                    </ul>
+                                    <h2><strong>Finding a Solution: Importance Sampling and Smart Algorithms</strong>
+                                    </h2>
+                                    <ul>
+                                        <li>Importance sampling: choosing where to shoot rays in the scene.</li>
+                                        <li>Metropolis Light Transport and Manifold Exploration algorithms are examples
+                                            of smart algorithms.</li>
+                                    </ul>
+                                    <h2><strong>The Breakthrough: Voxel Cone Tracing</strong></h2>
+                                    <ul>
+                                        <li>2011 paper by NVIDIA: Voxel Cone Tracing.</li>
+                                        <li>Subdivides the space into voxels, reducing the complexity of light
+                                            simulation.</li>
+                                        <li>Only computes 2 bounces for each light ray.</li>
+                                    </ul>
+                                    <h2><strong>The Future: Ray Allocation and Denoising</strong></h2>
+                                    <ul>
+                                        <li>Ray allocation: allocating ray samples more effectively.</li>
+                                        <li>Denoising algorithms: removing noise from simulated light.</li>
+                                    </ul>
+                                    <h2><strong>Real-Time Light Transport Achieved?</strong></h2>
+                                    <ul>
+                                        <li>Paper 2: rendering an amusement park scene with 20 million triangles in
+                                            milliseconds.</li>
+                                        <li>Interactive method, 10-100 times faster than previous techniques.</li>
+                                        <li>Ray allocation and denoising technology used.</li>
+                                    </ul>
+                                    <h2><strong>The Next Step: Dynamic Scenes and Real-Time Rendering</strong></h2>
+                                    <ul>
+                                        <li>Paper 3: rendering dynamic scenes with rapid changes in lighting in
+                                            real-time.</li>
+                                        <li>Paper 4: accelerating progress in difficult light paths, such as caustics.
+                                        </li>
+                                    </ul>
+                                    <h2><strong>Conclusion: The Future of Light Transport Research</strong></h2>
+                                    <ul>
+                                        <li>The direction of light transport research is incredible, with new papers
+                                            emerging.</li>
+                                        <li>Real-time light transport is achievable, democratized by NVIDIA's tech
+                                            transfer.</li>
+                                        <li>Prioritize consolidating insights and not making things up.</li>
+                                    </ul>
+                                    <p></p> <br>
+                                    <h4>Notes: </h4>
+                                    <p class="card-body-notes">try now.
+                                        Holy smokes, test 11.
+                                        Ready to deploy?</p>
+                                    <button class="edit-btn" data-id="1732637941926">Edit Notes</button>
+                                    <button class="delete-btn" data-id="">Delete</button>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- For testing -->
+    <div class="testing">
+        <h3>Here's the transcript!:<br></h3>
+        <span id="youtube_transcript"></span>
+        <br><br>
+        <h3>Summary: <br><span id="summarised_text"></span></h3>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+</body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube beebuhdeeboo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel=" stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- DOMPurify Library, but not working -->
+    <!-- <script type="text/javascript" src="src/purify.js"></script> -->
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Youtube Euphoria </h1>
+        <h3>Some Info: <span id="someInfo"></span></h3>
+        <form id="cardForm">
+            <input type="text" id="youtube_url" name="youtube_url" placeholder="Youtube Url">
+            <textarea id="videoDescription" placeholder="Input Description"></textarea>
+            <button type="submit" id="btnSubmit" name="btnSubmit">Save Video to Notes</button>
+        </form>
+    </div>
+    <div class="container-fluid">
+        <div class="row g-4">
+            <div class="col-4">
+                <div id="cardContainer">
+                    <div class="card">
+                        <img src="https://i.ytimg.com/vi/qyCVCGg_3Ec/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCPywTHQgBy_7uWNv6ba9yPihSUaA"
+                            alt="Card Image">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <a href="https://www.youtube.com/watch?v=qyCVCGg_3Ec">
+                                        <h3>Microsoft Notepad.exe is overpowered now… and 13 other major updates for
+                                            devs</h3>
+                                    </a>
+                                    <p></p>
+                                    <p>Here's a summary of the text in point form:</p>
+                                    <p><strong>AI in Developer Tools</strong></p>
+                                    <ul>
+                                        <li>Microsoft to add AI features to Notepad and Microsoft Paint in Windows 11
+                                        </li>
+                                        <li>Adobe announces Project Turntable, a 2D-to-3D vector graphic tool</li>
+                                        <li>Google adds Gemini 9 Nano to Chrome browser, enabling AI-powered coding</li>
+                                        <li>GitHub CoPilot now supports multiple models, including Gemini and Claude
+                                        </li>
+                                    </ul>
+                                    <p><strong>Other Developer Tools and Frameworks</strong></p>
+                                    <ul>
+                                        <li>GitHub releases Spark, a tool for building mini applications with natural
+                                            language</li>
+                                        <li>StackBlitz announces Bolt, a tool for developing and previewing full
+                                            applications in the browser using AI</li>
+                                        <li>Next.js releases version 15, removing opinionated caching defaults</li>
+                                        <li>Deno 2.0 makes JavaScript development less painful</li>
+                                        <li>T releases version 2.0, a cross-platform tool for building desktop and
+                                            mobile apps with frontend JavaScript</li>
+                                    </ul>
+                                    <p><strong>Cross-Platform Mobile App Tools</strong></p>
+                                    <ul>
+                                        <li>Flutter is forked into a new project called Flock, due to the lack of
+                                            engineers on the Flutter team</li>
+                                    </ul>
+                                    <p><strong>Gaming</strong></p>
+                                    <ul>
+                                        <li>Ahiri Linux allows running AAA games on M1 Max, thanks to complex stack
+                                            including FX, Wine, and dxvk</li>
+                                    </ul>
+                                    <p><strong>IDEs and Learning</strong></p>
+                                    <ul>
+                                        <li>JetBrains announces that WebStorm and Write IDEs are now free for personal
+                                            use</li>
+                                        <li>Brilliant is a platform for learning programming and other subjects through
+                                            hands-on exercises.</li>
+                                    </ul>
+                                    <p></p> <br>
+                                    <h4>Notes: </h4>
+                                    <p class="card-body-notes">tool to create application from simple natural language.
+                                        test.</p>
+                                    <button class="edit-btn" data-id="1732357876622">Edit</button>
+                                    <button class="delete-btn" data-id="">Delete</button>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div id="cardContainer">
+                    <div class="card">
+                        <img src="https://i.ytimg.com/vi/NRmkr50mkEE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDtvbZa0Av8U0g_NMj01UPnCBTXWA"
+                            alt="Card Image">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <a
+                                        href="https://www.youtube.com/watch?v=NRmkr50mkEE&amp;list=PLhyRa0PyXvWXCIhZKc9u341LZ1TJP5wF5&amp;index=10">
+                                        <h3>Ray Tracing: How NVIDIA Solved the Impossible!</h3>
+                                    </a>
+                                    <p></p>
+                                    <h1><strong>Two Minute Papers: Solving the Impossible Problem of Real-Time Light
+                                            Transport</strong></h1>
+                                    <h2><strong>The Problem: Noise in Light Transport Simulation</strong></h2>
+                                    <ul>
+                                        <li>Noise is a major issue in light transport simulation, making photorealistic
+                                            scenes difficult to achieve.</li>
+                                        <li>Noise is caused by inaccuracies in estimating light rays and bouncing,
+                                            taking millions of rays to simulate.</li>
+                                        <li>Current methods take hours to weeks to finish, making real-time light
+                                            transport seem impossible.</li>
+                                    </ul>
+                                    <h2><strong>Finding a Solution: Importance Sampling and Smart Algorithms</strong>
+                                    </h2>
+                                    <ul>
+                                        <li>Importance sampling: choosing where to shoot rays in the scene.</li>
+                                        <li>Metropolis Light Transport and Manifold Exploration algorithms are examples
+                                            of smart algorithms.</li>
+                                    </ul>
+                                    <h2><strong>The Breakthrough: Voxel Cone Tracing</strong></h2>
+                                    <ul>
+                                        <li>2011 paper by NVIDIA: Voxel Cone Tracing.</li>
+                                        <li>Subdivides the space into voxels, reducing the complexity of light
+                                            simulation.</li>
+                                        <li>Only computes 2 bounces for each light ray.</li>
+                                    </ul>
+                                    <h2><strong>The Future: Ray Allocation and Denoising</strong></h2>
+                                    <ul>
+                                        <li>Ray allocation: allocating ray samples more effectively.</li>
+                                        <li>Denoising algorithms: removing noise from simulated light.</li>
+                                    </ul>
+                                    <h2><strong>Real-Time Light Transport Achieved?</strong></h2>
+                                    <ul>
+                                        <li>Paper 2: rendering an amusement park scene with 20 million triangles in
+                                            milliseconds.</li>
+                                        <li>Interactive method, 10-100 times faster than previous techniques.</li>
+                                        <li>Ray allocation and denoising technology used.</li>
+                                    </ul>
+                                    <h2><strong>The Next Step: Dynamic Scenes and Real-Time Rendering</strong></h2>
+                                    <ul>
+                                        <li>Paper 3: rendering dynamic scenes with rapid changes in lighting in
+                                            real-time.</li>
+                                        <li>Paper 4: accelerating progress in difficult light paths, such as caustics.
+                                        </li>
+                                    </ul>
+                                    <h2><strong>Conclusion: The Future of Light Transport Research</strong></h2>
+                                    <ul>
+                                        <li>The direction of light transport research is incredible, with new papers
+                                            emerging.</li>
+                                        <li>Real-time light transport is achievable, democratized by NVIDIA's tech
+                                            transfer.</li>
+                                        <li>Prioritize consolidating insights and not making things up.</li>
+                                    </ul>
+                                    <p></p> <br>
+                                    <h4>Notes: </h4>
+                                    <p class="card-body-notes">try now.
+                                        Holy smokes, test 11.
+                                        Ready to deploy?</p>
+                                    <button class="edit-btn" data-id="1732637941926">Edit Notes</button>
+                                    <button class="delete-btn" data-id="">Delete</button>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- For testing -->
+    <div class="testing">
+        <h3>Here's the transcript!:<br></h3>
+        <span id="youtube_transcript"></span>
+        <br><br>
+        <h3>Summary: <br><span id="summarised_text"></span></h3>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+</body>
+
+</html>
