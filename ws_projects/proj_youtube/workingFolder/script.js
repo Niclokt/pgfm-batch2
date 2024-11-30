@@ -264,14 +264,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 ? `<img src ="${video_thumbnail}" alt="Card Image">`
                 : ""
         }
-        <div class="card-body">
-            <a href=${youtube_url}><h3>${video_title}</h3></a>
-            <p>${video_summary}</p> <br>
-            <h4>Notes: </h4>
-            <p class="card-body-notes">${video_desc}</p>
-            <button class="edit-btn" data-id="${card_id}">Edit Notes</button>
-            <button class="delete-btn" data-id="">Delete</button>
-        </div>
+            <div class="col">
+	<div class="card h-100">
+		<div class="card-body">
+			<a href=${youtube_url}>
+				<h3>${video_title}</h3>
+			</a>
+			<p>${video_summary}</p> <br>
+			<h4>Notes: </h4>
+			<p class="card-body-notes">${video_desc}</p>
+			<button class="edit-btn" data-id="${card_id}">Edit Notes</button>
+			<button class="delete-btn" data-id="">Delete</button>
+		</div>
+		<div class="card-footer">
+			<small class="text-body-secondary">Last updated 3 mins ago</small>
+		</div>
+	</div>
+</div>
     `;
 
         //Add edit functionality to the edit button
