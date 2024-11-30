@@ -8,8 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardForm = document.getElementById("cardForm");
     const cardContainer = document.getElementById("cardContainer");
 
+    //Load Event Listeners
+
     // Load existing cards from local storage
-    loadCardsFromLocalStorage();
+    const cardsList = loadCardsFromLocalStorage();
 
     //Handle form submission to create new card
     cardForm.addEventListener("submit", async (event) => {
@@ -254,44 +256,53 @@ document.addEventListener("DOMContentLoaded", () => {
         } = cardData;
 
         const card = document.createElement("div");
-        card.classList.add("card");
+        card.classList.add("col");
+
         console.log(`FN #7 - card: ${JSON.stringify(card)}`);
 
         //Add card content
         card.innerHTML = `
-        ${
-            video_thumbnail
-                ? `<img src ="${video_thumbnail}" alt="Card Image">`
-                : ""
-        }
-            <div class="col">
-	<div class="card h-100">
-		<div class="card-body">
-			<a href=${youtube_url}>
-				<h3>${video_title}</h3>
-			</a>
-			<p>${video_summary}</p> <br>
-			<h4>Notes: </h4>
-			<p class="card-body-notes">${video_desc}</p>
-			<button class="edit-btn" data-id="${card_id}">Edit Notes</button>
-			<button class="delete-btn" data-id="">Delete</button>
-		</div>
-		<div class="card-footer">
-			<small class="text-body-secondary">Last updated 3 mins ago</small>
-		</div>
-	</div>
-</div>
+        <div class="card">
+            <div class="card h-100">
+                ${
+                    video_thumbnail
+                        ? `<img src ="${video_thumbnail}" alt="Card Image">`
+                        : ""
+                }
+	        	<div class="card-body">
+	        		<a href=${youtube_url}>
+	        			<h3>${video_title}</h3>
+	        		</a>
+
+                    <h4><u>Video Summary: </u></h4>
+	        		<p>${video_summary}</p> <br>    
+	        		<h4>Notes: </h4>
+	        		<p class="card-body-notes">${video_desc}</p>
+	        		<button class="edit-btn" data-id="${card_id}">Edit Notes</button>
+	        		<button class="delete-btn" data-id="">Delete</button>
+	        	</div>
+	        	<div class="card-footer">
+	        		<small class="text-body-secondary">Last updated 3 mins ago</small>
+	        	</div>
+	        </div>
+        </div>
     `;
 
         //Add edit functionality to the edit button
         //[??] how to get card id??
         card.querySelector(".edit-btn").addEventListener("click", () => {
+            //Get id of clicked button
+
+            //Call function to Edit Card
             editCardFromLocalStorage(cardData, card);
         });
 
         //Add delete functionality to the delete button
         card.querySelector(".delete-btn").addEventListener("click", () => {
+            //Get id of clicked button (include code before "card.remove")
+
             card.remove();
+            //Call function to delete Card
             deleteCardFromLocalStorage(cardData);
         });
 
@@ -304,6 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function loadCardsFromLocalStorage() {
         const cards = JSON.parse(localStorage.getItem("videoCards")) || [];
         cards.forEach(createCardElement);
+        return cards;
     }
 
     //FN 9: Include function to edit card from local storage
