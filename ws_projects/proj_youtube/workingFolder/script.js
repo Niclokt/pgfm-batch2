@@ -12,27 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardsList = loadCardsFromLocalStorage();
 
     ///////// LOAD EVENT LISTENERS /////////
-    //EVENT LISTENER #1 -- Edit Card
-    //Add edit functionality to the edit button
-    //[??] how to get card id??
-    cardsList.querySelector(".edit-btn").addEventListener("click", () => {
-        //Get id of clicked button
-
-        //Call function to Edit Card
-        editCardFromLocalStorage(cardData, card);
-    });
-
-    //EVENT LISTENER #2 -- Delete Card
-    //Add delete functionality to the delete button
-    cardsList.querySelector(".delete-btn").addEventListener("click", () => {
-        //Get id of clicked button (include code before "card.remove")
-
-        card.remove();
-        //Call function to delete Card
-        deleteCardFromLocalStorage(cardData);
-    });
-
-    //EVENT LISTENER #3 -- Create Card
+    //EVENT LISTENER #1 -- Create Card
     //Handle form submission to create new card
     cardForm.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -256,21 +236,57 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //FN x: Wrap Event Listener in a Function
-    function addCardEventListeners(card, cardData) {
-        const editButton = card.querySelector(".edit-btn");
-        const deleteButton = card.querySelector(".delete-btn");
+    //function addCardEventListeners(card, cardData) {
+    function addCardEventListeners() {
+        //Get Card Container from DOM
+        const cardContainer = document.getElementById("cardContainer");
 
-        editButton.addEventListener("click", (event) => {
-            const editButtonId = event.target.id;
-            const cardToEditID = ;
-            editCardFromLocalStorage(cardData, card);
+        //Consolidating containers with the "edit"/"delete" classes
+        const editButtons = cardContainer.querySelectorAll(".edit-btn");
+        const saveButtons = cardContainer.querySelectorAll(".save-btn");
+        const deleteButtons = cardContainer.querySelectorAll(".delete-btn");
+
+        //Attach Event Listeners to all edit buttons
+        editButtons.forEach((editButton) => {
+            editButton.addEventListener("click", (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                //Get Card ID of clickeed Button
+                const cardToEditID = event.target.dataset.id;
+                console.log(`FN X - cardToEditID: ${cardToEditID}`);
+                //Call Edit Card Function (To get card and data by Id)
+                //editCardFromLocalStorage(cardData, card);
+                editCardFromLocalStorage(cardToEditID);
+            });
         });
 
-        deleteButton.addEventListener("click", (event) => {
-            const deleteButtonId = event.target.id;
-            const cardToDeleteID = ;
-            card.remove();
-            deleteCardFromLocalStorage(cardData);
+        //Attach Event Listeners to all save buttons
+        saveButtons.forEach((saveButton) => {
+            saveButton.addEventListener("click", (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                //Get Card ID of clickeed Button
+                const cardToSaveID = event.target.dataset.id;
+                console.log(`FN X - cardToEditID: ${cardToSaveID}`);
+                //Call Edit Card Function (To get card and data by Id)
+                //saveCard(cardDataToSave, cardElementToSave, updatedDescription);
+                saveEditedCardToLocalStorage(cardToSaveID);
+            });
+        });
+
+        //Attach Event Listeners to all delete buttons
+        deleteButtons.forEach((deleteButton) => {
+            deleteButton.addEventListener("click", (event) => {
+                event.preventDefault();
+                //Get Card ID of clicked Button
+                const cardToDeleteID = event.target.dataset.id;
+                console.log(`FN X - cardToDeleteID: ${cardToDeleteID}`);
+                //Remove card from HTML DOM
+                card.remove();
+                //Call delete card function
+                //deleteCardFromLocalStorage(cardData);
+                deleteCardFromLocalStorage(cardToDeleteID);
+            });
         });
     }
 
@@ -283,6 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // FN 7: Create and Load Card from local storage
     function createCardElement(cardData) {
+        //Instantiate Variable
         const {
             card_id,
             youtube_url,
@@ -294,14 +311,15 @@ document.addEventListener("DOMContentLoaded", () => {
             dateCreated,
         } = cardData;
 
+        //Create card element in HTML DOM
         const card = document.createElement("div");
         card.classList.add("col");
 
-        console.log(`FN #7 - card: ${JSON.stringify(card)}`);
+        //console.log(`FN #7 - card: ${JSON.stringify(card)}`);
 
         //Add card content
         card.innerHTML = `
-        <div class="card">
+        <div class="card" id="${card_id}">
             <div class="card h-100">
                 ${
                     video_thumbnail
@@ -317,8 +335,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	        		<p>${video_summary}</p> <br>    
 	        		<h4>Notes: </h4>
 	        		<p class="card-body-notes">${video_desc}</p>
-	        		<button class="edit-btn" data-id="${card_id}_editBtn">Edit Notes</button>
-	        		<button class="delete-btn" data-id="${card_id}_deleteBtn">Delete</button>
+	        		<button class="edit-btn" data-id="${card_id}">Edit Notes</button>
+	        		<button class="delete-btn" data-id="${card_id}">Delete</button>
 	        	</div>
 	        	<div class="card-footer">
 	        		<small class="text-body-secondary">Last updated 3 mins ago</small>
@@ -326,29 +344,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	        </div>
         </div>
     `;
+        addCardEventListeners();
 
-        addCardEventListeners(card, cardData);
-        // TO REMOVE: Event Listeners have been hoisted to the top
-        // //Add edit functionality to the edit button
-        // //[??] how to get card id??
-        // card.querySelector(".edit-btn").addEventListener("click", () => {
-        //     //Get id of clicked button
-
-        //     //Call function to Edit Card
-        //     editCardFromLocalStorage(cardData, card);
-        // });
-
-        // //Add delete functionality to the delete button
-        // card.querySelector(".delete-btn").addEventListener("click", () => {
-        //     //Get id of clicked button (include code before "card.remove")
-
-        //     card.remove();
-        //     //Call function to delete Card
-        //     deleteCardFromLocalStorage(cardData);
-        // });
-
-        // Append the card to the card container
-        // After creating the elements & saving the card data into local storage, need to add the elements into the HTML card container for the new cards to be displayed.
         cardContainer.appendChild(card);
     }
 
@@ -360,18 +357,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //FN 9: Include function to edit card from local storage
-    function editCardFromLocalStorage(cardDataToEdit, cardElement) {
-        console.log(`cardElement: ${JSON.stringify(cardElement)}`);
-        //add code here
-        //const cards = JSON.parse(localStorage.getItem("videoCards")) || [];
-        //create temporary input field and save edited data into a variable
-        //update "videoCards" object in Local Storage
-        // Get the card's current description
+    //function editCardFromLocalStorage(cardDataToEdit, cardElement) {
+    function editCardFromLocalStorage(cardToEditID) {
+        console.log(`cardToEditID: ${cardToEditID}`);
+        //Get cardToEdit Element by ID
+        const cardElement = document.getElementById(`${cardToEditID}`);
+        console.log(`FN 9 - cardElement: ${cardElement}`);
 
-        //Select elements to edit
+        //Select nested elements to edit
         const descriptionElement =
             cardElement.querySelector(".card-body-notes");
-        console.log(JSON.stringify(descriptionElement));
+        console.log(
+            `FN 9 - descriptionElement: ${JSON.stringify(descriptionElement)}`
+        );
 
         //Create input fields for editing
         const descriptionInput = document.createElement("textarea");
@@ -382,30 +380,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //Replace Static Content w Input Fields
         descriptionElement.replaceWith(descriptionInput);
-        descriptionElement.classList.add(".card-body-notes");
+        descriptionElement.classList.add("card-body-notes");
         console.log(
             `FN #9 - Edit Card: static content has been replaced with input field`
         );
 
         //Change Edit button to Save button
         const editButton = cardElement.querySelector(".edit-btn");
-        editButton.textContent = "Save";
-        editButton.classList.add("save-btn");
-        editButton.classList.remove("edit-btn");
+        const newSaveButton = editButton.cloneNode(true); // Creates a new button, clearing listeners
+        newSaveButton.textContent = "Save";
+        newSaveButton.classList.add("save-btn");
+        newSaveButton.classList.remove("edit-btn");
 
-        //Save changes on button click
-        editButton.addEventListener("click", () => {
-            saveCard(cardDataToEdit, cardElement, descriptionInput.value);
-            //include parameters here
-        });
+        //Replace editButton w newSaveButton
+        editButton.replaceWith(newSaveButton);
+
+        //Call Event Listener
+        addCardEventListeners();
+        // //Save changes on button click
+        // editButton.addEventListener("click", () => {
+        //     saveCard(cardDataToEdit, cardElement, descriptionInput.value);
+        //     //include parameters here
+        // });
     }
 
     //FN 10: Function to save changes to edit
-    async function saveCard(
-        cardDataToSave,
-        cardElementToSave,
-        updatedDescription
-    ) {
+    // async function saveCard(
+    //     cardDataToSave,
+    //     cardElementToSave,
+    //     updatedDescription
+    // ) {
+
+    async function saveEditedCardToLocalStorage(cardToSaveID) {
         // //Get updated values
         // const descriptionInput =
         //     cardElementToSave.querySelector(".card-body-notes");
@@ -435,14 +441,15 @@ document.addEventListener("DOMContentLoaded", () => {
         // );
 
         //input check
-        console.log(`Fn #10 - Updated Description: ${updatedDescription}`);
+        console.log(`Fn #10 - cardToSaveID: ${cardToSaveID}`);
 
         // Update the local storage card data
         const cards = JSON.parse(localStorage.getItem("videoCards")) || [];
 
         // [??] How does it only identfy and updated the card we're updating with updatedDescription?
+        // [Ans] Via the logic in the if function
         const updatedCards = cards.map((card) => {
-            if (card.card_id === cardDataToSave.card_id) {
+            if (card.card_id === cardToSaveID) {
                 return { ...card, video_desc: updatedDescription };
             }
             return card;
@@ -459,31 +466,35 @@ document.addEventListener("DOMContentLoaded", () => {
             `Fn #10 - UpdatedDescriptionElement.textContent: ${updatedDescriptionElement.textContent}`
         );
 
-        const descriptionInput = cardElementToSave.querySelector("textarea");
+        const descriptionInput = cardElementToSave.querySelector(
+            `#${cardToSaveID} textarea`
+        );
         descriptionInput.replaceWith(updatedDescriptionElement);
         console.log(
             `Fn #10 - Input Field has been replaced with Static Field: ${updatedDescriptionElement.textContent}`
         );
 
         // Change Save button back to Edit button
-        const saveButton = cardElementToSave.querySelector(".save-btn");
-        saveButton.textContent = "Edit";
-        saveButton.classList.add("edit-btn");
-        saveButton.classList.remove("save-btn");
+        const saveButton = cardElementToSave.querySelector(" .save-btn");
+        const newEditButton = saveButton.cloneNode(true); // Creates a new button, clearing listeners
+        newEditButton.textContent = "Edit";
+        newEditButton.classList.add("edit-btn");
+        newEditButton.classList.remove("save-btn");
+
+        //Replace saveButton w New Edit button
+        saveButton.replaceWith(newEditButton);
 
         // Reassign event listener for editing
-        saveButton.addEventListener("click", () => {
-            editCardFromLocalStorage(cardDataToSave, cardElementToSave);
-        });
+        addCardEventListeners();
     }
 
     //FN 11: Include function to delete a card from local storage
-    function deleteCardFromLocalStorage(cardToDelete) {
+    function deleteCardFromLocalStorage(cardToEditID) {
         //add code here
         const cards = JSON.parse(localStorage.getItem("videoCards")) || [];
         const updatedCards = cards.filter(
             // !! To edit what to filter in here!! Should eventually filter by id
-            (card) => card.card_id !== cardToDelete.card_id
+            (card) => card.card_id !== cardToEditID
         );
         localStorage.setItem("videoCards", JSON.stringify(updatedCards));
     }
