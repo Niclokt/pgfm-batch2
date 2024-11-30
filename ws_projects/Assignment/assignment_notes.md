@@ -131,41 +131,48 @@ Some learning points:
 
 ## 03 -- Learning Points (Mistakes & Boundary Testing)
 
-1. Functions wrapping APIs
+1. **Functions wrapping APIs**
 
     - Should be declared as an async function
     - "await" should be used when calling these async functions
 
-2. Conditions
+2. **Conditions**
 
     - Ensure the code is comparing the right variables for validation
 
-3. Stress testing
+3. **Stress testing**
 
     - Groq API is unable to process prompt with too much words
     - Tried getting a summary for a 15 hr video and the api call failed hahaha...
     - [Video used for stress testing](https://www.youtube.com/watch?v=x4rFhThSX04)
     - ![alt text](image.png)
 
-4. Preserving HTML while saving `<TextArea>` value to `<p>` element .TextContent
+4. **Preserving HTML while saving `<TextArea>` value to `<p>` element .TextContent**
     - Instead of saving to TextContent, save to .innerHTML
     - Consideration:
         - Allowing raw HTML input can expose your site to XSS (Cross-Site Scripting) attacks. Always sanitize user input if the data comes from untrusted sources.
-        -
+5. **Button clicks on each video card**
+
+-   Identifying the card which was clicked - Methods to do so:
+    -   Identify by button-id
+    -   Get button to return a unique identifier, to identify the container to be manipulated
 
 ## 04 --
 
 ## 05 -- Code to check back:
 
-    - Check back on the FN #7
-    - Why is the card not saved?
-    -
+-   Check back on the FN #7
+    -   Why is the card not saved?
 
 ## 06 -- Questions to check
 
 1. **Event listeners:**
     - How does it work when we wrap it in a function?
     - Does the function keep running until the event listner is called?
+    #### **(Answers)**
+    - Don't have to create event listener for every new card created
+    - Instead can hoist the event listeners to the top of the js script.
+    - So that it'll always be listening, and less event listeners means less computationally expensive
 2. **Edit function Saving to local storage:**
     - Test test
 
