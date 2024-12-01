@@ -1,5 +1,7 @@
 var prompt = require("prompt-sync")();
 //// Date: 01 Dec 2024
+
+////// Tutorial 02 //////
 ////// Exercise 1 /////
 ////Done/////
 // for (i = 0; i < 100; i++) {
@@ -64,7 +66,7 @@ var prompt = require("prompt-sync")();
 // }
 
 ////// Exercise 5 //////
-//Print Even Numbers
+////Print Even Numbers
 ////Done/////
 // for (i = 1; i < 21; i++) {
 //     if (i % 2 === 0) {
