@@ -1,5 +1,5 @@
 var prompt = require("prompt-sync")();
-
+//// Date: 01 Dec 2024
 ////// Exercise 1 /////
 ////Done/////
 // for (i = 0; i < 100; i++) {
