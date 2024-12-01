@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //Card Details: [Step 0] Store user input:
         const youtube_url = document.getElementById("youtube_url").value;
         const video_desc = document.getElementById("videoDescription").value;
-
+        console.log(`Create Card - stored user input`);
         //Card Details: [Step 0] Get current timestamp for card id
         const timestamp = Date.now();
         console.log(timestamp);
@@ -290,6 +290,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    //FN xx
+    function removeEventListeners() {
+        //Get Card Container from DOM
+        const cardContainer = document.getElementById("cardContainer");
+
+        //Consolidating containers with the "edit"/"delete" classes
+        const editButtons = cardContainer.querySelectorAll(".edit-btn");
+        const saveButtons = cardContainer.querySelectorAll(".save-btn");
+        const deleteButtons = cardContainer.querySelectorAll(".delete-btn");
+
+        editButtons.forEach((editButton) => {
+            editButton.removeEventListener("click", editCardHandler);
+        });
+        saveButtons.forEach((saveButton) => {
+            saveButton.removeEventListener("click", saveCardHandler);
+        });
+        deleteButtons.forEach((deleteButton) => {
+            deleteButton.removeEventListener("click", deleteCardHandler);
+        });
+    }
+
     // FN 6: Save Card to Local Storage, into "videoCards" obj
     function saveCardToLocalStorage(card) {
         const videoCards = JSON.parse(localStorage.getItem("videoCards")) || [];
@@ -312,8 +333,8 @@ document.addEventListener("DOMContentLoaded", () => {
         } = cardData;
 
         //Create card element in HTML DOM
-        const card = document.createElement("div");
-        card.classList.add("col");
+        const card = document.createElement("div"); // Variable declaration
+        card.classList.add("col"); // Add class for styling (Bootstrap)
 
         //console.log(`FN #7 - card: ${JSON.stringify(card)}`);
 
@@ -345,6 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     `;
         addCardEventListeners();
+        removeEventListeners();
 
         cardContainer.appendChild(card);
     }
@@ -396,6 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
         editButton.replaceWith(newSaveButton);
 
         //Call Event Listener
+        removeEventListeners();
         addCardEventListeners();
     }
 
@@ -455,6 +478,7 @@ document.addEventListener("DOMContentLoaded", () => {
         saveButton.replaceWith(newEditButton);
 
         // Reassign event listener for editing
+        removeEventListeners();
         addCardEventListeners();
     }
 
