@@ -360,46 +360,47 @@ document.addEventListener("DOMContentLoaded", () => {
         //Add card content
         card.innerHTML = `
             <div class="card" id="${card_id}">
-                <div class="card h-100 shadow-sm hover-card">
+                <div class="card h-100 shadow-sm rounded-3 hover-card">
                     <!-- Image Section with conditional rendering -->
                     ${
                         video_thumbnail
-                            ? `<img src="${video_thumbnail}" alt="Card Image" class="card-img-top">`
+                            ? `<img src="${video_thumbnail}" alt="Card Image" class="card-img-top rounded-top">`
                             : ""
                     }
-                
+                    
                     <div class="card-body">
+                        <!-- Video Title -->
                         <a href="${youtube_url}" class="text-decoration-none">
-                            <h3 class="card-title text-primary">${video_title}</h3>
+                            <h3 class="card-title text-dark">${video_title}</h3>
                         </a>
-                
+                    
                         <!-- Collapsible Video Summary -->
-                        <h4 class="text-secondary"><u>Video Summary:</u></h4>
-                        <button class="btn btn-outline-info btn-sm mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#summary-${card_id}" aria-expanded="false" aria-controls="summary-${card_id}">
+                        <h4 class="text-muted"><u>Video Summary:</u></h4>
+                        <button class="btn btn-outline-pink btn-sm mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#summary-${card_id}" aria-expanded="false" aria-controls="summary-${card_id}" id="toggleSummary-${card_id}">
                             Show More
                         </button>
                         <div class="collapse" id="summary-${card_id}">
                             <p class="card-text">${video_summary}</p>
                         </div>
-                
+                    
                         <hr>
-                
+                    
                         <!-- Collapsible Video Notes -->
-                        <h4 class="text-secondary">Notes:</h4>
-                        <button class="btn btn-outline-info btn-sm mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#notes-${card_id}" aria-expanded="false" aria-controls="notes-${card_id}">
+                        <h4 class="text-muted">Notes:</h4>
+                        <button class="btn btn-outline-pink btn-sm mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#notes-${card_id}" aria-expanded="false" aria-controls="notes-${card_id}" id="toggleNotes-${card_id}">
                             Show More
                         </button>
                         <div class="collapse" id="notes-${card_id}">
                             <p class="card-text">${video_desc}</p>
                         </div>
-
+                        
                         <!-- Button Group -->
                         <div class="d-flex justify-content-between">
                             <button class="btn btn-warning btn-sm edit-btn" data-id="${card_id}">Edit Notes</button>
                             <button class="btn btn-danger btn-sm delete-btn" data-id="${card_id}">Delete</button>
                         </div>
                     </div>
-                
+                    
                     <div class="card-footer text-muted">
                         <small>Last updated 3 mins ago</small>
                     </div>

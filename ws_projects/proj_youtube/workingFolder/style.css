@@ -59,22 +59,93 @@ form textare{
 }
 
 /* Animation on hover - Testing */
+/* Custom hover effect for the card */
+/* Custom hover effect for the card */
 .hover-card {
-    transition: transform 0.4s ease, box-shadow 0.4s ease, transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
-    border-radius: 10px;  /* Slight border radius for a smoother look */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 15px;  /* Smooth rounded corners */
+    border: none;  /* Remove border */
 }
 
+/* Hover effect: slightly raise the card and apply a soft shadow */
 .hover-card:hover {
-    transform: translateY(-15px) scale(1.05);  /* Increase upward movement and scale for prominence */
-    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow for emphasis */
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Pastel Colors */
+.card {
+    background: linear-gradient(to bottom right, #e2d7f5, #f0e7f5);  /* Soft pastel purple gradient */
+    /* Border removed from card */
+    border: none;
+}
+
+.card-title {
+    color: #6b4f97; /* Pastel purple for titles */
+}
+
+.btn-outline-pink {
+    color: #ec7b9e;  /* Pastel pink text */
+    border-color: #ec7b9e;
+}
+
+.btn-outline-pink:hover {
+    background-color: #ec7b9e;
+    color: white;
+}
+
+.btn-warning {
+    background-color: #f9e2a0;
+    border-color: #f9e2a0;
+}
+
+.btn-warning:hover {
+    background-color: #f9d362;
+    border-color: #f9d362;
+}
+
+.btn-danger {
+    background-color: #f5a5a5;
+    border-color: #f5a5a5;
+}
+
+.btn-danger:hover {
+    background-color: #f56565;
+    border-color: #f56565;
+}
+
+.card-footer {
+    background-color: #f7f7f7;
+}
+
+.collapse {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Custom spacing and padding */
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4e4e4e;
+}
+
+.card-footer small {
+    font-size: 0.85rem;
+    color: #999;
 }
 
 /* Optional: Add a hover effect for the title or buttons for more interactivity */
 .hover-card .card-title:hover {
-    color: #007bff;  /* Changes text color on hover */
+    color: #b38cc3;
     text-decoration: underline;
 }
 
 .hover-card .btn:hover {
-    transform: scale(1.1);  /* Slightly increase button size on hover */
+    transform: scale(1.1);
 }
+
