@@ -3,14 +3,11 @@
 //Parse info into APIs
 //Store data into local storage: 1. Thumbnail, 2. Title, 3. Summary, 4. Description, 5. DateCreated
 
-// SECTIONS
-//1. MAIN DRIVER FUNCTION
-//2. MAIN API FUNCTIONS
-//3. EVENT HANDLERS
-//4. EVENT LISTENERS
-//5. HELPER FUNCTIONS
+//MAIN EVENT LISTENER
 
-//MAIN DRIVER FUNCTION
+//MAIN API FUNCTIONS
+
+//Main Event Listeners
 document.addEventListener("DOMContentLoaded", () => {
     const cardForm = document.getElementById("cardForm");
     const cardContainer = document.getElementById("cardContainer");
@@ -18,7 +15,80 @@ document.addEventListener("DOMContentLoaded", () => {
     //CALL LOCAL STORAGE: Load existing cards from local storage
     const cardsList = loadCardsFromLocalStorage();
 
-    // *********************MAIN API FUNCTIONS -- START********************* //
+    ///////// LOAD EVENT LISTENERS /////////
+    //EVENT LISTENER #1 -- Create Card
+    //Handle form submission to create new card
+    cardForm.addEventListener("submit", async (event) => {
+        console.log(`Submit button clicked`);
+        event.preventDefault();
+
+        //Card Details: [Step 0] Store user input:
+        const youtube_url = document.getElementById("youtube_url").value;
+        const video_desc = document.getElementById("videoDescription").value;
+        console.log(`Create Card - stored user input`);
+        //Card Details: [Step 0] Get current timestamp for card id
+        const timestamp = Date.now();
+        console.log(timestamp);
+
+        const card_id = timestamp;
+
+        console.log(`Input Youtube URL: ${youtube_url}`);
+        console.log(`Input Desc: ${video_desc}`);
+
+        //Card Details: [Step 1] From user input url, get video id
+        const video_id = getVideoId(youtube_url);
+        console.log("Update -- Got Video Id");
+
+        //Card Details: [Step 1] Get Video Summary --> Store video_summary
+        const video_summary = await printGroqResponse(youtube_url);
+        console.log("Update -- Got Summary");
+
+        //Card Details: [Step 2] Get Video Details --> Store in 'video_thumbnail' and 'video_title'
+        const video_details = await getVideoDetails(video_id);
+        console.log("Update -- Got Video Details");
+
+        const video_title = video_details.video_title;
+        const video_thumbnail = video_details.video_thumbnail;
+
+        //Get Date: YYYY MMM DD, HH:MM
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1; // Get the month (0-11, so add 1 for 1-12)
+        const date = now.getDate(); // Get the day of the month (1-31)
+        const hours = now.getHours(); // Get the hour (0-23)
+        const minutes = now.getMinutes(); // Get the minutes (0-59)
+
+        //Card Details: Get Date Created
+        const dateCreated = `${year}-${month}-${date}, ${hours}:${minutes}`;
+        console.log("Update -- Got Date");
+
+        //Create Card obj
+        //to implement id
+        const newCard = {
+            card_id,
+            youtube_url,
+            video_desc,
+            video_id,
+            video_summary,
+            video_title,
+            video_thumbnail,
+            dateCreated,
+        };
+
+        //Add new card to the local storage:
+        saveCardToLocalStorage(newCard);
+        console.log("Update -- Saved card to Local Storage");
+
+        //Create and display card
+        createCardElement(newCard);
+        console.log("Update -- Created card");
+
+        //Clear the form
+        cardForm.reset();
+        console.log("Update -- Card form resetted");
+    });
+
+    /////// FUNCTION DECLARATIONS ///////
     //FN 1: Add Async function to fetch video details
     async function getVideoDetails(video_id) {
         const options = {
@@ -157,6 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error during chat completion:", error);
         }
     }
+
     // FN 5: Get video Id
     function getVideoId(input_url) {
         const url = input_url;
@@ -166,9 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(videoId); // Output: "td4cpnZO6oY"
         return videoId;
     }
-    // *********************MAIN API FUNCTIONS -- END*********************** //
-
-    // *********************EVENT HANDLERS -- START************************* //
+    // ********EVENT HANDLERS******** //
     // FN xxx: Refactor handlers of the various event listeners as a named functions instead of calling them as anonymous functions
     function editCardHandler(event) {
         event.preventDefault();
@@ -201,82 +270,8 @@ document.addEventListener("DOMContentLoaded", () => {
         deleteCardFromLocalStorage(cardToDeleteID);
     }
 
-    // *********************EVENT HANDLERS -- END*************************** //
-
-    // *********************EVENT LISTENERS -- START************************ //
-    //EVENT LISTENER #1 -- Create Card
-    //Handle form submission to create new card
-    cardForm.addEventListener("submit", async (event) => {
-        console.log(`Submit button clicked`);
-        event.preventDefault();
-
-        //Card Details: [Step 0] Store user input:
-        const youtube_url = document.getElementById("youtube_url").value;
-        const video_desc = document.getElementById("videoDescription").value;
-        console.log(`Create Card - stored user input`);
-        //Card Details: [Step 0] Get current timestamp for card id
-        const timestamp = Date.now();
-        console.log(timestamp);
-
-        const card_id = timestamp;
-
-        console.log(`Input Youtube URL: ${youtube_url}`);
-        console.log(`Input Desc: ${video_desc}`);
-
-        //Card Details: [Step 1] From user input url, get video id
-        const video_id = getVideoId(youtube_url);
-        console.log("Update -- Got Video Id");
-
-        //Card Details: [Step 1] Get Video Summary --> Store video_summary
-        const video_summary = await printGroqResponse(youtube_url);
-        console.log("Update -- Got Summary");
-
-        //Card Details: [Step 2] Get Video Details --> Store in 'video_thumbnail' and 'video_title'
-        const video_details = await getVideoDetails(video_id);
-        console.log("Update -- Got Video Details");
-
-        const video_title = video_details.video_title;
-        const video_thumbnail = video_details.video_thumbnail;
-
-        //Get Date: YYYY MMM DD, HH:MM
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = now.getMonth() + 1; // Get the month (0-11, so add 1 for 1-12)
-        const date = now.getDate(); // Get the day of the month (1-31)
-        const hours = now.getHours(); // Get the hour (0-23)
-        const minutes = now.getMinutes(); // Get the minutes (0-59)
-
-        //Card Details: Get Date Created
-        const dateCreated = `${year}-${month}-${date}, ${hours}:${minutes}`;
-        console.log("Update -- Got Date");
-
-        //Create Card obj
-        //to implement id
-        const newCard = {
-            card_id,
-            youtube_url,
-            video_desc,
-            video_id,
-            video_summary,
-            video_title,
-            video_thumbnail,
-            dateCreated,
-        };
-
-        //Add new card to the local storage:
-        saveCardToLocalStorage(newCard);
-        console.log("Update -- Saved card to Local Storage");
-
-        //Create and display card
-        createCardElement(newCard);
-        console.log("Update -- Created card");
-
-        //Clear the form
-        cardForm.reset();
-        console.log("Update -- Card form resetted");
-    });
-
-    //FN x: Wrap Add Event Listener in a Function
+    //FN x: Wrap Event Listener in a Function
+    //function addCardEventListeners(card, cardData) {
     function addCardEventListeners() {
         //Get Card Container from DOM
         const cardContainer = document.getElementById("cardContainer");
@@ -302,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    //FN x: Wrap Remove Event Listener in a Function
+    //FN xx
     function removeEventListeners() {
         //Get Card Container from DOM
         const cardContainer = document.getElementById("cardContainer");
@@ -322,9 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
             deleteButton.removeEventListener("click", deleteCardHandler);
         });
     }
-    // *********************EVENT LISTENERS -- END************************** //
 
-    // *********************HELPER FUNCTIONS -- START*********************** //
     // FN 6: Save Card to Local Storage, into "videoCards" obj
     function saveCardToLocalStorage(card) {
         const videoCards = JSON.parse(localStorage.getItem("videoCards")) || [];
@@ -350,33 +343,35 @@ document.addEventListener("DOMContentLoaded", () => {
         const card = document.createElement("div"); // Variable declaration
         card.classList.add("col"); // Add class for styling (Bootstrap)
 
+        //console.log(`FN #7 - card: ${JSON.stringify(card)}`);
+
         //Add card content
         card.innerHTML = `
-            <div class="card" id="${card_id}">
-                <div class="card h-100">
-                    ${
-                        video_thumbnail
-                            ? `<img src ="${video_thumbnail}" alt="Card Image">`
-                            : ""
-                    }
-                    <div class="card-body">
-                        <a href=${youtube_url}>
-                            <h3>${video_title}</h3>
-                        </a>
-    
-                        <h4><u>Video Summary: </u></h4>
-                        <p>${video_summary}</p> <br>    
-                        <h4>Notes: </h4>
-                        <p class="card-body-notes">${video_desc}</p>
-                        <button class="edit-btn" data-id="${card_id}">Edit Notes</button>
-                        <button class="delete-btn" data-id="${card_id}">Delete</button>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-        `;
+        <div class="card" id="${card_id}">
+            <div class="card h-100">
+                ${
+                    video_thumbnail
+                        ? `<img src ="${video_thumbnail}" alt="Card Image">`
+                        : ""
+                }
+	        	<div class="card-body">
+	        		<a href=${youtube_url}>
+	        			<h3>${video_title}</h3>
+	        		</a>
+
+                    <h4><u>Video Summary: </u></h4>
+	        		<p>${video_summary}</p> <br>    
+	        		<h4>Notes: </h4>
+	        		<p class="card-body-notes">${video_desc}</p>
+	        		<button class="edit-btn" data-id="${card_id}">Edit Notes</button>
+	        		<button class="delete-btn" data-id="${card_id}">Delete</button>
+	        	</div>
+	        	<div class="card-footer">
+	        		<small class="text-body-secondary">Last updated 3 mins ago</small>
+	        	</div>
+	        </div>
+        </div>
+    `;
         addCardEventListeners();
         removeEventListeners();
 
@@ -391,6 +386,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //FN 9: Include function to edit card from local storage
+    //function editCardFromLocalStorage(cardDataToEdit, cardElement) {
     function editCardFromLocalStorage(cardToEditID) {
         console.log(`cardToEditID: ${cardToEditID}`);
         //Get cardToEdit Element by ID
@@ -434,6 +430,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //FN 10: Function to save changes to edit
+    // async function saveCard(
+    //     cardDataToSave,
+    //     cardElementToSave,
+    //     updatedDescription
+    // ) {
+
     async function saveEditedCardToLocalStorage(cardToSaveID) {
         // Get the updated description from the textarea
         const cardElementToSave = document.getElementById(cardToSaveID);
@@ -497,11 +499,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         localStorage.setItem("videoCards", JSON.stringify(updatedCards));
     }
-    // *********************HELPER FUNCTIONS -- END************************* //
 });
-
-// *********************TESTING FUNCTIONS -- START*********************** //
 //Call Async functions
 // getVideoDetails();
 // printGroqResponse();
-// *********************TESTING FUNCTIONS -- END************************* //
