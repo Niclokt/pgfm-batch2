@@ -248,7 +248,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const deleteButtons = cardContainer.querySelectorAll(".delete-btn");
 
         //Refactor handlers of the various event listeners as a named function
-
         function editCardHandler(event) {
             event.preventDefault();
             event.stopPropagation();
@@ -282,45 +281,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //Attach Event Listeners to all edit buttons
         editButtons.forEach((editButton) => {
-            editButton.addEventListener("click", (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                //Get Card ID of clickeed Button
-                const cardToEditID = event.target.dataset.id;
-                console.log(`FN X - cardToEditID: ${cardToEditID}`);
-                //Call Edit Card Function (To get card and data by Id)
-                //editCardFromLocalStorage(cardData, card);
-                editCardFromLocalStorage(cardToEditID);
-            });
+            editButton.addEventListener("click", editCardHandler);
         });
 
         //Attach Event Listeners to all save buttons
         saveButtons.forEach((saveButton) => {
-            saveButton.addEventListener("click", (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                //Get Card ID of clickeed Button
-                const cardToSaveID = event.target.dataset.id;
-                console.log(`FN X - cardToEditID: ${cardToSaveID}`);
-                //Call Edit Card Function (To get card and data by Id)
-                //saveCard(cardDataToSave, cardElementToSave, updatedDescription);
-                saveEditedCardToLocalStorage(cardToSaveID);
-            });
+            saveButton.addEventListener("click", saveCardHandler);
         });
 
         //Attach Event Listeners to all delete buttons
         deleteButtons.forEach((deleteButton) => {
-            deleteButton.addEventListener("click", (event) => {
-                event.preventDefault();
-                //Get Card ID of clicked Button
-                const cardToDeleteID = event.target.dataset.id;
-                console.log(`FN X - cardToDeleteID: ${cardToDeleteID}`);
-                //Remove card from HTML DOM
-                card.remove();
-                //Call delete card function
-                //deleteCardFromLocalStorage(cardData);
-                deleteCardFromLocalStorage(cardToDeleteID);
-            });
+            deleteButton.addEventListener("click", deleteCardHandler);
         });
     }
 
