@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //EVENT LISTENER #1 -- Create Card
     //Handle form submission to create new card
     cardForm.addEventListener("submit", async (event) => {
+        console.log(`Submit button clicked`);
         event.preventDefault();
 
         //Card Details: [Step 0] Store user input:
@@ -245,6 +246,39 @@ document.addEventListener("DOMContentLoaded", () => {
         const editButtons = cardContainer.querySelectorAll(".edit-btn");
         const saveButtons = cardContainer.querySelectorAll(".save-btn");
         const deleteButtons = cardContainer.querySelectorAll(".delete-btn");
+
+        //Refactor handlers of the various event listeners as a named function
+
+        function editCardHandler(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            const cardToEditID = event.target.dataset.id;
+            console.log(`FN X - cardToEditID: ${cardToEditID}`);
+            editCardFromLocalStorage(cardToEditID);
+        }
+
+        function saveCardHandler(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            //Get Card ID of clickeed Button
+            const cardToSaveID = event.target.dataset.id;
+            console.log(`FN X - cardToEditID: ${cardToSaveID}`);
+            //Call Edit Card Function (To get card and data by Id)
+            //saveCard(cardDataToSave, cardElementToSave, updatedDescription);
+            saveEditedCardToLocalStorage(cardToSaveID);
+        }
+
+        function deleteCardHandler(event) {
+            event.preventDefault();
+            //Get Card ID of clicked Button
+            const cardToDeleteID = event.target.dataset.id;
+            console.log(`FN X - cardToDeleteID: ${cardToDeleteID}`);
+            //Remove card from HTML DOM
+            card.remove();
+            //Call delete card function
+            //deleteCardFromLocalStorage(cardData);
+            deleteCardFromLocalStorage(cardToDeleteID);
+        }
 
         //Attach Event Listeners to all edit buttons
         editButtons.forEach((editButton) => {
