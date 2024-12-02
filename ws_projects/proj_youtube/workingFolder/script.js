@@ -170,43 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // *********************EVENT HANDLERS -- START************************* //
     // FN xxx: Refactor handlers of the various event listeners as a named functions instead of calling them as anonymous functions
-    function editCardHandler(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        const cardToEditID = event.target.dataset.id;
-        console.log(`FN X - cardToEditID: ${cardToEditID}`);
-        editCardFromLocalStorage(cardToEditID);
-    }
-
-    function saveCardHandler(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        //Get Card ID of clicked Button
-        const cardToSaveID = event.target.dataset.id;
-        console.log(`FN X - cardToEditID: ${cardToSaveID}`);
-        //Call Edit Card Function (To get card and data by Id)
-        //saveCard(cardDataToSave, cardElementToSave, updatedDescription);
-        saveEditedCardToLocalStorage(cardToSaveID);
-    }
-
-    function deleteCardHandler(event) {
-        event.preventDefault();
-        //Get Card ID of clicked Button
-        const cardToDeleteID = event.target.dataset.id;
-        console.log(`FN X - cardToDeleteID: ${cardToDeleteID}`);
-        //Remove card from HTML DOM
-        card.remove();
-        //Call delete card function
-        //deleteCardFromLocalStorage(cardData);
-        deleteCardFromLocalStorage(cardToDeleteID);
-    }
-
-    // *********************EVENT HANDLERS -- END*************************** //
-
-    // *********************EVENT LISTENERS -- START************************ //
-    //EVENT LISTENER #1 -- Create Card
-    //Handle form submission to create new card
-    cardForm.addEventListener("submit", async (event) => {
+    async function createCardHandler(event) {
         console.log(`Submit button clicked`);
         event.preventDefault();
 
@@ -274,7 +238,50 @@ document.addEventListener("DOMContentLoaded", () => {
         //Clear the form
         cardForm.reset();
         console.log("Update -- Card form resetted");
-    });
+    }
+
+    function editCardHandler(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        const cardToEditID = event.target.dataset.id;
+        console.log(`FN X - cardToEditID: ${cardToEditID}`);
+        editCardFromLocalStorage(cardToEditID);
+    }
+
+    function saveCardHandler(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        //Get Card ID of clicked Button
+        const cardToSaveID = event.target.dataset.id;
+        console.log(`FN X - cardToEditID: ${cardToSaveID}`);
+        //Call Edit Card Function (To get card and data by Id)
+        //saveCard(cardDataToSave, cardElementToSave, updatedDescription);
+        saveEditedCardToLocalStorage(cardToSaveID);
+    }
+
+    function deleteCardHandler(event) {
+        event.preventDefault();
+        //Get Card ID of clicked Button
+        const cardToDeleteID = event.target.dataset.id;
+        console.log(`FN X - cardToDeleteID: ${cardToDeleteID}`);
+        //Get card to be removed from HTML
+        const cardToRemove = document.getElementById(cardToDeleteID);
+        console.log(`Card to be removed:  ${cardToRemove}`);
+
+        //Remove card from HTML DOM
+        cardToRemove.remove();
+        //cardContainer.removeChild(cardToRemove);
+
+        //Call delete card function
+        //deleteCardFromLocalStorage(cardData);
+        deleteCardFromLocalStorage(cardToDeleteID);
+    }
+    // *********************EVENT HANDLERS -- END*************************** //
+
+    // *********************EVENT LISTENERS -- START************************ //
+    //EVENT LISTENER #1 -- Create Card
+    //Handle form submission to create new card
+    cardForm.addEventListener("submit", createCardHandler);
 
     //FN x: Wrap Add Event Listener in a Function
     function addCardEventListeners() {
@@ -377,8 +384,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </div>
         `;
-        addCardEventListeners();
         removeEventListeners();
+        addCardEventListeners();
 
         cardContainer.appendChild(card);
     }
@@ -488,14 +495,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //FN 11: Include function to delete a card from local storage
-    function deleteCardFromLocalStorage(cardToEditID) {
+    function deleteCardFromLocalStorage(cardToDeleteID) {
+        console.log(`FN 11 - delete card from LS, Card ID: ${cardToDeleteID}`);
         //add code here
         const cards = JSON.parse(localStorage.getItem("videoCards")) || [];
         const updatedCards = cards.filter(
-            // !! To edit what to filter in here!! Should eventually filter by id
-            (card) => card.card_id !== cardToEditID
+            // !! To edit what to filter in here!! Should filter by id
+            // NOTE! To use "!=" instead of "!==" operator, since 'card.card_id' -> is a string vs  'cardToDeleteID' -> is an integer
+            (card) => card.card_id !== JSON.stringify(cardToDeleteID)
         );
         localStorage.setItem("videoCards", JSON.stringify(updatedCards));
+        console.log(`Updated Cards: ${JSON.stringify(updatedCards)}`);
+        console.log("Updated LC after deletion");
     }
     // *********************HELPER FUNCTIONS -- END************************* //
 });
