@@ -214,6 +214,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const dateCreated = `${year}-${month}-${date}, ${hours}:${minutes}`;
         console.log("Update -- Got Date");
 
+        //Card Details: Get date updated
+        const dateUpdated = dateCreated;
+
         //Create Card obj
         //to implement id
         const newCard = {
@@ -225,6 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
             video_title,
             video_thumbnail,
             dateCreated,
+            dateUpdated,
         };
 
         //Add new card to the local storage:
@@ -352,6 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
             video_title,
             video_thumbnail,
             dateCreated,
+            dateUpdated,
         } = cardData;
 
         //Create card element in HTML DOM
@@ -403,7 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>  
                     
                     <div class="card-footer text-muted">
-                        <small>Last updated 3 mins ago</small>
+                        <small>Last updated : ${dateUpdated}</small>
                     </div>
                 </div>
             </div>
@@ -477,11 +482,29 @@ document.addEventListener("DOMContentLoaded", () => {
         // Update the local storage card data
         const cards = JSON.parse(localStorage.getItem("videoCards")) || [];
 
+        //Get dateTime card was saved (updated)
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1; // Get the month (0-11, so add 1 for 1-12)
+        const date = now.getDate(); // Get the day of the month (1-31)
+        const hours = now.getHours(); // Get the hour (0-23)
+        const minutes = now.getMinutes(); // Get the minutes (0-59)
+
+        //Card Details: Put it all together
+        const dateUpdated = `${year}-${month}-${date}, ${hours}:${minutes}`;
+        console.log(
+            `FN #10 - Date Updated on Save: ${typeof dateUpdated} ${dateUpdated}`
+        );
         // [??] How does it only identfy and updated the card we're updating with updatedDescription?
+        // [??] To check back and better understand this function
         // [Ans] Via the logic in the if function
         const updatedCards = cards.map((card) => {
             if (card.card_id === cardToSaveID) {
-                return { ...card, video_desc: updatedDescription };
+                return {
+                    ...card,
+                    video_desc: updatedDescription,
+                    dateUpdated: dateUpdated,
+                };
             }
             return card;
         });
@@ -502,6 +525,8 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(
             `Fn #10 - Input Field has been replaced with Static Field: ${updatedDescriptionElement.textContent}`
         );
+
+        // Save updated date:
 
         // Change Save button back to Edit button
         const saveButton = cardElementToSave.querySelector(".save-btn");
