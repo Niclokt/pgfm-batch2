@@ -161,21 +161,83 @@
 // }
 
 //// Exercise 7 ////
+//// Product Inventory Grid
+//// Done ////
+// let arr5 = [
+//     ["Chlorox", 5, 10],
+//     ["Kleenex pack of 5", 10, 20],
+//     ["Ayataka", 2, 50],
+//     ["Tomato", 1.5, 52],
+// ];
+// // Update Quantity of product
+// arr5[3][2] = 40;
+
+// // Print updated inventory
+// console.log(arr5);
 
 //// Exercise 8 ////
+//// Basic IIFE Usage
+//// Done ////
+// // Traditional function syntax
+// (function () {
+//     console.log("IIFE traditional function syntax executed");
+// })();
+
+// // Arrow function syntax
+// (() => {
+//     console.log("IIFE array function syntax executed");
+// })();
 
 //// Exercise 9 ////
+//// IIFE w parameters
+//// Done ////
+// let a = 4;
+// let b = 10;
+
+// let sum = (function (input_1, input_2) {
+//     let result = input_1 + input_2;
+//     return result;
+// })(a, b);
+
+// console.log(sum);
 
 //// Exercise 10 ////
+//// Converted to arrow function
+//// Done ////
+// ((input_1, input_2) => {
+//     return input_1 + input_2;
+// })();
 
 //// Exercise 11 ////
+//// Single argument arrow function
+//// Done
+// console.log(
+//     ((base) => {
+//         return parseInt(base) * parseInt(base);
+//     })(3)
+// );
 
 //// Exercise 12 ////
+//// No argument arrow function
+//// Done
+// (() => {
+//     console.log("Hello, World!");
+// })();
 
 //// Exercise 13 ////
+// -- NA --
 
 //// Exercise 14 ////
+// -- NA --
 
 //// Exercise 15 ////
+// -- NA --
 
 //// Exercise 16 ////
+//// Debugging Challenge
+//// Done
+// function addNumbers(a, b) {
+//     var sum = parseInt(a) + parseInt(b);
+//     console.log(sum);
+// }
+// addNumbers(10, "20"); // Incorrectly prints "1020" instead of 30
