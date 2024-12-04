@@ -241,8 +241,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function editCardHandler(event) {
+        console.log("EditCardHandler Triggered!");
         event.preventDefault();
-        event.stopPropagation();
+        //event.stopPropagation();
         const cardToEditID = event.target.dataset.id;
         console.log(`FN X - cardToEditID: ${cardToEditID}`);
         editCardFromLocalStorage(cardToEditID);
@@ -250,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function saveCardHandler(event) {
         event.preventDefault();
-        event.stopPropagation();
+        //event.stopPropagation();
         //Get Card ID of clicked Button
         const cardToSaveID = event.target.dataset.id;
         console.log(`FN X - cardToEditID: ${cardToSaveID}`);
@@ -391,7 +392,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             Show More
                         </button>
                         <div class="collapse" id="notes-${card_id}">
-                            <p class="card-text">${video_desc}</p>
+                            <p class="card-text card-body-notes">${video_desc}</p>
                         </div>
                         
                         <!-- Button Group -->
@@ -399,7 +400,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <button class="btn btn-warning btn-sm edit-btn" data-id="${card_id}">Edit Notes</button>
                             <button class="btn btn-danger btn-sm delete-btn" data-id="${card_id}">Delete</button>
                         </div>
-                    </div>
+                    </div>  
                     
                     <div class="card-footer text-muted">
                         <small>Last updated 3 mins ago</small>
