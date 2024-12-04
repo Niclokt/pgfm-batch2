@@ -523,10 +523,17 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(`FN 11 - delete card from LS, Card ID: ${cardToDeleteID}`);
         //add code here
         const cards = JSON.parse(localStorage.getItem("videoCards")) || [];
+
+        console.log(`cardToDeleteID datatype = ${typeof cardToDeleteID}`);
+        console.log(`card.Id datatype = ${typeof cards[0].card_id}`);
+
         const updatedCards = cards.filter(
             // !! To edit what to filter in here!! Should filter by id
-            // NOTE! To use "!=" instead of "!==" operator, since 'card.card_id' -> is a string vs  'cardToDeleteID' -> is an integer
-            (card) => card.card_id !== JSON.stringify(cardToDeleteID)
+            // NOTE! To use "!=" instead of "!==" operator, since 'card.card_id' -> is an integer VS 'cardToDeleteID' -> is an string
+            // Ensure that datatypes are the same when using the strict equality operato
+            // Converted card.card_id to string instead
+
+            (card) => JSON.stringify(card.card_id) !== cardToDeleteID
         );
         localStorage.setItem("videoCards", JSON.stringify(updatedCards));
         console.log(`Updated Cards: ${JSON.stringify(updatedCards)}`);
