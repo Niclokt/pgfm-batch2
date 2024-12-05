@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--Link to Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <h1 style="font-family: Playwrite GB S">Tut 5 - Q7: Task Master</h1>
+
+    <ul>
+        <li class="hot">Item 1</li>
+        <li class="hot">Item 2</li>
+        <li class="hot">Item 3</li>
+        <li>Item 4</li>
+        <li class="hot">Item 5</li>
+        <li class="hot epic">Item 6</li>
+        <li class="tired but hot">Item 7</li>
+    </ul>
+
+    <button onclick="task1()">Using querySelectorAll to change all 'li.hot' elements to 'cool'</button>
+    <br />
+    <button onclick="task2()">"Using getElementsByClassName to check if there are 3+ elements with the class hot and
+        change the 3rd one.</button>
+    <br />
+    <button onclick="task3()">Using getElementsByTagName to check for any 'li.hot' and change the first one to
+        'cool'</button>
+
+    <script>
+        // First Task: Change all 'li.hot' class to 'cool'
+        function task1() {
+            // Task 1:
+            document.querySelectorAll('li.hot').forEach(elem => {
+                elem.className = 'cool';
+            });
+        }
+
+        // Task 2: Using getElementsByClassName to check if there are 3 or more elements with class 'hot' and change the 3rd one
+        function task2() {
+            const hotItemsByClass = document.getElementsByClassName('hot');
+            if (hotItemsByClass.length >= 3) {
+                hotItemsByClass[2].className = 'cool';
+            }
+        }
+
+        // Task 3: Using getElementsByTagName to check for any 'li.hot' and change the first one to 'cool'
+        function task3() {
+            const listItems = document.getElementsByTagName('li');
+            for (const elem of listItems) {
+                if (elem.classList.contains('hot')) {
+                    elem.classList.remove('hot');
+                    elem.classList.add('cool');
+                    break;
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
