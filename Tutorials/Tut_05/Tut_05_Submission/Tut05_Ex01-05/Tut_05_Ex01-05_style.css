@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    margin: 10vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: flex-end;
+}
+
+.nav_item{
+    margin: 20px;
+}
+
+.main_body{
+    width: 60%;
+}
