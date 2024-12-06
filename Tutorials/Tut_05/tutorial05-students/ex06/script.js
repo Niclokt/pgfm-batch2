@@ -1,4 +1,4 @@
-// Get inputs from DOM - Select button
+// Get inputs from DOM - Get button
 const button = document.getElementById("calculateBtn");
 
 // Event Listener
