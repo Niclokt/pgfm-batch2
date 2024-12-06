@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    margin: 10vh;
+    margin: 5vh;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:center;
@@ -9,8 +9,10 @@
 
 .media-container {
     display: flex;
-    justify-content: center; /* Centers the iframe horizontally */
-    align-items: center;    /* Centers the iframe vertically */
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    margin: 3vh;
 }
 
 .nav_item{

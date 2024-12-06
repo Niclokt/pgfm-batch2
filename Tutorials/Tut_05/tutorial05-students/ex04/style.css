@@ -1,0 +1,21 @@
+#first-header{
+    background-color: bisque;
+}
+
+ul{
+    Font-family: Playwrite GB S
+}
+
+.atn{
+    width: 20%;
+    background-color: springgreen;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: darkviolet;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
