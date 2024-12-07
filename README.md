@@ -67,10 +67,9 @@ Include the Adobe XD wireframe as a folder. You can include the XD share url.`
 
 > As a user type, I want to be able to collapse the summary section, so that I can keep the look and feel of my dashboard need, without it looking too cluttered with content.
 
-#### [2] Links to wireframe and figjam
+#### [2] Links to Figjam and wireframe
 
--   [Wireframe]()
--   [Figjam]()
+-   [FigJam / Wireframe](https://www.figma.com/board/82uw41Elgv8nKGA3PcHpf6/Programming-Fundamentals-Project-Organiser?node-id=0-1&t=xCUfvc0QzRjc4VJu-1)
 
 ## Features
 
