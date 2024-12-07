@@ -2,6 +2,14 @@
 
 ^ _(Link to Project embedded in title)_
 
+Before we begin some...
+
+#### QUICK LINKS
+
+1. [GitHub Link](https://github.com/Niclokt/pgfm-batch2.git)
+2. [GitHub Pages Link](https://niclokt.github.io/pgfm-batch2/)
+3. [Figma FigJam (Wireframe in Figjam file)](https://www.figma.com/board/82uw41Elgv8nKGA3PcHpf6/Programming-Fundamentals-Project-Organiser?node-id=4-5951&t=pAZuouuVejvrHjo3-1)
+
 ### Project Pitch
 
 ```
