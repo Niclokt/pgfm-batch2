@@ -25,12 +25,18 @@ In this section, you should go over the different parts of your project, and des
 -   URL input feature - allows users X to achieve Y, by having them fill out Z
 -   Video Card
 -   Collapsible Summary
+- Edit Notes
+- Last Updated DateTime
+- Delete Card
 
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 ### Features Left to Implement
 
 -   Another feature idea
+- Draggable/ Rearrangeable cards
+- Search function
+- Incollapsible overview function
 
 ## Technologies Used
 
