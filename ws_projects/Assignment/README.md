@@ -4,6 +4,14 @@ One or two paragraphs providing an overview of your project. Tell us about your 
 
 Essentially, this part is your sales pitch.
 
+
+See a youtube video that might provide some interesting insights, but not enough time and brain power to sit through the video and process it's contents? 
+
+That's where Youtube Euphoria comes into play! Get your dose of dopamin regardless of time and day! A click of a button, Youtube Euphoria coming your way!
+
+
+
+
 ## Design Process
 
 Provide us insights about your design process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
