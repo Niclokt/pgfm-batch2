@@ -1,15 +1,14 @@
 # Project Youtube Euphoria
 
-One or two paragraphs providing an overview of your project. Tell us about your project.
-
-Essentially, this part is your sales pitch.
-
-
 See a youtube video that might provide some interesting insights, but not enough time and brain power to sit through the video and process it's contents? 
 
 That's where Youtube Euphoria comes into play! Get your dose of dopamin regardless of time and day! A click of a button, Youtube Euphoria coming your way!
 
+Simply input the url of the youtube video  of interest.
 
+A card with a link to the video and summary of it's content will be created.
+
+Store and organise these cards all in one place.
 
 
 ## Design Process
@@ -45,6 +44,9 @@ In addition, you may also use this section to discuss plans for additional featu
 - Draggable/ Rearrangeable cards
 - Search function
 - Incollapsible overview function
+- Tabs to organise Video cards into various cateogories
+
+
 
 ## Technologies Used
 
