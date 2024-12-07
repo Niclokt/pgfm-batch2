@@ -1,14 +1,22 @@
-# Project Youtube Euphoria
+# [Project Youtube Euphoria](https://niclokt.github.io/pgfm-batch2/)
 
+^ _(Link to Project embedded in title)_
+
+### Project Pitch
+
+```
 See a youtube video that might provide some interesting insights?
 
 But no time and brain power to sit through the video and process it's contents?
 
-That's where Youtube Euphoria comes into play!  
-Get your dose of dopamin regardless of time and day!  
+That's where Youtube Euphoria comes into play!
+Get your dose of dopamin regardless of time and day!
 A click of a button, Youtube Euphoria coming your way!
+```
 
-#### _Steps:_
+### Introducing 🙌Youtube Euphoria🙌
+
+### How to use?:
 
 1. Simply copy the youtube url from your browser's navigation bar.
 2. Paste the url of the youtube video of interest into the input box.
@@ -84,19 +92,27 @@ Include the Adobe XD wireframe as a folder. You can include the XD share url.`
 `In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.`
 
 -   [Bootstrap](https://getbootstrap.com/docs/5.3/components/collapse/)
-    -   To simplify the process of beautifying frontend
+    -   Simplifies the process of beautifying frontend
 -   [Marked](https://marked.js.org)
-    -   to convert markdown script into HTML code
--   [Youtube Detail API]()
+    -   Converts markdown script into HTML code
+-   [Youtube Detail API](https://rapidapi.com/ytjar/api/yt-api)
+
     -   Get info on youtube video (e.g. Video Title)
+    -   Found in `script.js` under section `MAIN API FUNCTIONS`, in `getVideoDetails()` function
+
 -   [Youtube Transcript API]()
+
     -   Get transcipt of youtube video
--   [Groq]()
-    -   Get summary of video transcript using Llamma LLM model
+    -   Found in `script.js` under section `MAIN API FUNCTIONS`, in `fetchTranscript()` function
+
+-   [Groq](https://console.groq.com/docs/api-reference#chat)
+    -   Get summary of video transcript using Llama LLM model
+    -   Model: `llama3-8b-8192`
+    -   Found in `script.js` under section `MAIN API FUNCTIONS`, in `getGroqChatCompletion()` function
 
 ## Testing
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+`For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:`
 
 1. Contact form:
     1. Go to the "Contact Us" page
@@ -104,15 +120,24 @@ For any scenarios that have not been automated, test the user stories manually a
     3. Try to submit the form with an invalid email address and verify that a relevant error message appears
     4. Try to submit the form with all inputs valid and verify that a success message appears.
 
-###Bugs:
+### Bugs:
+
+`You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.  `
+
+#### Bug #1 - Edit Button functionality
 
 -   The edit button only works if you click on the edit button in the first video card. Afterwhich the edit button will work for the rest of the videos.
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+#### Bug #2 - Delete button
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+-   Only works occasionally
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+### Webpage Responsivity:
+
+`In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.`
+
+-   At the moment it only works well on a laptop
+-   More improvements can be made while viewing from a small screen or mobile device.
 
 ## Credits
 
@@ -126,4 +151,4 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ### Acknowledgements
 
--   I received inspiration for this project from myself
+-   I received inspiration for this project from pinterest's dashboard
