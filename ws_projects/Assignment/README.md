@@ -23,7 +23,7 @@ In this section, you should go over the different parts of your project, and des
 ### Existing Features
 
 -   URL input feature - allows users X to achieve Y, by having them fill out Z
--   Video Card
+-   Video Cards
 -   Collapsible Summary
 - Edit Notes
 - Last Updated DateTime
@@ -45,6 +45,20 @@ In this section, you should mention all of the languages, frameworks, libraries,
 -   [JQuery](https://jquery.com)
     -   The project uses **JQuery** to simplify DOM manipulation.
 
+- [Bootstrap]()
+
+- [Marked]()
+    - to convert markdown script into HTML code
+
+
+- [Groq]()
+    - Get summary of video transcript
+- [Youtube Transcript API]()
+    - Get transcipt of youtube video
+- [Youtube Detail API]()
+    - Get info on youtube video (e.g. Video Title)
+
+
 ## Testing
 
 For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
@@ -54,6 +68,10 @@ For any scenarios that have not been automated, test the user stories manually a
     2. Try to submit the empty form and verify that an error message about the required fields appears
     3. Try to submit the form with an invalid email address and verify that a relevant error message appears
     4. Try to submit the form with all inputs valid and verify that a success message appears.
+
+
+###Bugs:
+- The edit button only works if you click on the edit button in the first video card. Afterwhich the edit button will work for the rest of the videos.
 
 In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
 
@@ -65,12 +83,12 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ### Content
 
--   The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+-   N.A.
 
 ### Media
 
--   The photos used in this site were obtained from ...
+-   The videos used in this site were obtained from youtube.
 
 ### Acknowledgements
 
--   I received inspiration for this project from X
+-   I received inspiration for this project from myself
