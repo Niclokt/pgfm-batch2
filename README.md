@@ -14,7 +14,9 @@ Get your dose of dopamin regardless of time and day!
 A click of a button, Youtube Euphoria coming your way!
 ```
 
-### Introducing 🙌Youtube Euphoria🙌
+### Introducing ✨Youtube Euphoria✨:
+
+![alt text](image.png)
 
 ### How to use?:
 
@@ -49,9 +51,21 @@ Include the Adobe XD wireframe as a folder. You can include the XD share url.`
 
 #### [1] User Stories
 
-> User Stories
+##### US #1
 
--   As a user type, I want to perform an action, so that I can achieve a goal.
+> As a user type, I want to create video cards with a concise summary of the videos, so that I can get the gist of the video at a glance.
+
+##### US #2
+
+> As a user type, I want to be able to make notes and be able to edit it after creating the card, so that I can list follow up actions or personal insights related to the video, OR insights gleaned from the content.
+
+##### US #3
+
+> As a user type, I want to be able to delete video cards that I've created, so that I can re-organise my video card dashboard.
+
+##### US #4
+
+> As a user type, I want to be able to collapse the summary section, so that I can keep the look and feel of my dashboard need, without it looking too cluttered with content.
 
 #### [2] Links to wireframe and figjam
 
@@ -114,11 +128,28 @@ Include the Adobe XD wireframe as a folder. You can include the XD share url.`
 
 `For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:`
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+#### 1. Submittitng of Youtube URL:
+
+    1. Copy url of desired youtube video
+    2. Paste it in the text box
+    3. Click "Save Video to Notes" button
+    4. A video card, with the thumbnail of the desired video and summarised version of the transcript should appear in the dashboard below
+
+#### 2. Editing the 'Notes' section of the video card
+
+    1. Go to an existing video card.
+    2. Click on the "show more" button under "Notes", to expand any notes that might have been saved previously.
+    3. Click on "Edit Notes", the text should convert into an editable text field.
+    4. Make changes to the text in the editable text field.
+    5. Click "Save" to save changes, editable text field should convert back into text and should display the updated text that was saved.
+    6. Refresh the page, go back to the same card.
+    7. Click on the "show more" button under "Notes", the text display should be the same as what was last updated by user.
+
+#### 3. Deleting a video card:
+
+    1. Go to an existing video card.
+    2. Click the "Delete" button, the video card should no longer be displayed no the dashboard.
+    3. Refresh the webpage, the previously removed video card should still be displayed no the dashboard.
 
 ### Bugs:
 
