@@ -1,21 +1,34 @@
 # Project Youtube Euphoria
 
-See a youtube video that might provide some interesting insights, but not enough time and brain power to sit through the video and process it's contents? 
+See a youtube video that might provide some interesting insights, but not enough time and brain power to sit through the video and process it's contents?
 
 That's where Youtube Euphoria comes into play! Get your dose of dopamin regardless of time and day! A click of a button, Youtube Euphoria coming your way!
 
-Simply input the url of the youtube video  of interest.
+Simply input the url of the youtube video of interest.
 
 A card with a link to the video and summary of it's content will be created.
 
-Store and organise these cards all in one place.
-
+These cards will be organised and stored in one place.
 
 ## Design Process
 
 Provide us insights about your design process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
+### Target Audience:
+
+-   Anyone who watches youtube for knowledge
+
+### Audience pain points:
+
+-   Have to make the effort to make notes
+-   Have to sit through the entire video to get the gist of the content
+-   Might have to re-watch the video a few times to digest videos with more complex content
+
+### Project Value Proposition
+
+-   Organises and stores summarised version of video into cards
+
+### List of User Stories:
 
 -   As a user type, I want to perform an action, so that I can achieve a goal.
 
@@ -32,42 +45,37 @@ In this section, you should go over the different parts of your project, and des
 -   URL input feature - allows users X to achieve Y, by having them fill out Z
 -   Video Cards
 -   Collapsible Summary
-- Edit Notes
-- Last Updated DateTime
-- Delete Card
+-   Edit Notes
+-   Last Updated DateTime
+-   Delete Card
 
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 ### Features Left to Implement
 
--   Another feature idea
-- Draggable/ Rearrangeable cards
-- Search function
-- Incollapsible overview function
-- Tabs to organise Video cards into various cateogories
-
-
+-   Draggable/ Rearrangeable cards
+-   Search function
+-   Incollapsible overview function
+-   Tabs to organise Video cards into various cateogories
 
 ## Technologies Used
 
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
 -   [JQuery](https://jquery.com)
+
     -   The project uses **JQuery** to simplify DOM manipulation.
 
-- [Bootstrap]()
-
-- [Marked]()
-    - to convert markdown script into HTML code
-
-
-- [Groq]()
-    - Get summary of video transcript
-- [Youtube Transcript API]()
-    - Get transcipt of youtube video
-- [Youtube Detail API]()
-    - Get info on youtube video (e.g. Video Title)
-
+-   [Bootstrap](https://getbootstrap.com/docs/5.3/components/collapse/)
+    -   To simplify the process of beautifying frontend
+-   [Marked](https://marked.js.org)
+    -   to convert markdown script into HTML code
+-   [Youtube Detail API]()
+    -   Get info on youtube video (e.g. Video Title)
+-   [Youtube Transcript API]()
+    -   Get transcipt of youtube video
+-   [Groq]()
+    -   Get summary of video transcript using Llamma LLM model
 
 ## Testing
 
@@ -79,9 +87,9 @@ For any scenarios that have not been automated, test the user stories manually a
     3. Try to submit the form with an invalid email address and verify that a relevant error message appears
     4. Try to submit the form with all inputs valid and verify that a success message appears.
 
-
 ###Bugs:
-- The edit button only works if you click on the edit button in the first video card. Afterwhich the edit button will work for the rest of the videos.
+
+-   The edit button only works if you click on the edit button in the first video card. Afterwhich the edit button will work for the rest of the videos.
 
 In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
 
